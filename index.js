@@ -68,14 +68,14 @@ function richMessage(recipientId, text) {
       //     values.indexOf("closed") < 0||
       //     values.indexOf("hours") < 0 ) {
             // hours
-            if (date.getDay > 0 && date.getDay < 5){
+            if (date.getDay() > 0 && date.getDay() < 5){
                 message = "The Career Center is open from 9am-5pm today\n";
             }
-            else if (date.getDay == 5) {
+            else if (date.getDay() == 5) {
                 message = "The Career Center is open from 9am-4pm today\n";
             }
             else{
-                message = date.getDay+ "The Career Center is closed today\n";
+                message = "The Career Center is closed today\n";
             }
             message = message +
                       "Our regular hours are:\n \tMonday - Thursday: 9am-5pm\n \tFriday: 9am-4pm";
