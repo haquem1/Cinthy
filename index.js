@@ -63,9 +63,14 @@ function richMessage(recipientId, text) {
 
       text = text || "";
       var values = text.split(' ');
+      //sanitize
+      for(var i = 0; i < values.length; i++){
+          values[i] = values[i].toLowerCase();
+      }
       if (values.indexOf("open") > -1 ||
-          values.indexOf("close") ||
-          values.indexOf("hours")) {
+          values.indexOf("close") > -1 ||
+          values.indexOf("close") > -1 ||
+          values.indexOf("hours")) > -1 {
             // hours
             if (date.getDay > 0 && date.getDay < 5){
                 message = "The Career Center is open from 9am-5pm today\n";
@@ -77,7 +82,7 @@ function richMessage(recipientId, text) {
                 message = "The Career Center is closed today\n";
             }
             message = message +
-                      "Our regular hours are:\n \tMonday - Thursday: 9am-5pm\n  \tFriday: 9am-4pm";
+                      "Our regular hours are:\n \tMonday - Thursday: 9am-5pm\n \tFriday: 9am-4pm";
 
            sendMessage(recipientId, {text: message});
            return true;
