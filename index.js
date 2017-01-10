@@ -75,7 +75,7 @@ function richMessage(recipientId, text) {
                 message = "The Career Center is open from 9am-4pm today\n";
             }
             else{
-                message = "The Career Center is closed today\n";
+                message = date.getDay+ "The Career Center is closed today\n";
             }
             message = message +
                       "Our regular hours are:\n \tMonday - Thursday: 9am-5pm\n \tFriday: 9am-4pm";
