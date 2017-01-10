@@ -27,9 +27,9 @@ app.post('/webhook', function (req, res) {
     for (i = 0; i < events.length; i++) {
         var event = events[i];
         if (event.message && event.message.text) {
-          //  if (!richMessage(event.sender.id, event.message.text)) {
+            if (!richMessage(event.sender.id, event.message.text)) {
                 sendMessage(event.sender.id, {text: "Thank you for your message! A staff member from the Career Center will get back to you shortly"});
-          //  }
+            }
         } else if (event.postback) {
             console.log("Postback received: " + JSON.stringify(event.postback));
         }
@@ -58,74 +58,48 @@ function sendMessage(recipientId, message) {
 
 // send rich message with kitten
 function richMessage(recipientId, text) {
-      var date = new Date();
-      date.setHours(0,0,0,0,0);
 
-      text = text || "";
-      var values = text.split(' ');
-      if (values.indexOf("open") > -1 ||
-          values.indexOf("close") ||
-          values.indexOf("hours")) {
-            // hours
-            if (date.getDay > 0 && date.getDay < 5 && !getSpecialHours(date)){
-                message = "The Career Center is open from 9am-5pm today\n";
-            }
-            else if (date.getDay == 5 && !getSpecialHours(date)) {
-                message = "The Career Center is open from 9am-4pm today\n";
-            }
-            else{
-                message = "The Career Center is closed today\n";
-            }
-            message = message +
-                      "Our regular hours are:\n \tMonday - Thursday: 9am-5pm\n  \tFriday: 9am-4pm";
+    text = text || "";
+    var values = text.split(' ');
 
-           sendMessage(recipientId, {text: message});
-           return true;
-      }
+    if (values.length === 3 && values[0] === 'kitten') {
+        if (Number(values[1]) > 0 && Number(values[2]) > 0) {
 
-      return false;
+            var imageUrl = "https://placekitten.com/" + Number(values[1]) + "/" + Number(values[2]);
+
+            message = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [{
+                            "title": "Kitten",
+                            "subtitle": "Cute kitten picture",
+                            "image_url": imageUrl ,
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": imageUrl,
+                                "title": "Show kitten"
+                                }, {
+                                "type": "postback",
+                                "title": "I like this",
+                                "payload": "User " + recipientId + " likes kitten " + imageUrl,
+                            }]
+                        }]
+                    }
+                }
+            };
+
+            sendMessage(recipientId, message);
+
+            return true;
+        }
+    }
+
+    return false;
+
 };
-//     text = text || "";
-//     var values = text.split(' ');
-//
-//     if (values.length === 3 && values[0] === 'kitten') {
-//         if (Number(values[1]) > 0 && Number(values[2]) > 0) {
-//
-//             var imageUrl = "https://placekitten.com/" + Number(values[1]) + "/" + Number(values[2]);
-//
-//             message = {
-//                 "attachment": {
-//                     "type": "template",
-//                     "payload": {
-//                         "template_type": "generic",
-//                         "elements": [{
-//                             "title": "Kitten",
-//                             "subtitle": "Cute kitten picture",
-//                             "image_url": imageUrl ,
-//                             "buttons": [{
-//                                 "type": "web_url",
-//                                 "url": imageUrl,
-//                                 "title": "Show kitten"
-//                                 }, {
-//                                 "type": "postback",
-//                                 "title": "I like this",
-//                                 "payload": "User " + recipientId + " likes kitten " + imageUrl,
-//                             }]
-//                         }]
-//                     }
-//                 }
-//             };
-//
-//             sendMessage(recipientId, message);
-//
-//             return true;
-//         }
-//     }
-//
-//     return false;
-//
-// };
-//
+
 // checks if date falls on holiday or special hours
 function getSpecialHours(recipientId, date) {
     // holiday closure, JSON array
@@ -148,7 +122,7 @@ function getSpecialHours(recipientId, date) {
         }
     }
     return false;
-};
+}
 // var express = require('express');
 // var bodyParser = require('body-parser');
 // var request = require('request');
