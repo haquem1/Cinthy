@@ -100,29 +100,7 @@ function richMessage(recipientId, text) {
 
 };
 
-// // checks if date falls on holiday or special hours
-// function getSpecialHours(recipientId, date) {
-//     // holiday closure, JSON array
-//     var closed = [{"date": new Date(2017,0,16), "holiday: Martin Luther King Jr Day"},
-//                   {"date": new Date(2017,2,31), "holiday: Cesar Chavez Day"},
-//                   {"date": new Date(2017,4,29), "holiday: Memorial Day"}];
-//     // holds special hours, JSON array
-//     var special = [{"date": new Date(2017,0,16), "holiday: Martin Luther King Jr Day", "hours": "9am-2pm"}];
-//     for (var i = 0; i < closed.length; i++) {
-//         if (closed[i].date == date){
-//             return true;
-//         }
-//     }
-//     for (var i = 0; i < special.length; i++) {
-//         if (special[i].date == date){
-//             sendMessage(recipientId, {text: "The Career Center is open from"
-//                                           + special[i].hours
-//                                           + "9am-4pm today"})
-//             return true;
-//         }
-//     }
-//     return false;
-// };
+
 // var express = require('express');
 // var bodyParser = require('body-parser');
 // var request = require('request');
