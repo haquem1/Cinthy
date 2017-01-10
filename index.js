@@ -78,7 +78,7 @@ function richMessage(recipientId, text) {
                 message = "The Career Center is closed today\n";
             }
             message = message +
-                      "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
+                      "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm"+text;
 
            sendMessage(recipientId, {text: message});
            return true;
