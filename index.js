@@ -63,10 +63,10 @@ function richMessage(recipientId, text) {
 
       text = text || "";
       var values = text.split(' ');
-      if (values.indexOf("open") > -1 ||
-          values.indexOf("close") > -1 ||
-          values.indexOf("closed") > -1 ||
-          values.indexOf("hours") > -1 ) > {
+      if (values.indexOf("open") ||
+          values.indexOf("close")  ||
+          values.indexOf("closed") ||
+          values.indexOf("hours") ) {
             // hours
             if (date.getDay > 0 && date.getDay < 5){
                 message = "The Career Center is open from 9am-5pm today\n";
