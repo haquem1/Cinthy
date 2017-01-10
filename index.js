@@ -63,10 +63,10 @@ function richMessage(recipientId, text) {
 
       text = text || "";
       // var values = text.split(' ');
-      if (text.indexOf("open") < 0 ||
-          text.indexOf("close") < 0 ||
-          text.indexOf("closed") < 0||
-          text.indexOf("hours") < 0 ) {
+      if (text.indexOf("open") != -1 ||
+          text.indexOf("close") != -1 ||
+          text.indexOf("closed") != -1||
+          text.indexOf("hours") != -1 ) {
             // hours
             if (date.getDay() > 0 && date.getDay() < 5){
                 message = "The Career Center is open from 9am-5pm today\n";
@@ -82,7 +82,7 @@ function richMessage(recipientId, text) {
 
            sendMessage(recipientId, {text: message});
            return true;
-  //    }
+      }
 
       return false;
     // text = text || "";
