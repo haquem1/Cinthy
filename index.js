@@ -27,7 +27,7 @@ app.post('/webhook', function (req, res) {
     for (i = 0; i < events.length; i++) {
         var event = events[i];
         if (event.message && event.message.text) {
-            if (!kittenMessage(event.sender.id, event.message.text)) {
+            if (!richMessage(event.sender.id, event.message.text)) {
                 sendMessage(event.sender.id, {text: "Thank you for your message! A staff member from the Career Center will get back to you shortly"});
             }
         } else if (event.postback) {
@@ -57,7 +57,7 @@ function sendMessage(recipientId, message) {
 };
 
 // send rich message with kitten
-function kittenMessage(recipientId, text) {
+function richMessage(recipientId, text) {
 
     text = text || "";
     var values = text.split(' ');
