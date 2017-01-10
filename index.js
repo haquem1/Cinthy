@@ -28,7 +28,7 @@ app.post('/webhook', function (req, res) {
         var event = events[i];
         if (event.message && event.message.text) {
             if (!kittenMessage(event.sender.id, event.message.text)) {
-                sendMessage(event.sender.id, {text: "Echo: " + event.message.text});
+                sendMessage(event.sender.id, {text: "Thank you for your message! A staff member from the Career Center will get back to you shortly"});
             }
         } else if (event.postback) {
             console.log("Postback received: " + JSON.stringify(event.postback));
