@@ -29,7 +29,7 @@ app.post('/webhook', function (req, res) {
         if (event.message && event.message.text) {
             // if (!richMessage(event.sender.id, event.message.text)) {
                 // auto reply to sender
-                sendMessage(event.sender.id, {text: "Thank you for your message! A staff member from the Career Center will get back to you shortly"});
+                sendMessage(event.sender.id, {text: event.message.text});
             // }
         } else if (event.postback) {
             console.log("Postback received: " + JSON.stringify(event.postback));
