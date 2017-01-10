@@ -58,14 +58,18 @@ function sendMessage(recipientId, message) {
 
 // send rich message with kitten
 function richMessage(recipientId, text) {
+
       var date = new Date();
       date.setHours(0,0,0,0,0);
-
       text = text || "";
-      // var values = text.split(' ');
+
+      for(var i; i < text.length; i++){
+          text = text.toLowerCase();
+      }
+      
       if (text.indexOf("open") != -1 ||
           text.indexOf("close") != -1 ||
-          text.indexOf("closed") != -1||
+          text.indexOf("closed") != -1 ||
           text.indexOf("hours") != -1 ) {
             // hours
             if (date.getDay() > 0 && date.getDay() < 5){
