@@ -64,9 +64,9 @@ function richMessage(recipientId, text) {
       text = text || "";
 
       for(var i; i < text.length; i++){
-          text = text.toLowerCase();
+          text[i] = text[i].toLowerCase();
       }
-      
+
       if (text.indexOf("open") != -1 ||
           text.indexOf("close") != -1 ||
           text.indexOf("closed") != -1 ||
