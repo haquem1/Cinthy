@@ -58,49 +58,96 @@ function sendMessage(recipientId, message) {
 
 // send rich message with kitten
 function richMessage(recipientId, text) {
+      var date = new Date();
+      date.setHours(0,0,0,0,0);
 
-    text = text || "";
-    var values = text.split(' ');
+      text = text || "";
+      var values = text.split(' ');
+      if (values.indexOf("open") > -1 ||
+          values.indexOf("close") ||
+          values.indexOf("hours")) {
+            // hours
+            if (date.getDay > 0 && date.getDay < 5){
+                message = "The Career Center is open from 9am-5pm today\n";
+            }
+            else if (date.getDay == 5) {
+                message = "The Career Center is open from 9am-4pm today\n";
+            }
+            else{
+                message = "The Career Center is closed today\n";
+            }
+            message = message +
+                      "Our regular hours are:\n \tMonday - Thursday: 9am-5pm\n  \tFriday: 9am-4pm";
 
-    if (values.length === 3 && values[0] === 'kitten') {
-        if (Number(values[1]) > 0 && Number(values[2]) > 0) {
+           sendMessage(recipientId, {text: message});
+           return true;
+      }
 
-            var imageUrl = "https://placekitten.com/" + Number(values[1]) + "/" + Number(values[2]);
-
-            message = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "generic",
-                        "elements": [{
-                            "title": "Kitten",
-                            "subtitle": "Cute kitten picture",
-                            "image_url": imageUrl ,
-                            "buttons": [{
-                                "type": "web_url",
-                                "url": imageUrl,
-                                "title": "Show kitten"
-                                }, {
-                                "type": "postback",
-                                "title": "I like this",
-                                "payload": "User " + recipientId + " likes kitten " + imageUrl,
-                            }]
-                        }]
-                    }
-                }
-            };
-
-            sendMessage(recipientId, message);
-
-            return true;
-        }
-    }
-
-    return false;
+      return false;
+    // text = text || "";
+    // var values = text.split(' ');
+    //
+    // if (values.length === 3 && values[0] === 'kitten') {
+    //     if (Number(values[1]) > 0 && Number(values[2]) > 0) {
+    //
+    //         var imageUrl = "https://placekitten.com/" + Number(values[1]) + "/" + Number(values[2]);
+    //
+    //         message = {
+    //             "attachment": {
+    //                 "type": "template",
+    //                 "payload": {
+    //                     "template_type": "generic",
+    //                     "elements": [{
+    //                         "title": "Kitten",
+    //                         "subtitle": "Cute kitten picture",
+    //                         "image_url": imageUrl ,
+    //                         "buttons": [{
+    //                             "type": "web_url",
+    //                             "url": imageUrl,
+    //                             "title": "Show kitten"
+    //                             }, {
+    //                             "type": "postback",
+    //                             "title": "I like this",
+    //                             "payload": "User " + recipientId + " likes kitten " + imageUrl,
+    //                         }]
+    //                     }]
+    //                 }
+    //             }
+    //         };
+    //
+    //         sendMessage(recipientId, message);
+    //
+    //         return true;
+    //     }
+    // }
+    //
+    // return false;
 
 };
 
-
+// // checks if date falls on holiday or special hours
+// function getSpecialHours(recipientId, date) {
+//     // holiday closure, JSON array
+//     var closed = [{"date": new Date(2017,0,16), "holiday: Martin Luther King Jr Day"},
+//                   {"date": new Date(2017,2,31), "holiday: Cesar Chavez Day"},
+//                   {"date": new Date(2017,4,29), "holiday: Memorial Day"}];
+//     // holds special hours, JSON array
+//     var special = [{"date": new Date(2017,0,16), "holiday: Martin Luther King Jr Day", "hours": "9am-2pm"}];
+//     for (var i = 0; i < closed.length; i++) {
+//         if (closed[i].date == date){
+//             return true;
+//         }
+//     }
+//     for (var i = 0; i < special.length; i++) {
+//         if (special[i].date == date){
+//             sendMessage(recipientId, {text: "The Career Center is open from"
+//                                           + special[i].hours
+//                                           + "9am-4pm today"})
+//             return true;
+//         }
+//     }
+//     return false;
+// }
 // var express = require('express');
 // var bodyParser = require('body-parser');
 // var request = require('request');
