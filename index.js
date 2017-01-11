@@ -98,8 +98,9 @@ function richMessage(recipientId, text) {
             // will migrate to json file
 
             if (text.indexOf("week")){
-                if (text.indexOf("next")){
-
+                if (text.indexOf("next week")){
+                  sendMessage(recipientId, {text: "Event Message"});
+                  return true;
                 }
                 else {
 
@@ -113,7 +114,7 @@ function richMessage(recipientId, text) {
 
                 }
             }
-            sendMessage(recipientId, {text: message});
+            sendMessage(recipientId, {text: "Event Message"});
             return true;
       }
       return false;
