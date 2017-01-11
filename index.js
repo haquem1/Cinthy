@@ -96,7 +96,7 @@ function richMessage(recipientId, text) {
                             "date": "Tuesday, February 14",
                             "time": "11:00am - 3:00pm",
                             "location": "USU, Grand Salon",
-                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png"
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
                             "tid": new Date("February 14, 2017")
                           },
                           {
@@ -104,7 +104,7 @@ function richMessage(recipientId, text) {
                             "date": "Tuesday, February 16",
                             "time": "11:00am - 3:00pm",
                             "location": "USU, Grand Salon",
-                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png"
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
                             "tid": new Date("February 16, 2017")
                           }
                         ];
