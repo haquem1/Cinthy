@@ -95,14 +95,14 @@ function richMessage(recipientId, text) {
                             "name": "How To Find a Job on Campus Workshop",
                             "date": "Tuesday, February 14",
                             "time": "11:00am - 3:00pm",
-                            "location": "USU, Grand Salon"
+                            "location": "USU, Grand Salon",
                             "tid": new Date("February 14, 2017")
                           },
                           {
                             "name": "How To Find a Job on Campus Job Fair",
                             "date": "Tuesday, February 16",
                             "time": "11:00am - 3:00pm",
-                            "location": "USU, Grand Salon"
+                            "location": "USU, Grand Salon",
                             "tid": new Date("February 16, 2017")
                           }
                         ];
