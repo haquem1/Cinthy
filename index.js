@@ -67,35 +67,35 @@ function richMessage(recipientId, text) {
       text = text.toLowerCase();
 
       // hours block
-      if (text.indexOf("open") != -1 ||
-          text.indexOf("close") != -1 ||
-          text.indexOf("closed") != -1 ||
-          text.indexOf("hours") != -1 ) {
-            // hours
-            if (date.getDay() > 0 && date.getDay() < 6 && date.getHours() > 7 && date.getHours < 18){
-                if(date.getDay() == 5 && date.getHours() < 17){
-                    message = "The Career Center is now open\n";
-                }
-                else if(date.getDay() < 5){
-                    message = "The Career Center is now open\n";
-                }
-            }
-            else{
-                message = "The Career Center is now closed\n";
-            }
-            message = message +
-                      "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
+      // if (text.indexOf("open") != -1 ||
+      //     text.indexOf("close") != -1 ||
+      //     text.indexOf("closed") != -1 ||
+      //     text.indexOf("hours") != -1 ) {
+      //       // hours
+      //       if (date.getDay() > 0 && date.getDay() < 6 && date.getHours() > 7 && date.getHours < 18){
+      //           if(date.getDay() == 5 && date.getHours() < 17){
+      //               message = "The Career Center is now open\n";
+      //           }
+      //           else if(date.getDay() < 5){
+      //               message = "The Career Center is now open\n";
+      //           }
+      //       }
+      //       else{
+      //           message = "The Career Center is now closed\n";
+      //       }
+      //       message = message +
+      //                 "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
+      //
+      //      sendMessage(recipientId, {text: message});
+      //      return true;
+      // }
 
-           sendMessage(recipientId, {text: message});
-           return true;
-      }
-
-
+      //events block
 
       return false;
     // text = text || "";
     // var values = text.split(' ');
-    //
+    // https://csun-csm.symplicity.com/events
     // if (values.length === 3 && values[0] === 'kitten') {
     //     if (Number(values[1]) > 0 && Number(values[2]) > 0) {
     //
