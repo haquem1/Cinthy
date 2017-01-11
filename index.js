@@ -79,7 +79,7 @@ function richMessage(recipientId, text) {
                 }
             }
             else{
-                message = "The Career Center is now closed\n";
+                message = date.getDay()+" "+date.getHours()+" The Career Center is now closed\n";
             }
             message = message +
                       "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
