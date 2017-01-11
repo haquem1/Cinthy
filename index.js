@@ -128,9 +128,8 @@ function richMessage(recipientId, text) {
             }
             else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1){
                  // all events for semester
-            //     var events = ["banana", "orange"];
-            var events = [];
-                 for (var i = 0; i < 3; i++){
+                 var ccEvents = ["banana", "orange"];
+                 for (var i = 0; i < ccEvents.length; i++){
             //       message = {
             //                   "attachment": {
             //                       "type": "template",
