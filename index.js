@@ -148,9 +148,10 @@ function richMessage(recipientId, text) {
             //                       }
             //                   }
             //               };
-                   sendMessage(recipientId, message);
-                   return true;
+                   sendMessage(recipientId, {text: "hello"};
+
                  }
+                 return true;
             }
             else{
                 // show next event by default
