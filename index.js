@@ -69,13 +69,8 @@ function richMessage(recipientId, text) {
           text.indexOf("close") != -1 ||
           text.indexOf("closed") != -1 ||
           text.indexOf("hours") != -1 ) {
-            if (date.getDay() > 0 && date.getDay() < 6 && date.getHours() > 8 && date.getHours() < 17){
-                if(date.getDay() == 5 && date.getHours() < 16){
-                    message = "The Career Center is now open\n";
-                }
-                else if(date.getDay() < 5){
-                    message = "The Career Center is now open\n";
-                }
+            if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && date.getUTCHours() > 16 && date.getUTCHours() < 1){
+                message = "The Career Center is now open\n";
             }
             else{
                 message = date.getDay()+" "+date.getHours()+" The Career Center is now closed\n";
@@ -98,7 +93,7 @@ function richMessage(recipientId, text) {
 
             if (text.indexOf("week") != -1){
                 if (text.indexOf("next") == text.indexOf("week") - 1){
-                  sendMessage(recipientId, {text: "Event Message"});
+                  sendMessage(recipientId, {text: "Next Event Message"});
                   return true;
                 }
                 else {
