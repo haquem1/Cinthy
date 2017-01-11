@@ -126,9 +126,10 @@ function richMessage(recipientId, text) {
                   return true;
                 }
             }
-            // else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1){
-            //     // all events for semester
-            //     for (var i = 0; i < events.length; i++){
+            else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1){
+                 // all events for semester
+                 var events = ["banana", "orange"]
+                 for (var i = 0; i < events.length; i++){
             //       message = {
             //                   "attachment": {
             //                       "type": "template",
@@ -147,10 +148,10 @@ function richMessage(recipientId, text) {
             //                       }
             //                   }
             //               };
-            //       sendMessage(recipientId, message);
-            //       return true;
-            //     }
-            //}
+                   sendMessage(recipientId, message);
+                   return true;
+                 }
+            }
             else{
                 // show next event by default
                 sendMessage(recipientId, {text: "Event Message"});
