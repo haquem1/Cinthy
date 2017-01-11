@@ -97,7 +97,7 @@ function richMessage(recipientId, text) {
                   return true;
                 }
                 else {
-                  sendMessage(recipientId, {text: text.indexOf("next")+" "+text.indexOf("week")+" Next Message"});
+                  sendMessage(recipientId, {text: text.indexOf("next week")+" Next Message"});
                   return true;
                 }
             }
