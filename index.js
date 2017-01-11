@@ -90,27 +90,37 @@ function richMessage(recipientId, text) {
           text.indexOf("happening") != -1) {
 
             // will migrate to json file
-
+            
             if (text.indexOf("week") != -1){
-                if (text.indexOf("next") == text.indexOf("week") - 1){
-                  sendMessage(recipientId, {text: "Next Event Message"});
+                if (text.indexOf("next week") != -1){
+                  sendMessage(recipientId, {text: "Next Week Message"});
                   return true;
                 }
                 else {
-                  sendMessage(recipientId, {text: text.indexOf("next week")+" Next Message"});
+                  sendMessage(recipientId, {text:"Week Message"});
                   return true;
                 }
             }
-            if (text.indexOf("month")){
-                if (text.indexOf("next")== text.indexOf("month") - 1){
-
+            else if (text.indexOf("month") != -1){
+                if (text.indexOf("next month") != -1){
+                  sendMessage(recipientId, {text: "Next Week Message"});
+                  return true;
                 }
                 else {
-
+                  sendMessage(recipientId, {text: "Month Message"});
+                  return true;
                 }
             }
-            sendMessage(recipientId, {text: "Event Message"});
-            return true;
+            else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1){
+                // all events for semester
+                sendMessage(recipientId, {text: "Semester Message"});
+                return true;
+            }
+            else{
+                // show next event by default
+                sendMessage(recipientId, {text: "Event Message"});
+                return true;
+            }
       }
       return false;
     // text = text || "";
