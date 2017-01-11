@@ -73,7 +73,7 @@ function richMessage(recipientId, text) {
                 message = "The Career Center is now open\n";
             }
             else{
-                message = date.getDay()+" "+date.getHours()+" The Career Center is now closed\n";
+                message = "The Career Center is now closed\n";
             }
             message = message +
                       "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
@@ -97,7 +97,8 @@ function richMessage(recipientId, text) {
                   return true;
                 }
                 else {
-
+                  sendMessage(recipientId, {text: "Next Message"});
+                  return true;
                 }
             }
             if (text.indexOf("month")){
