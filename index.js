@@ -90,22 +90,22 @@ function richMessage(recipientId, text) {
           text.indexOf("happening") != -1) {
 
             // // will migrate to json file
-            // var events = [
-            //               {
-            //                 "name": "How To Find a Job on Campus Workshop",
-            //                 "date": "Tuesday, February 14",
-            //                 "time": "11:00am - 3:00pm",
-            //                 "location": "USU, Grand Salon"
-            //                 "tid": new Date("February 14, 2017")
-            //               },
-            //               {
-            //                 "name": "How To Find a Job on Campus Job Fair",
-            //                 "date": "Tuesday, February 16",
-            //                 "time": "11:00am - 3:00pm",
-            //                 "location": "USU, Grand Salon"
-            //                 "tid": new Date("February 16, 2017")
-            //               }
-            //             ];
+            var ccEvents = [
+                          {
+                            "name": "How To Find a Job on Campus Workshop",
+                            "date": "Tuesday, February 14",
+                            "time": "11:00am - 3:00pm",
+                            "location": "USU, Grand Salon"
+                            "tid": new Date("February 14, 2017")
+                          },
+                          {
+                            "name": "How To Find a Job on Campus Job Fair",
+                            "date": "Tuesday, February 16",
+                            "time": "11:00am - 3:00pm",
+                            "location": "USU, Grand Salon"
+                            "tid": new Date("February 16, 2017")
+                          }
+                        ];
             if (text.indexOf("week") != -1){
                 if (text.indexOf("next week") != -1){
                   sendMessage(recipientId, {text: "Next Week Message"});
@@ -128,7 +128,7 @@ function richMessage(recipientId, text) {
             }
             else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1){
                  // all events for semester
-                 var ccEvents = ["banana", "orange"];
+                //  var ccEvents = ["banana", "orange"];
                  for (var i = 0; i < ccEvents.length; i++){
             //       message = {
             //                   "attachment": {
