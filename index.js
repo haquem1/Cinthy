@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
-var fs =
 var app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -63,44 +62,42 @@ function richMessage(recipientId, text) {
       var date = new Date();
       date.setHours(0,0,0,0,0);
       text = text || "";
-      // sanitize
+      //sanitize
       text = text.toLowerCase();
 
-      // hours block
-      // if (text.indexOf("open") != -1 ||
-      //     text.indexOf("close") != -1 ||
-      //     text.indexOf("closed") != -1 ||
-      //     text.indexOf("hours") != -1 ) {
-      //       // hours
-      //       if (date.getDay() > 0 && date.getDay() < 6 && date.getHours() > 7 && date.getHours < 18){
-      //           if(date.getDay() == 5 && date.getHours() < 17){
-      //               message = "The Career Center is now open\n";
-      //           }
-      //           else if(date.getDay() < 5){
-      //               message = "The Career Center is now open\n";
-      //           }
-      //       }
-      //       else{
-      //           message = "The Career Center is now closed\n";
-      //       }
-      //       message = message +
-      //                 "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
-      //
-      //      sendMessage(recipientId, {text: message});
-      //      return true;
-      // }
+      if (text.indexOf("open") != -1 ||
+          text.indexOf("close") != -1 ||
+          text.indexOf("closed") != -1 ||
+          text.indexOf("hours") != -1 ) {
+            // hours
+            if (date.getDay() > 0 && date.getDay() < 6 && date.getHours() > 7 && date.getHours < 18){
+                if(date.getDay() == 5 && date.getHours() < 17){
+                    message = "The Career Center is now open\n";
+                }
+                else if(date.getDay() < 5){
+                    message = "The Career Center is now open\n";
+                }
+            }
 
-      //events block
+            else{
+                message = "The Career Center is now closed\n";
+            }
+            message = message +
+                      "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
+
+           sendMessage(recipientId, {text: message});
+           return true;
+      }
 
       return false;
     // text = text || "";
     // var values = text.split(' ');
-    // https://csun-csm.symplicity.com/events
+    //
     // if (values.length === 3 && values[0] === 'kitten') {
     //     if (Number(values[1]) > 0 && Number(values[2]) > 0) {
     //
     //         var imageUrl = "https://placekitten.com/" + Number(values[1]) + "/" + Number(values[2]);
-    // //use as format for events
+    //
     //         message = {
     //             "attachment": {
     //                 "type": "template",
