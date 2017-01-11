@@ -82,122 +82,122 @@ function richMessage(recipientId, text) {
            return true;
       }
 
-      // events block
-      else if (text.indexOf("when") != -1 ||
-          text.indexOf("event") != -1 ||
-          text.indexOf("events") != -1 ||
-          text.indexOf("happen") != -1 ||
-          text.indexOf("happening") != -1) {
-
-            // // will migrate to json file
-            // var events = [
-            //               {
-            //                 "name": "How To Find a Job on Campus Workshop",
-            //                 "date": "Tuesday, February 14",
-            //                 "time": "11:00am - 3:00pm",
-            //                 "location": "USU, Grand Salon"
-            //                 "tid": new Date("February 14, 2017")
-            //               },
-            //               {
-            //                 "name": "How To Find a Job on Campus Job Fair",
-            //                 "date": "Tuesday, February 16",
-            //                 "time": "11:00am - 3:00pm",
-            //                 "location": "USU, Grand Salon"
-            //                 "tid": new Date("February 16, 2017")
-            //               }
-            //             ];
-            if (text.indexOf("week") != -1){
-                if (text.indexOf("next week") != -1){
-                  sendMessage(recipientId, {text: "Next Week Message"});
-                  return true;
-                }
-                else {
-                  sendMessage(recipientId, {text:"Week Message"});
-                  return true;
-                }
-            }
-            else if (text.indexOf("month") != -1){
-                if (text.indexOf("next month") != -1){
-                  sendMessage(recipientId, {text: "Next Month Message"});
-                  return true;
-                }
-                else {
-                  sendMessage(recipientId, {text: "Month Message"});
-                  return true;
-                }
-            }
-            // else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1){
-            //     // all events for semester
-            //     for (var i = 0; i < events.length; i++){
-            //       message = {
-            //                   "attachment": {
-            //                       "type": "template",
-            //                       "payload": {
-            //                           "template_type": "generic",
-            //                           "elements": [{
-            //                               "title": events[i].name,
-            //                               "subtitle": events[i].date+"\n"+events[i].time+"\n"+events[i].location+"\n",
-            //                               "image_url": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png" ,
-            //                               "buttons": [{
-            //                                   "type": "web_url",
-            //                                   "url": "https://csun-csm.symplicity.com/events",
-            //                                   "title": "Learn More"
-            //                               }]
-            //                           }]
-            //                       }
-            //                   }
-            //               };
-            //       sendMessage(recipientId, message);
-            //       return true;
-            //     }
-            }
-            else{
-                // show next event by default
-                sendMessage(recipientId, {text: "Event Message"});
-                return true;
-            }
-      }
+//       // events block
+//       else if (text.indexOf("when") != -1 ||
+//           text.indexOf("event") != -1 ||
+//           text.indexOf("events") != -1 ||
+//           text.indexOf("happen") != -1 ||
+//           text.indexOf("happening") != -1) {
+//
+//             // // will migrate to json file
+//             // var events = [
+//             //               {
+//             //                 "name": "How To Find a Job on Campus Workshop",
+//             //                 "date": "Tuesday, February 14",
+//             //                 "time": "11:00am - 3:00pm",
+//             //                 "location": "USU, Grand Salon"
+//             //                 "tid": new Date("February 14, 2017")
+//             //               },
+//             //               {
+//             //                 "name": "How To Find a Job on Campus Job Fair",
+//             //                 "date": "Tuesday, February 16",
+//             //                 "time": "11:00am - 3:00pm",
+//             //                 "location": "USU, Grand Salon"
+//             //                 "tid": new Date("February 16, 2017")
+//             //               }
+//             //             ];
+//             if (text.indexOf("week") != -1){
+//                 if (text.indexOf("next week") != -1){
+//                   sendMessage(recipientId, {text: "Next Week Message"});
+//                   return true;
+//                 }
+//                 else {
+//                   sendMessage(recipientId, {text:"Week Message"});
+//                   return true;
+//                 }
+//             }
+//             else if (text.indexOf("month") != -1){
+//                 if (text.indexOf("next month") != -1){
+//                   sendMessage(recipientId, {text: "Next Month Message"});
+//                   return true;
+//                 }
+//                 else {
+//                   sendMessage(recipientId, {text: "Month Message"});
+//                   return true;
+//                 }
+//             }
+//             // else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1){
+//             //     // all events for semester
+//             //     for (var i = 0; i < events.length; i++){
+//             //       message = {
+//             //                   "attachment": {
+//             //                       "type": "template",
+//             //                       "payload": {
+//             //                           "template_type": "generic",
+//             //                           "elements": [{
+//             //                               "title": events[i].name,
+//             //                               "subtitle": events[i].date+"\n"+events[i].time+"\n"+events[i].location+"\n",
+//             //                               "image_url": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png" ,
+//             //                               "buttons": [{
+//             //                                   "type": "web_url",
+//             //                                   "url": "https://csun-csm.symplicity.com/events",
+//             //                                   "title": "Learn More"
+//             //                               }]
+//             //                           }]
+//             //                       }
+//             //                   }
+//             //               };
+//             //       sendMessage(recipientId, message);
+//             //       return true;
+//             //     }
+//             //}
+//             else{
+//                 // show next event by default
+//                 sendMessage(recipientId, {text: "Event Message"});
+//                 return true;
+//             }
+//       }
       return false;
-    // text = text || "";
-    // var values = text.split(' ');
-    //
-    // if (values.length === 3 && values[0] === 'kitten') {
-    //     if (Number(values[1]) > 0 && Number(values[2]) > 0) {
-    //
-    //         var imageUrl = "https://placekitten.com/" + Number(values[1]) + "/" + Number(values[2]);
-    //
-    //         message = {
-    //             "attachment": {
-    //                 "type": "template",
-    //                 "payload": {
-    //                     "template_type": "generic",
-    //                     "elements": [{
-    //                         "title": "Kitten",
-    //                         "subtitle": "Cute kitten picture",
-    //                         "image_url": imageUrl ,
-    //                         "buttons": [{
-    //                             "type": "web_url",
-    //                             "url": imageUrl,
-    //                             "title": "Show kitten"
-    //                             }, {
-    //                             "type": "postback",
-    //                             "title": "I like this",
-    //                             "payload": "User " + recipientId + " likes kitten " + imageUrl,
-    //                         }]
-    //                     }]
-    //                 }
-    //             }
-    //         };
-    //
-    //         sendMessage(recipientId, message);
-    //
-    //         return true;
-    //     }
-    // }
-    //
-    // return false;
-
-};
+//     // text = text || "";
+//     // var values = text.split(' ');
+//     //
+//     // if (values.length === 3 && values[0] === 'kitten') {
+//     //     if (Number(values[1]) > 0 && Number(values[2]) > 0) {
+//     //
+//     //         var imageUrl = "https://placekitten.com/" + Number(values[1]) + "/" + Number(values[2]);
+//     //
+//     //         message = {
+//     //             "attachment": {
+//     //                 "type": "template",
+//     //                 "payload": {
+//     //                     "template_type": "generic",
+//     //                     "elements": [{
+//     //                         "title": "Kitten",
+//     //                         "subtitle": "Cute kitten picture",
+//     //                         "image_url": imageUrl ,
+//     //                         "buttons": [{
+//     //                             "type": "web_url",
+//     //                             "url": imageUrl,
+//     //                             "title": "Show kitten"
+//     //                             }, {
+//     //                             "type": "postback",
+//     //                             "title": "I like this",
+//     //                             "payload": "User " + recipientId + " likes kitten " + imageUrl,
+//     //                         }]
+//     //                     }]
+//     //                 }
+//     //             }
+//     //         };
+//     //
+//     //         sendMessage(recipientId, message);
+//     //
+//     //         return true;
+//     //     }
+//     // }
+//     //
+//     // return false;
+//
+  };
 
 // // checks if date falls on holiday or special hours
 // function getSpecialHours(recipientId, date) {
