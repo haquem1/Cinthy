@@ -60,7 +60,6 @@ function sendMessage(recipientId, message) {
 function richMessage(recipientId, text) {
 
       var date = new Date();
-      date.setHours(0,0,0,0,0);
       text = text || "";
       //sanitize
       text = text.toLowerCase();
