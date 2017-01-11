@@ -65,11 +65,11 @@ function richMessage(recipientId, text) {
       //sanitize
       text = text.toLowerCase();
 
+      // hours block
       if (text.indexOf("open") != -1 ||
           text.indexOf("close") != -1 ||
           text.indexOf("closed") != -1 ||
           text.indexOf("hours") != -1 ) {
-            // hours
             if (date.getDay() > 0 && date.getDay() < 6 && date.getHours() > 7 && date.getHours < 18){
                 if(date.getDay() == 5 && date.getHours() < 17){
                     message = "The Career Center is now open\n";
@@ -78,7 +78,6 @@ function richMessage(recipientId, text) {
                     message = "The Career Center is now open\n";
                 }
             }
-
             else{
                 message = "The Career Center is now closed\n";
             }
@@ -89,6 +88,34 @@ function richMessage(recipientId, text) {
            return true;
       }
 
+      // events block
+      else if (text.indexOf("when") != -1 ||
+          text.indexOf("event") != -1 ||
+          text.indexOf("events") != -1 ||
+          text.indexOf("happen") != -1 ||
+          text.indexOf("happening") != -1) {
+
+            // will migrate to json file
+
+            if (text.indexOf("week")){
+                if (text.indexOf("next")){
+
+                }
+                else {
+
+                }
+            }
+            if (text.indexOf("month")){
+                if (text.indexOf("next")){
+
+                }
+                else {
+
+                }
+            }
+            sendMessage(recipientId, {text: message});
+            return true;
+      }
       return false;
     // text = text || "";
     // var values = text.split(' ');
