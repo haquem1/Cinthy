@@ -96,6 +96,7 @@ function richMessage(recipientId, text) {
                             "date": "Tuesday, February 14",
                             "time": "11:00am - 3:00pm",
                             "location": "USU, Grand Salon",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png"
                             "tid": new Date("February 14, 2017")
                           },
                           {
@@ -103,6 +104,7 @@ function richMessage(recipientId, text) {
                             "date": "Tuesday, February 16",
                             "time": "11:00am - 3:00pm",
                             "location": "USU, Grand Salon",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png"
                             "tid": new Date("February 16, 2017")
                           }
                         ];
@@ -137,9 +139,9 @@ function richMessage(recipientId, text) {
                                     "payload": {
                                         "template_type": "generic",
                                         "elements": [{
-                                            "title": events[i].name,
-                                            "subtitle": events[i].date+"\n"+events[i].time+"\n"+events[i].location+"\n",
-                                            "image_url": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png" ,
+                                            "title": ccEvents[i].name,
+                                            "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
+                                            "image_url": ccEvents[i].imgUrl ,
                                             "buttons": [{
                                                 "type": "web_url",
                                                 "url": "https://csun-csm.symplicity.com/events",
