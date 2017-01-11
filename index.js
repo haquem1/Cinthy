@@ -106,6 +106,7 @@ function richMessage(recipientId, text) {
                             "tid": new Date("February 16, 2017")
                           }
                         ];
+
             if (text.indexOf("week") != -1){
                 if (text.indexOf("next week") != -1){
                   sendMessage(recipientId, {text: "Next Week Message"});
@@ -130,24 +131,24 @@ function richMessage(recipientId, text) {
                  // all events for semester
                 //  var ccEvents = ["banana", "orange"];
                  for (var i = 0; i < ccEvents.length; i++){
-            //       message = {
-            //                   "attachment": {
-            //                       "type": "template",
-            //                       "payload": {
-            //                           "template_type": "generic",
-            //                           "elements": [{
-            //                               "title": events[i].name,
-            //                               "subtitle": events[i].date+"\n"+events[i].time+"\n"+events[i].location+"\n",
-            //                               "image_url": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png" ,
-            //                               "buttons": [{
-            //                                   "type": "web_url",
-            //                                   "url": "https://csun-csm.symplicity.com/events",
-            //                                   "title": "Learn More"
-            //                               }]
-            //                           }]
-            //                       }
-            //                   }
-            //               };
+                    message = {
+                                "attachment": {
+                                    "type": "template",
+                                    "payload": {
+                                        "template_type": "generic",
+                                        "elements": [{
+                                            "title": events[i].name,
+                                            "subtitle": events[i].date+"\n"+events[i].time+"\n"+events[i].location+"\n",
+                                            "image_url": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png" ,
+                                            "buttons": [{
+                                                "type": "web_url",
+                                                "url": "https://csun-csm.symplicity.com/events",
+                                                "title": "Learn More"
+                                            }]
+                                        }]
+                                    }
+                                }
+                            };
                    sendMessage(recipientId, {text: "hello"});
 
                  }
