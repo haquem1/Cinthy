@@ -112,131 +112,131 @@ function richMessage(recipientId, text) {
                           }
                         ];
 
-            if (text.indexOf("week") != -1){
-                if (text.indexOf("next week") != -1){
-                  for (var i = 0; i < ccEvents.length; i++){
-                    if (ccEvents[i].tid.getUTCWeek() + 1 == compare.getUTCWeek()){
-                     found = true;
-                     message = {
-                                 "attachment": {
-                                     "type": "template",
-                                     "payload": {
-                                         "template_type": "generic",
-                                         "elements": [{
-                                             "title": ccEvents[i].name,
-                                             "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
-                                             "image_url": ccEvents[i].imgUrl ,
-                                             "buttons": [{
-                                                 "type": "web_url",
-                                                 "url": "https://csun-csm.symplicity.com/events",
-                                                 "title": "Learn More"
-                                             }]
-                                         }]
-                                     }
-                                 }
-                             };
-                    }
-                    }
-                    if (found){
-                      sendMessage(recipientId, message);
-                      return true;
-                    }
-                    sendMessage(recipientId, {text: "No events for next week!"});
-                }
-                else {
-                  for (var i = 0; i < ccEvents.length; i++){
-                    if (ccEvents[i].tid.getUTCWeek() == compare.getUTCWeek()){
-                     found = true;
-                     message = {
-                                 "attachment": {
-                                     "type": "template",
-                                     "payload": {
-                                         "template_type": "generic",
-                                         "elements": [{
-                                             "title": ccEvents[i].name,
-                                             "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
-                                             "image_url": ccEvents[i].imgUrl ,
-                                             "buttons": [{
-                                                 "type": "web_url",
-                                                 "url": "https://csun-csm.symplicity.com/events",
-                                                 "title": "Learn More"
-                                             }]
-                                         }]
-                                     }
-                                 }
-                             };
-                    }
-                }
-                if (found) {
-                  sendMessage(recipientId, message);
-                  return true;
-                }
-                sendMessage(recipientId, {text: "No events this week!"});
-            }
-          }
-            else if (text.indexOf("month") != -1){
-                if (text.indexOf("next month") != -1){
-                  for (var i = 0; i < ccEvents.length; i++){
-                    if (ccEvents[i].tid.getUTCMonth() + 1 == compare.getUTCMonth()){
-                     found = true;
-                     message = {
-                                 "attachment": {
-                                     "type": "template",
-                                     "payload": {
-                                         "template_type": "generic",
-                                         "elements": [{
-                                             "title": ccEvents[i].name,
-                                             "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
-                                             "image_url": ccEvents[i].imgUrl ,
-                                             "buttons": [{
-                                                 "type": "web_url",
-                                                 "url": "https://csun-csm.symplicity.com/events",
-                                                 "title": "Learn More"
-                                             }]
-                                         }]
-                                     }
-                                 }
-                             };
-                    }
-                }
-                if (found) {
-                  sendMessage(recipientId, message);
-                  return true;
-                }
-                sendMessage(recipientId, {text: "No events next month!"});
-              }
-                else {
-                  for (var i = 0; i < ccEvents.length; i++){
-                    if (ccEvents[i].tid.getUTCMonth() >= compare.getUTCMonth()){
-                     found = true;
-                     message = {
-                                 "attachment": {
-                                     "type": "template",
-                                     "payload": {
-                                         "template_type": "generic",
-                                         "elements": [{
-                                             "title": ccEvents[i].name,
-                                             "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
-                                             "image_url": ccEvents[i].imgUrl ,
-                                             "buttons": [{
-                                                 "type": "web_url",
-                                                 "url": "https://csun-csm.symplicity.com/events",
-                                                 "title": "Learn More"
-                                             }]
-                                         }]
-                                     }
-                                 }
-                             };
-                    }
-                }
-                if (found){
-                  sendMessage(recipientId, message);
-                  return true;
-                }
-                sendMessage(recipientId, {text: "No events this month!"});
-            }
-          }
-            else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1){
+          //   if (text.indexOf("week") != -1){
+          //       if (text.indexOf("next week") != -1){
+          //         for (var i = 0; i < ccEvents.length; i++){
+          //           if (ccEvents[i].tid.getUTCWeek() + 1 == compare.getUTCWeek()){
+          //            found = true;
+          //            message = {
+          //                        "attachment": {
+          //                            "type": "template",
+          //                            "payload": {
+          //                                "template_type": "generic",
+          //                                "elements": [{
+          //                                    "title": ccEvents[i].name,
+          //                                    "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
+          //                                    "image_url": ccEvents[i].imgUrl ,
+          //                                    "buttons": [{
+          //                                        "type": "web_url",
+          //                                        "url": "https://csun-csm.symplicity.com/events",
+          //                                        "title": "Learn More"
+          //                                    }]
+          //                                }]
+          //                            }
+          //                        }
+          //                    };
+          //           }
+          //           }
+          //           if (found){
+          //             sendMessage(recipientId, message);
+          //             return true;
+          //           }
+          //           sendMessage(recipientId, {text: "No events for next week!"});
+          //       }
+          //       else {
+          //         for (var i = 0; i < ccEvents.length; i++){
+          //           if (ccEvents[i].tid.getUTCWeek() == compare.getUTCWeek()){
+          //            found = true;
+          //            message = {
+          //                        "attachment": {
+          //                            "type": "template",
+          //                            "payload": {
+          //                                "template_type": "generic",
+          //                                "elements": [{
+          //                                    "title": ccEvents[i].name,
+          //                                    "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
+          //                                    "image_url": ccEvents[i].imgUrl ,
+          //                                    "buttons": [{
+          //                                        "type": "web_url",
+          //                                        "url": "https://csun-csm.symplicity.com/events",
+          //                                        "title": "Learn More"
+          //                                    }]
+          //                                }]
+          //                            }
+          //                        }
+          //                    };
+          //           }
+          //       }
+          //       if (found) {
+          //         sendMessage(recipientId, message);
+          //         return true;
+          //       }
+          //       sendMessage(recipientId, {text: "No events this week!"});
+          //   }
+          // }
+          //   else if (text.indexOf("month") != -1){
+          //       if (text.indexOf("next month") != -1){
+          //         for (var i = 0; i < ccEvents.length; i++){
+          //           if (ccEvents[i].tid.getUTCMonth() + 1 == compare.getUTCMonth()){
+          //            found = true;
+          //            message = {
+          //                        "attachment": {
+          //                            "type": "template",
+          //                            "payload": {
+          //                                "template_type": "generic",
+          //                                "elements": [{
+          //                                    "title": ccEvents[i].name,
+          //                                    "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
+          //                                    "image_url": ccEvents[i].imgUrl ,
+          //                                    "buttons": [{
+          //                                        "type": "web_url",
+          //                                        "url": "https://csun-csm.symplicity.com/events",
+          //                                        "title": "Learn More"
+          //                                    }]
+          //                                }]
+          //                            }
+          //                        }
+          //                    };
+          //           }
+          //       }
+          //       if (found) {
+          //         sendMessage(recipientId, message);
+          //         return true;
+          //       }
+          //       sendMessage(recipientId, {text: "No events next month!"});
+          //     }
+          //       else {
+          //         for (var i = 0; i < ccEvents.length; i++){
+          //           if (ccEvents[i].tid.getUTCMonth() >= compare.getUTCMonth()){
+          //            found = true;
+          //            message = {
+          //                        "attachment": {
+          //                            "type": "template",
+          //                            "payload": {
+          //                                "template_type": "generic",
+          //                                "elements": [{
+          //                                    "title": ccEvents[i].name,
+          //                                    "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
+          //                                    "image_url": ccEvents[i].imgUrl ,
+          //                                    "buttons": [{
+          //                                        "type": "web_url",
+          //                                        "url": "https://csun-csm.symplicity.com/events",
+          //                                        "title": "Learn More"
+          //                                    }]
+          //                                }]
+          //                            }
+          //                        }
+          //                    };
+          //           }
+          //       }
+          //       if (found){
+          //         sendMessage(recipientId, message);
+          //         return true;
+          //       }
+          //       sendMessage(recipientId, {text: "No events this month!"});
+          //   }
+          // }
+             if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1){
                  // all events for semester
                  for (var i = 0; i < ccEvents.length; i++){
                     message = {
