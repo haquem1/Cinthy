@@ -117,33 +117,32 @@ function richMessage(recipientId, text) {
                   for (var i = 0; i < ccEvents.length; i++){
                     // if (ccEvents[i].tid.getUTCWeek() + 1 == compare.getUTCWeek()){
                     //  found = true;
-                    //  message = {
-                    //              "attachment": {
-                    //                  "type": "template",
-                    //                  "payload": {
-                    //                      "template_type": "generic",
-                    //                      "elements": [{
-                    //                          "title": ccEvents[i].name,
-                    //                          "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
-                    //                          "image_url": ccEvents[i].imgUrl ,
-                    //                          "buttons": [{
-                    //                              "type": "web_url",
-                    //                              "url": "https://csun-csm.symplicity.com/events",
-                    //                              "title": "Learn More"
-                    //                          }]
-                    //                      }]
-                    //                  }
-                    //              }
-                    //          };
+                     message = {
+                                 "attachment": {
+                                     "type": "template",
+                                     "payload": {
+                                         "template_type": "generic",
+                                         "elements": [{
+                                             "title": ccEvents[i].name,
+                                             "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
+                                             "image_url": ccEvents[i].imgUrl ,
+                                             "buttons": [{
+                                                 "type": "web_url",
+                                                 "url": "https://csun-csm.symplicity.com/events",
+                                                 "title": "Learn More"
+                                             }]
+                                         }]
+                                     }
+                                 }
+                             };
                     //  }
                     }
                     if (found){
                       sendMessage(recipientId, message);
                       return true;
                     }
-                    found = true;
-                    if(found)
                     sendMessage(recipientId, {text: "No events for next week!"});
+                    return true;
                 }
             //     else {
             //       for (var i = 0; i < ccEvents.length; i++){
