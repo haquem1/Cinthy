@@ -60,6 +60,8 @@ function sendMessage(recipientId, message) {
 function richMessage(recipientId, text) {
 
       var date = new Date();
+      var compare = date;
+      compare.setHours(0,0,0,0);
       text = text || "";
       //sanitize
       text = text.toLowerCase();
@@ -89,7 +91,7 @@ function richMessage(recipientId, text) {
           text.indexOf("happen") != -1 ||
           text.indexOf("happening") != -1) {
 
-            // // will migrate to json file
+            // TODO: will migrate to json file
             var ccEvents = [
                           {
                             "name": "How To Find a Job on Campus Workshop",
@@ -157,8 +159,30 @@ function richMessage(recipientId, text) {
             }
             else{
                 // show next event by default
-                sendMessage(recipientId, {text: "Event Message"});
-                return true;
+                for (var i = 0; i < ccEvents.length; i++){
+                  if (ccEvents[i].tid >= compare){
+                   message = {
+                               "attachment": {
+                                   "type": "template",
+                                   "payload": {
+                                       "template_type": "generic",
+                                       "elements": [{
+                                           "title": ccEvents[i].name,
+                                           "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
+                                           "image_url": ccEvents[i].imgUrl ,
+                                           "buttons": [{
+                                               "type": "web_url",
+                                               "url": "https://csun-csm.symplicity.com/events",
+                                               "title": "Learn More"
+                                           }]
+                                       }]
+                                   }
+                               }
+                           };
+                  sendMessage(recipientId, message);
+                  return true;
+                  }
+                }
             }
       }
       return false;
