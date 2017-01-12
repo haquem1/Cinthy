@@ -109,7 +109,95 @@ function richMessage(recipientId, text) {
                             "location": "USU, Grand Salon",
                             "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
                             "tid": new Date("February 16, 2017")
-                          }
+                          },
+                          {
+                            "name": "Job Search Tips for International Students Workshop",
+                            "date": "Wednesday, February 15",
+                            "time": "10:00am - 11:15am",
+                            "location": "Career Center, BH 410",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
+                            "tid": new Date("February 15, 2017")
+                          },
+                          {
+                            "name": "Job Search Tips for International Students Panel",
+                            "date": "Wednesday, February 15",
+                            "time": "11:30am - 12:30pm",
+                            "location": "Career Center, BH 410",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
+                            "tid": new Date("February 15, 2017")
+                          },
+                          {
+                            "name": "Spring Tech Fest",
+                            "date": "Wednesday, February 21",
+                            "time": "10:00am - 3:00pm",
+                            "location": "USU, Northridge Center",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
+                            "tid": new Date("February 21, 2017")
+                          },
+                          {
+                            "name": "Resume Critique",
+                            "date": "Wednesday, February 28",
+                            "time": "10:30am - 2:30pm",
+                            "location": "USU, Northridge Center",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
+                            "tid": new Date("February 28, 2017")
+                          },
+                          {
+                            "name": "Internship Experience Panel",
+                            "date": "Tuesday, March 1",
+                            "time": "4:00pm - 5:30pm",
+                            "location": "USU, Flintride Room",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
+                            "tid": new Date("March 1, 2017")
+                          },
+                          {
+                            "name": "60 Seconds to Success",
+                            "date": "Tuesday, March 7",
+                            "time": "10:30am - 1:30pm",
+                            "location": "USU, Thousand Oaks Room",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
+                            "tid": new Date("March 7, 2017")
+                          },
+                          {
+                            "name": "Spring Internship & Career Expo",
+                            "date": "Wednesday, March 15",
+                            "time": "10:00am - 1:00pm",
+                            "location": "USU, Northridge Center & Grand Salon",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
+                            "tid": new Date("March 15, 2017")
+                          },
+                          {
+                            "name": "Non-Profit & Government Career Fair",
+                            "date": "Wednesday, March 29",
+                            "time": "10:00am - 1:00pm",
+                            "location": "USU, Northridge Center & Grand Salon",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
+                            "tid": new Date("March 29, 2017")
+                          },
+                          {
+                            "name": "Education Expo",
+                            "date": "Wednesday, April 12",
+                            "time": "12:00pm - 5:00pm",
+                            "location": "USU, Northridge Center",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
+                            "tid": new Date("April 12, 2017")
+                          },
+                          {
+                            "name": "Mocktail Party",
+                            "date": "Tuesday, April 25",
+                            "time": "6:30pm - 8:30pm",
+                            "location": "Orange Grove Bistro",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
+                            "tid": new Date("April 25, 2017")
+                          },
+                          {
+                            "name": "Recent Graduate & Alumni Fair",
+                            "date": "Wednesday, May 23",
+                            "time": "10:00am - 1:00pm",
+                            "location": "USU, Northridge Center & Grand Salon",
+                            "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
+                            "tid": new Date("May 23, 2017")
+                          },
                         ];
 
             if (text.indexOf("month") != -1 || text.indexOf("week") != -1){
