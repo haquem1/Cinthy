@@ -225,11 +225,10 @@ function richMessage(recipientId, text) {
                                }
                            };
                   sendMessage(recipientId, message);
-                  break;
+                  return true;
                   }
                 }
-                return true;
-            }
+          }
       }
       return false;
   };
