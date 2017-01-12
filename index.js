@@ -224,9 +224,10 @@ function richMessage(recipientId, text) {
                                }
                            };
                   sendMessage(recipientId, message);
-                  return true;
+                  break;
                   }
                 }
+                return true;
             }
       }
       return false;
