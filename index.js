@@ -115,7 +115,8 @@ function richMessage(recipientId, text) {
             if (text.indexOf("month") != -1 || text.indexOf("week")){
                 if (text.indexOf("next month") != -1){
                   for (var i = 0; i < ccEvents.length; i++){
-                    if (ccEvents[i].tid.getUTCMonth() + 1 == compare.getUTCMonth()){
+                    sendMessage
+                    if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1){
                      found = true;
                      message = {
                                  "attachment": {
@@ -146,7 +147,7 @@ function richMessage(recipientId, text) {
               }
                 else {
                   for (var i = 0; i < ccEvents.length; i++){
-                    if (ccEvents[i].tid.getUTCMonth() >= compare.getUTCMonth()){
+                    if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth()){
                      found = true;
                      message = {
                                  "attachment": {
