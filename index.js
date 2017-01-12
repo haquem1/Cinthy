@@ -199,7 +199,7 @@ function richMessage(recipientId, text) {
                             "tid": new Date("May 23, 2017")
                           },
                         ];
-
+            //TODO Add block for key career center events -- expand later to be all events
             if (text.indexOf("month") != -1 || text.indexOf("week") != -1){
                 var count = 0; //for initial greeting
                 if (text.indexOf("next month") != -1){
@@ -271,6 +271,7 @@ function richMessage(recipientId, text) {
           }
              else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1){
                  // all events for semester
+                 sendMessage(recipientId, {text: "Here are the events for the semester"});
                  for (var i = 0; i < ccEvents.length; i++){
                     message = {
                                 "attachment": {
@@ -317,6 +318,7 @@ function richMessage(recipientId, text) {
                                    }
                                }
                            };
+                  sendMessage(recipientId, {text: "Here is our upcoming event.\n\nAsk the assistant to see the events of this month, next month, and the semester!"});
                   sendMessage(recipientId, message);
                   return true;
                   }
