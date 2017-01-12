@@ -28,7 +28,7 @@ app.post('/webhook', function (req, res) {
         var event = events[i];
         if (event.message && event.message.text) {
             if (!richMessage(event.sender.id, event.message.text)) {
-                sendMessage(event.sender.id, {text: "Thank you for your message! A staff member from the Career Center will get back to you shortly"});
+                sendMessage(event.sender.id, {text: "Thank you for your message! A staff member from the Career Center will get back to you shortly\nTo learn more about our services check out our website at www.csun.edu/career"});
             }
         } else if (event.postback) {
             console.log("Postback received: " + JSON.stringify(event.postback));
@@ -114,6 +114,7 @@ function richMessage(recipientId, text) {
 
             if (text.indexOf("month") != -1 || text.indexOf("week") != -1){
                 if (text.indexOf("next month") != -1){
+                  sendMessage(recipientId, {text: "Here are next month's events:"});
                   for (var i = 0; i < ccEvents.length; i++){
                     sendMessage
                     if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1){
@@ -146,6 +147,7 @@ function richMessage(recipientId, text) {
                 return true;
               }
                 else {
+                  sendMessage(recipientId, {text: "Here are this month's events:"});
                   for (var i = 0; i < ccEvents.length; i++){
                     if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth()){
                      found = true;
