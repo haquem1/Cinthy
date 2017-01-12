@@ -113,10 +113,9 @@ function richMessage(recipientId, text) {
                         ];
 
             if (text.indexOf("month") != -1 || text.indexOf("week") != -1){
+                var count = 0; //for initial greeting
                 if (text.indexOf("next month") != -1){
-                  sendMessage(recipientId, {text: "Here are next month's events:"});
                   for (var i = 0; i < ccEvents.length; i++){
-                    sendMessage
                     if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1){
                      found = true;
                      message = {
@@ -137,8 +136,10 @@ function richMessage(recipientId, text) {
                                      }
                                  }
                              };
+                             if(++count == 1){
+                                sendMessage(recipientId, {text: "Here are next month's events:"});
+                             }
                              sendMessage(recipientId, message);
-
                     }
                 }
                 if (!found) {
@@ -147,7 +148,6 @@ function richMessage(recipientId, text) {
                 return true;
               }
                 else {
-                  sendMessage(recipientId, {text: "Here are this month's events:"});
                   for (var i = 0; i < ccEvents.length; i++){
                     if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth()){
                      found = true;
@@ -169,6 +169,9 @@ function richMessage(recipientId, text) {
                                      }
                                  }
                              };
+                             if(++count == 1){
+                               sendMessage(recipientId, {text: "Here are this month's events:"});
+                             }
                              sendMessage(recipientId, message);
                     }
                 }
