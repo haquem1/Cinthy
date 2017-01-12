@@ -116,7 +116,7 @@ function richMessage(recipientId, text) {
                 if (text.indexOf("next week") != -1){
                   for (var i = 0; i < ccEvents.length; i++){
                     // if (ccEvents[i].tid.getUTCWeek() + 1 == compare.getUTCWeek()){
-                    //  found = true;
+                     found = true;
                      message = {
                                  "attachment": {
                                      "type": "template",
