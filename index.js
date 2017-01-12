@@ -115,7 +115,7 @@ function richMessage(recipientId, text) {
             if (text.indexOf("week") != -1){
                 if (text.indexOf("next week") != -1){
                   for (var i = 0; i < ccEvents.length; i++){
-                    // if (ccEvents[i].tid.getUTCWeek() == compare.getUTCWeek() + 1){
+                    if (ccEvents[i].tid.getUTCWeek() == compare.getUTCWeek() + 1){
                      found = true;
                      message = {
                                  "attachment": {
@@ -136,7 +136,7 @@ function richMessage(recipientId, text) {
                                  }
                              };
                       sendMessage(recipientId, message);
-                    //  }
+                      }
                     }
                     if (!found){
                       sendMessage(recipientId, {text: "No events for next week!"});
