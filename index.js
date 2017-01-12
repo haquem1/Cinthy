@@ -112,7 +112,7 @@ function richMessage(recipientId, text) {
                           }
                         ];
 
-            if (text.indexOf("month") != -1){
+            if (text.indexOf("month") != -1 || text.indexOf("week")){
                 if (text.indexOf("next month") != -1){
                   for (var i = 0; i < ccEvents.length; i++){
                     if (ccEvents[i].tid.getUTCMonth() + 1 == compare.getUTCMonth()){
