@@ -133,24 +133,24 @@ function richMessage(recipientId, text) {
                  // all events for semester
                 //  var ccEvents = ["banana", "orange"];
                  for (var i = 0; i < ccEvents.length; i++){
-                    // message = {
-                    //             "attachment": {
-                    //                 "type": "template",
-                    //                 "payload": {
-                    //                     "template_type": "generic",
-                    //                     "elements": [{
-                    //                         "title": ccEvents[i].name,
-                    //                         "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
-                    //                         "image_url": ccEvents[i].imgUrl ,
-                    //                         "buttons": [{
-                    //                             "type": "web_url",
-                    //                             "url": "https://csun-csm.symplicity.com/events",
-                    //                             "title": "Learn More"
-                    //                         }]
-                    //                     }]
-                    //                 }
-                    //             }
-                    //         };
+                    message = {
+                                "attachment": {
+                                    "type": "template",
+                                    "payload": {
+                                        "template_type": "generic",
+                                        "elements": [{
+                                            "title": ccEvents[i].name,
+                                            "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
+                                            "image_url": ccEvents[i].imgUrl ,
+                                            "buttons": [{
+                                                "type": "web_url",
+                                                "url": "https://csun-csm.symplicity.com/events",
+                                                "title": "Learn More"
+                                            }]
+                                        }]
+                                    }
+                                }
+                            };
                    sendMessage(recipientId, {text: "hello"});
 
                  }
