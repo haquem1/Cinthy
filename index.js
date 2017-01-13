@@ -418,7 +418,7 @@ function richMessage(recipientId, text) {
                     }
                   }
                   }
-
+                return true;
             }
             else if (text.indexOf("month") != -1 || text.indexOf("week") != -1){
                 if (text.indexOf("next month") != -1){
