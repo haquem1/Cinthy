@@ -265,7 +265,8 @@ function richMessage(recipientId, text) {
                     text.indexOf("oncampus job") != -1 ||
                     text.indexOf("on-campus job") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "How To Find a Job on Campus Workshop" || ccEvents[i].name == "How To Find a Job on Campus Fair") {
+                        if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
+                            ccEvents[i].name == "How To Find a Job on Campus Fair") {
                             message = {
                                 "attachment": {
                                     "type": "template",
@@ -284,6 +285,7 @@ function richMessage(recipientId, text) {
                                     }
                                 }
                             };
+                            if (++count == 1) sendMessage(recipientId, message);
                         }
                     }
 
@@ -309,6 +311,7 @@ function richMessage(recipientId, text) {
                                     }
                                 }
                             };
+                            if (++count == 1) sendMessage(recipientId, message);
                         }
                     }
 
