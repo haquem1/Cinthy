@@ -204,9 +204,7 @@ function richMessage(recipientId, text) {
 
             var count = 0; //for initial greeting
             //TODO Add block for key career center events -- expand later to be all events
-            if (text.indexOf("opportunity") != -1 ||
-                // text.indexOf("opportunities") != -1 ||
-                // text.indexOf("critique") != -1 ||
+            if (text.indexOf("critique") != -1 ||
                 // text.indexOf("internship") != -1 ||
                 // text.indexOf("internships") != -1 ||
                 // text.indexOf("job") != -1 ||
