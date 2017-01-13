@@ -204,44 +204,46 @@ function richMessage(recipientId, text) {
 
             var count = 0; //for initial greeting
             //TODO Add block for key career center events -- expand later to be all events
-            // if (text.indexOf("opportunity") != -1 ||
-            //     // text.indexOf("opportunities") != -1 ||
-            //     // text.indexOf("critique") != -1 ||
-            //     // text.indexOf("internship") != -1 ||
-            //     // text.indexOf("internships") != -1 ||
-            //     // text.indexOf("job") != -1 ||
-            //     // text.indexOf("jobs") != -1 ||
-            //     // text.indexOf("fair") != -1 ||
-            //     // text.indexOf("expo") != -1 ||
-            //     // text.indexOf("exposition") != -1 ||
-            //     // text.indexOf("resume") != -1 ||
-            //     // text.indexOf("resumes") != -1 ||
-            //     // text.indexOf("interview") != -1 ||
-            //     // text.indexOf("practice") != -1 ||
-            //     // text.indexOf("prep") != -1 ||
-            //     // text.indexOf("preparation") != -1 ||
-            //     // text.indexOf("prepare") != -1 ||
-            //     // text.indexOf("graduate") != -1 ||
-            //     // text.indexOf("alumni") != -1 ||
-            //     // text.indexOf("alum" != -1 ||
-            //     // text.indexOf("grad") != -1 ||)
-            //     // text.indexOf("tech") != -1 ||
-            //     // text.indexOf("technology") != -1 ||
-            //     // text.indexOf("engineering") != -1 ||
-            //     // text.indexOf("computers") != -1 ||
-            //     // text.indexOf("computer") != -1 ||
-            //     // text.indexOf("engineer") != -1 ||
-            //     // text.indexOf("government") != -1 ||
-            //     // text.indexOf("non-profit") != -1 ||
-            //     // text.indexOf("nonprofit") != -1 ||
-            //     // text.indexOf("profit") != -1 ||
-            //     // text.indexOf("education") != -1 ||
-            //     // text.indexOf("teacher") != -1 ||
-            //     // text.indexOf("teaching") != -1 ||
-            //     // text.indexOf("teachers") != -1 ||
-            //     // text.indexOf("teach") != -1 ||
-            //     // text.indexOf("network") != -1 ||
-            //     text.indexOf("networking") != -1){
+            if (text.indexOf("opportunity") != -1 ||
+                // text.indexOf("opportunities") != -1 ||
+                // text.indexOf("critique") != -1 ||
+                // text.indexOf("internship") != -1 ||
+                // text.indexOf("internships") != -1 ||
+                // text.indexOf("job") != -1 ||
+                // text.indexOf("jobs") != -1 ||
+                // text.indexOf("fair") != -1 ||
+                // text.indexOf("expo") != -1 ||
+                // text.indexOf("exposition") != -1 ||
+                // text.indexOf("resume") != -1 ||
+                // text.indexOf("resumes") != -1 ||
+                // text.indexOf("interview") != -1 ||
+                // text.indexOf("practice") != -1 ||
+                // text.indexOf("prep") != -1 ||
+                // text.indexOf("preparation") != -1 ||
+                // text.indexOf("prepare") != -1 ||
+                // text.indexOf("graduate") != -1 ||
+                // text.indexOf("alumni") != -1 ||
+                // text.indexOf("alum" != -1 ||
+                // text.indexOf("grad") != -1 ||)
+                // text.indexOf("tech") != -1 ||
+                // text.indexOf("technology") != -1 ||
+                // text.indexOf("engineering") != -1 ||
+                // text.indexOf("computers") != -1 ||
+                // text.indexOf("computer") != -1 ||
+                // text.indexOf("engineer") != -1 ||
+                // text.indexOf("government") != -1 ||
+                // text.indexOf("non-profit") != -1 ||
+                // text.indexOf("nonprofit") != -1 ||
+                // text.indexOf("profit") != -1 ||
+                // text.indexOf("education") != -1 ||
+                // text.indexOf("teacher") != -1 ||
+                // text.indexOf("teaching") != -1 ||
+                // text.indexOf("teachers") != -1 ||
+                // text.indexOf("teach") != -1 ||
+                // text.indexOf("network") != -1 ||
+                text.indexOf("networking") != -1){
+                  sendMessage(recipientId, {text: "I'm here"});
+                  return true;
             //       //
             //       // // tech fest
             //       // if(text.indexOf("tech") != -1 ||
@@ -419,8 +421,8 @@ function richMessage(recipientId, text) {
             //       // }
             //       // }
             //     return true;
-            // }
-            if (text.indexOf("month") != -1 || text.indexOf("week") != -1){
+             }
+            else if (text.indexOf("month") != -1 || text.indexOf("week") != -1){
                 if (text.indexOf("next month") != -1){
                   for (var i = 0; i < ccEvents.length; i++){
                     if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1){
