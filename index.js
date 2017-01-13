@@ -86,6 +86,7 @@ function richMessage(recipientId, text) {
       }
 
       // events block
+      // TODO display eveything as a catalogue instead of an enormous stream of messages
       else if (text.indexOf("when") != -1 ||
           text.indexOf("event") != -1 ||
           text.indexOf("events") != -1 ||
@@ -271,7 +272,8 @@ function richMessage(recipientId, text) {
           }
              else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1){
                  // all events for semester
-                 sendMessage(recipientId, {text: "Here are the events for the semester"});
+                 //TODO Maybe make all events a link to a calendar? Show catalogue of only key events
+                 sendMessage(recipientId, {text: "Here are the events for the semester:"});
                  for (var i = 0; i < ccEvents.length; i++){
                     message = {
                                 "attachment": {
@@ -298,6 +300,7 @@ function richMessage(recipientId, text) {
             }
             else{
                 // show next event by default
+                //TODO Add rich template for clickable calendar of all year's events
                 for (var i = 0; i < ccEvents.length; i++){
                   if (ccEvents[i].tid >= compare){
                    message = {
