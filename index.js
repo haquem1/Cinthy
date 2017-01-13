@@ -224,21 +224,21 @@ function richMessage(recipientId, text) {
                 text.indexOf("alum" != -1 ||
                 text.indexOf("grad") != -1 ||)
                 text.indexOf("tech") != -1 ||
-                text.indexOf("technology") != -1 ||
-                text.indexOf("engineering") != -1 ||
-                text.indexOf("computers") != -1 ||
-                text.indexOf("computer") != -1 ||
-                text.indexOf("engineer") != -1 ||
-                text.indexOf("government") != -1 ||
-                text.indexOf("non-profit") != -1 ||
-                text.indexOf("nonprofit") != -1 ||
-                text.indexOf("profit") != -1 ||
-                text.indexOf("education") != -1 ||
-                text.indexOf("teacher") != -1 ||
-                text.indexOf("teaching") != -1 ||
-                text.indexOf("teachers") != -1 ||
-                text.indexOf("teach") != -1 ||
-                text.indexOf("network") != -1 ||
+                // text.indexOf("technology") != -1 ||
+                // text.indexOf("engineering") != -1 ||
+                // text.indexOf("computers") != -1 ||
+                // text.indexOf("computer") != -1 ||
+                // text.indexOf("engineer") != -1 ||
+                // text.indexOf("government") != -1 ||
+                // text.indexOf("non-profit") != -1 ||
+                // text.indexOf("nonprofit") != -1 ||
+                // text.indexOf("profit") != -1 ||
+                // text.indexOf("education") != -1 ||
+                // text.indexOf("teacher") != -1 ||
+                // text.indexOf("teaching") != -1 ||
+                // text.indexOf("teachers") != -1 ||
+                // text.indexOf("teach") != -1 ||
+                // text.indexOf("network") != -1 ||
                 text.indexOf("networking") != -1){
                   sendMessage(recipientId, {text: "I'm here"});
                   return true;
