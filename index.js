@@ -244,39 +244,16 @@ function richMessage(recipientId, text) {
 
                   // tech fest
                   if(text.indexOf("tech") != -1 ||
-                    text.indexOf("tech") != -1 ||
+                    text.indexOf("techfest") != -1 ||
                     text.indexOf("technology") != -1 ||
                     text.indexOf("engineering") != -1 ||
                     text.indexOf("computers") != -1 ||
                     text.indexOf("computer") != -1 ||
                     text.indexOf("engineer") != -1){
                       for (var i = 0; i < ccEvents.length; i++){
-                       // tech fest displays first
-                       if (ccEvents[i].name == "Spring Tech Fest"){
-                          found = true;
-                          message = {
-                                      "attachment": {
-                                          "type": "template",
-                                          "payload": {
-                                              "template_type": "generic",
-                                              "elements": [{
-                                                  "title": ccEvents[i].name,
-                                                  "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
-                                                  "image_url": ccEvents[i].imgUrl ,
-                                                  "buttons": [{
-                                                      "type": "web_url",
-                                                      "url": "https://csun-csm.symplicity.com/events",
-                                                      "title": "Learn More"
-                                                  }]
-                                              }]
-                                          }
-                                      }
-                                  };
-                          sendMessage(recipientId, {text: "Here are some events to help you:"});
-                          sendMessage(recipientId, message);
-                       }
-                       else if (found && (ccEvents[i].name == "Spring Internship & Career Expo" ||
-                                          ccEvents[i].name == "Recent Graduate & Alumni Fair")){
+                       if (ccEvents[i].name == "Spring Tech Fest" ||
+                                ccEvents[i].name == "Spring Internship & Career Expo" ||
+                                ccEvents[i].name == "Recent Graduate & Alumni Fair"){
                              message = {
                                          "attachment": {
                                              "type": "template",
@@ -295,6 +272,7 @@ function richMessage(recipientId, text) {
                                              }
                                          }
                                      };
+                               if(++count == 1) sendMessage(recipientId, {text: "Here are some events to help you:"});
                                sendMessage(recipientId, message);
                         }
                       }
