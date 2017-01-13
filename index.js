@@ -222,7 +222,7 @@ function richMessage(recipientId, text) {
                 text.indexOf("graduate") != -1 ||
                 text.indexOf("alumni") != -1 ||
                 text.indexOf("alum" != -1 ||
-                text.indexOf("grad") != -1 ||)
+                text.indexOf("grad") != -1 ||
                 text.indexOf("tech") != -1 ||
                 // text.indexOf("technology") != -1 ||
                 // text.indexOf("engineering") != -1 ||
