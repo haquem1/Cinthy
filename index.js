@@ -240,47 +240,45 @@ function richMessage(recipientId, text) {
                 text.indexOf("teach") != -1 ||
                 text.indexOf("network") != -1 ||
                 text.indexOf("networking") != -1){
-                  sendMessage(recipientId, {text: "I'm here"});
-                  return true;
-            //       //
-            //       // // tech fest
-            //       // if(text.indexOf("tech") != -1 ||
-            //       //   text.indexOf("technology") != -1 ||
-            //       //   text.indexOf("engineering") != -1 ||
-            //       //   text.indexOf("computers") != -1 ||
-            //       //   text.indexOf("computer") != -1 ||
-            //       //   text.indexOf("engineer") != -1){
-            //       //     for (var i = 0; i < ccEvents.length; i++){
-            //       //       if (ccEvents[i].name == "Spring Tech Fest" ||
-            //       //           ccEvents[i].name == "Spring Internship & Career Expo" ||
-            //       //           ccEvents[i].name == "Recent Graduate & Alumni Fair"){
-            //       //            message = {
-            //       //                        "attachment": {
-            //       //                            "type": "template",
-            //       //                            "payload": {
-            //       //                                "template_type": "generic",
-            //       //                                "elements": [{
-            //       //                                    "title": ccEvents[i].name,
-            //       //                                    "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
-            //       //                                    "image_url": ccEvents[i].imgUrl ,
-            //       //                                    "buttons": [{
-            //       //                                        "type": "web_url",
-            //       //                                        "url": "https://csun-csm.symplicity.com/events",
-            //       //                                        "title": "Learn More"
-            //       //                                    }]
-            //       //                                }]
-            //       //                            }
-            //       //                        }
-            //       //                    };
-            //       //               (if ++count == 1){
-            //       //                 sendMessage(recipientId, {text: "Here are some events to help you:"});
-            //       //               }
-            //       //               sendMessage(recipientId, message);
-            //       //               i = 0;
-            //       //       }
-            //       //     }
-            //       //   }
-            //       // // recent grad
+                  
+                  // tech fest
+                  if(text.indexOf("tech") != -1 ||
+                    text.indexOf("technology") != -1 ||
+                    text.indexOf("engineering") != -1 ||
+                    text.indexOf("computers") != -1 ||
+                    text.indexOf("computer") != -1 ||
+                    text.indexOf("engineer") != -1){
+                      for (var i = 0; i < ccEvents.length; i++){
+                        if (ccEvents[i].name == "Spring Tech Fest" ||
+                            ccEvents[i].name == "Spring Internship & Career Expo" ||
+                            ccEvents[i].name == "Recent Graduate & Alumni Fair"){
+                             message = {
+                                         "attachment": {
+                                             "type": "template",
+                                             "payload": {
+                                                 "template_type": "generic",
+                                                 "elements": [{
+                                                     "title": ccEvents[i].name,
+                                                     "subtitle": ccEvents[i].date+"\n"+ccEvents[i].time+"\n"+ccEvents[i].location+"\n",
+                                                     "image_url": ccEvents[i].imgUrl ,
+                                                     "buttons": [{
+                                                         "type": "web_url",
+                                                         "url": "https://csun-csm.symplicity.com/events",
+                                                         "title": "Learn More"
+                                                     }]
+                                                 }]
+                                             }
+                                         }
+                                     };
+                                (if ++count == 1){
+                                  sendMessage(recipientId, {text: "Here are some events to help you:"});
+                                }
+                                sendMessage(recipientId, message);
+                                i = 0;
+                        }
+                      }
+                    }
+                  // // recent grad
             //       // else if(text.indexOf("grad") != -1 ||
             //       //   text.indexOf("graduate") != -1 ||
             //       //   text.indexOf("alum") != -1 ||
@@ -418,7 +416,8 @@ function richMessage(recipientId, text) {
             //       //   }
             //       // }
             //       // }
-            //     return true;
+                    sendMessage(recipientId, {text: "I'm here"});
+                    return true;
              }
             else if (text.indexOf("month") != -1 || text.indexOf("week") != -1){
                 if (text.indexOf("next month") != -1){
