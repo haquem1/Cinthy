@@ -249,10 +249,10 @@ function richMessage(recipientId, text) {
                     text.indexOf("computer") != -1 ||
                     text.indexOf("engineer") != -1){
                       for (var i = 0; i < ccEvents.length; i++){
-                       if ( ccEvents[i].name == "How To Find a Job on Campus Workshop"
-                          //  ccEvents[i].name == "Spring Tech Fest" ||
-                          //  ccEvents[i].name == "Spring Internship & Career Expo" ||
-                          //  ccEvents[i].name == "Recent Graduate & Alumni Fair"
+                       if (
+                           ccEvents[i].name == "Spring Tech Fest" ||
+                           ccEvents[i].name == "Spring Internship & Career Expo" ||
+                           ccEvents[i].name == "Recent Graduate & Alumni Fair"
                          ){
                             //  message = {
                             //              "attachment": {
@@ -272,7 +272,7 @@ function richMessage(recipientId, text) {
                             //                  }
                             //              }
                             //          };
-                                (if ++count == 1){
+                                if (++count == 1){
                                   sendMessage(recipientId, {text: "Here are some events to help you:"});
                                 }
                               //  sendMessage(recipientId, message);
