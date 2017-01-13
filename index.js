@@ -275,8 +275,7 @@ function richMessage(recipientId, text) {
                                 if (++count == 1){
                                   sendMessage(recipientId, {text: "Here are some events to help you:"});
                                 }
-                               sendMessage(recipientId, message);
-                               i = 0;
+                              //  sendMessage(recipientId, message);
                         }
                       }
                     }
