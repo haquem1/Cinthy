@@ -435,7 +435,6 @@ function richMessage(recipientId, text) {
             //       //   }
             //       // }
             //       // }
-                    sendMessage(recipientId, {text: "I'm here"});
                     return true;
              }
             else if (text.indexOf("month") != -1 || text.indexOf("week") != -1){
