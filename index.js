@@ -224,6 +224,7 @@ function richMessage(recipientId, text) {
                 text.indexOf("alum") != -1 ||
                 text.indexOf("grad") != -1 ||
                 text.indexOf("tech") != -1 ||
+                text.indexOf("techfest") != -1 ||
                 text.indexOf("technology") != -1 ||
                 text.indexOf("engineering") != -1 ||
                 text.indexOf("computers") != -1 ||
@@ -243,6 +244,7 @@ function richMessage(recipientId, text) {
 
                   // tech fest
                   if(text.indexOf("tech") != -1 ||
+                    text.indexOf("tech") != -1 ||
                     text.indexOf("technology") != -1 ||
                     text.indexOf("engineering") != -1 ||
                     text.indexOf("computers") != -1 ||
