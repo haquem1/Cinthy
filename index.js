@@ -211,6 +211,7 @@ function richMessage(recipientId, text) {
                 text.indexOf("oncampus job") != -1 ||
                 text.indexOf("on-campus job") != -1 ||
                 text.indexOf("international") != -1) {
+
                 if (text.indexOf("techfest") != -1 ||
                     text.indexOf("tech fest") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
@@ -238,6 +239,29 @@ function richMessage(recipientId, text) {
                 } else if (text.indexOf("resumania") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "Resume Critique") {
+                            message = {
+                                "attachment": {
+                                    "type": "template",
+                                    "payload": {
+                                        "template_type": "generic",
+                                        "elements": [{
+                                            "title": ccEvents[i].name,
+                                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                            "image_url": ccEvents[i].imgUrl,
+                                            "buttons": [{
+                                                "type": "web_url",
+                                                "url": "https://csun-csm.symplicity.com/events",
+                                                "title": "Learn More"
+                                            }]
+                                        }]
+                                    }
+                                }
+                            };
+                        }
+                    }
+                } else if (text.indexOf("job fair") != -1 || text.indexOf("career fair") != -1) {
+                    for (var i = 0; i < ccEvents.length; i++) {
+                        if (ccEvents[i].name == "Spring Internship & Career Expo") {
                             message = {
                                 "attachment": {
                                     "type": "template",
