@@ -101,10 +101,10 @@ function richMessage(recipientId, text) {
     //     }
     // }
 
-//notification for regular message
-if (text.indexOf("message") != -1 || text.indexOf("message:") != -1) {
-    return false
-}
+// //notification for regular message
+// if (text.indexOf("message") != -1 || text.indexOf("message:") != -1) {
+//     return false
+// }
 // TODO add special hours/closures
 if (text.indexOf("open") != -1 ||
     text.indexOf("close") != -1 ||
