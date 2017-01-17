@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
+var nodemailer = require('nodemailer');
 var app = express();
 
 app.use(bodyParser.urlencoded({
@@ -72,10 +73,37 @@ function richMessage(recipientId, text) {
     var found = false;
     compare.setHours(0, 0, 0, 0);
     text = text || "";
+    var values = text.split(' ');
     //sanitize
     text = text.toLowerCase();
 
-    // hours block
+    // get started
+    if (values[0] == "hi" ||
+        values[0] == "hello" ||
+        values[0] == "greetings" ||
+        values[0] == "hey" ||
+        values[0] == "help" ||
+        values[0] == "hi!" ||
+        values[0] == "hello!" ||
+        values[0] == "greetings!" ||
+        values[0] == "hey!" ||
+        values[0] == "help!" ||
+        values[0] == "hi." ||
+        values[0] == "hello." ||
+        values[0] == "greetings." ||
+        values[0] == "hey." ||
+        values[0] == "help."){
+          if(values.length < 5){
+            sendMessage(recipientId, {text: "Hi, this is Cinthy the Career Center Bot!\nHere are some commands to get you started:\n\nYou can find out about our hours and events by just asking. For example ask if we are open today or when the career fair is. We can even recommend events for you! \nSay message: to send a message you would like a staff to personally answer\nType help or just say hello to bring this screen up again"});
+            return true;
+          }
+      }
+    }
+
+    //notification for regular message
+    if (text.indexOf("message") || text.indexOf("message:")){
+        return false
+    }
     // TODO add special hours/closures
     if (text.indexOf("open") != -1 ||
         text.indexOf("close") != -1 ||
@@ -101,7 +129,9 @@ function richMessage(recipientId, text) {
         text.indexOf("event") != -1 ||
         text.indexOf("events") != -1 ||
         text.indexOf("happen") != -1 ||
-        text.indexOf("happening") != -1) {
+        text.indexOf("happening") != -1 ||
+        text.indexOf("can i") != -1 ||
+        text.indexOf("recommend")) {
 
         // TODO: will migrate to json file
         var ccEvents = [{
@@ -398,7 +428,8 @@ function richMessage(recipientId, text) {
             text.indexOf("teachers") != -1 ||
             text.indexOf("teach") != -1 ||
             text.indexOf("network") != -1 ||
-            text.indexOf("networking") != -1) {
+            text.indexOf("networking") != -1 ||
+            text.indexOf("recommend")) {
 
             // tech fest
             if (text.indexOf("tech") != -1 ||
