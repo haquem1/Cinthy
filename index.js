@@ -102,7 +102,7 @@ function richMessage(recipientId, text) {
     }
 
 //notification for regular message
-if (text.indexOf("message") || text.indexOf("message:")) {
+if (text.indexOf("message") != -1 || text.indexOf("message:") != -1) {
     return false
 }
 // TODO add special hours/closures
