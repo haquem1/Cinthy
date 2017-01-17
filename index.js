@@ -78,28 +78,28 @@ function richMessage(recipientId, text) {
     text = text.toLowerCase();
 
     // get started
-    if (values[0] == "hi" ||
-        values[0] == "hello" ||
-        values[0] == "greetings" ||
-        values[0] == "hey" ||
-        values[0] == "help" ||
-        values[0] == "hi!" ||
-        values[0] == "hello!" ||
-        values[0] == "greetings!" ||
-        values[0] == "hey!" ||
-        values[0] == "help!" ||
-        values[0] == "hi." ||
-        values[0] == "hello." ||
-        values[0] == "greetings." ||
-        values[0] == "hey." ||
-        values[0] == "help.") {
-        if (values.length < 5) {
-            sendMessage(recipientId, {
-                text: "Hi, this is Cinthy the Career Center Bot!\nHere are some commands to get you started:\n\nYou can find out about our hours and events by just asking. For example ask if we are open today or when the career fair is. We can even recommend events for you! \nSay message: to send a message you would like a staff to personally answer\nType help or just say hello to bring this screen up again"
-            });
-            return true;
-        }
-    }
+    // if (values[0] == "hi" ||
+    //     values[0] == "hello" ||
+    //     values[0] == "greetings" ||
+    //     values[0] == "hey" ||
+    //     values[0] == "help" ||
+    //     values[0] == "hi!" ||
+    //     values[0] == "hello!" ||
+    //     values[0] == "greetings!" ||
+    //     values[0] == "hey!" ||
+    //     values[0] == "help!" ||
+    //     values[0] == "hi." ||
+    //     values[0] == "hello." ||
+    //     values[0] == "greetings." ||
+    //     values[0] == "hey." ||
+    //     values[0] == "help.") {
+    //     if (values.length < 5) {
+    //         sendMessage(recipientId, {
+    //             text: "Hi, this is Cinthy the Career Center Bot!\nHere are some commands to get you started:\n\nYou can find out about our hours and events by just asking. For example ask if we are open today or when the career fair is. We can even recommend events for you! \nSay message: to send a message you would like a staff to personally answer\nType help or just say hello to bring this screen up again"
+    //         });
+    //         return true;
+    //     }
+    // }
 
 //notification for regular message
 if (text.indexOf("message") != -1 || text.indexOf("message:") != -1) {
