@@ -301,7 +301,7 @@ function richMessage(recipientId, text) {
 
                 if (text.indexOf("techfest") != -1 ||
                     text.indexOf("tech fest") != -1) {
-                    // for (var i = 0; i < ccEvents.length; i++) {
+                    for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "Spring Tech Fest") {
                             message = {
                                 "attachment": {
@@ -322,7 +322,7 @@ function richMessage(recipientId, text) {
                                 }
                             };
                         }
-                    // }
+                    }
                 } else if (text.indexOf("resumania") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "Resume Critique") {
