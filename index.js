@@ -84,7 +84,7 @@ function richMessage(recipientId, text) {
        values[0] == "who") && values.length < 6){
 
        message = "Hi! This is Cinthy the Career Center Assistant.\n\nAsk me about our hours or our upcoming events.\nI might even be able to recommend events for you or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer\n\nSimply say hello or help to bring this screen up again."
-       sendMessage(recipientId, message);
+       sendMessage(recipientId, {text: message});
        return true;
     }
     // hours block
