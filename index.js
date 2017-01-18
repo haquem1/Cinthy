@@ -79,20 +79,22 @@ function richMessage(recipientId, text) {
     // message for career center
     if (text.indexOf("message") != -1 ||
         text.indexOf("message:") != -1 ||
-        text.indexOf("msg") != -1 ){
-          return false;
+        text.indexOf("msg") != -1) {
+        return false;
     }
 
     // get started
     if ((values[0] == "hello" ||
-       values[0] == "hi" ||
-       values[0] == "hey" ||
-       values[0] == "help" ||
-       values[0] == "who") && values.length < 6){
+            values[0] == "hi" ||
+            values[0] == "hey" ||
+            values[0] == "help" ||
+            values[0] == "who") && values.length < 6) {
 
-       message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
-       sendMessage(recipientId, {text: message});
-       return true;
+        message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
+        sendMessage(recipientId, {
+            text: message
+        });
+        return true;
     }
 
     // hours block
@@ -158,7 +160,7 @@ function richMessage(recipientId, text) {
             "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
             "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?mode=form&id=8001574a2317b2e330e9de3cf49e4ac9&s=event&ss=is",
             "tid": new Date("February 16, 2017")
-        },{
+        }, {
             "name": "Job Search Tips for International Students Workshop",
             "date": "Wednesday, February 15",
             "time": "10:00am - 11:15am",
@@ -190,7 +192,7 @@ function richMessage(recipientId, text) {
             "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
             "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?mode=form&id=151804da45844d582c4153d1fa8f7ba1&s=event&ss=is",
             "tid": new Date("February 21, 2017")
-        },{
+        }, {
             "name": "Resume Critique",
             "date": "Wednesday, February 28",
             "time": "10:30am - 2:30pm",
@@ -214,7 +216,7 @@ function richMessage(recipientId, text) {
             "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
             "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?mode=form&id=4cc852afc252f312404628f2bdd42f60&s=event&ss=ws",
             "tid": new Date("March 1, 2017")
-        },{
+        }, {
             "name": "60 Seconds to Success",
             "date": "Tuesday, March 7",
             "time": "10:30am - 1:30pm",
@@ -254,7 +256,7 @@ function richMessage(recipientId, text) {
             "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
             "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid982139?mode=form&id=7fc6b1811517a0418b085cfcf25dfbd9&s=event&ss=is",
             "tid": new Date("April 19, 2017")
-        },{
+        }, {
             "name": "Mocktail Party",
             "date": "Tuesday, April 25",
             "time": "6:30pm - 8:30pm",
@@ -344,101 +346,101 @@ function richMessage(recipientId, text) {
                         }
                     }
                 } else if (text.indexOf("fair") != -1 ||
-                           text.indexOf("career") != -1 ||
-                           text.indexOf("expo") != -1 ||
-                           text.indexOf("exposition") != -1){
+                    text.indexOf("career") != -1 ||
+                    text.indexOf("expo") != -1 ||
+                    text.indexOf("exposition") != -1) {
 
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (text.indexOf("education") != -1){
-                          if (ccEvents[i].name == "Education Expo") {
-                              message = {
-                                  "attachment": {
-                                      "type": "template",
-                                      "payload": {
-                                          "template_type": "generic",
-                                          "elements": [{
-                                              "title": ccEvents[i].name,
-                                              "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                              "image_url": ccEvents[i].imgUrl,
-                                              "buttons": [{
-                                                  "type": "web_url",
-                                                  "url": ccEvents[i].rsvpUrl,
-                                                  "title": "Learn More"
-                                              }]
-                                          }]
-                                      }
-                                  }
-                              };
-                          }
+                        if (text.indexOf("education") != -1) {
+                            if (ccEvents[i].name == "Education Expo") {
+                                message = {
+                                    "attachment": {
+                                        "type": "template",
+                                        "payload": {
+                                            "template_type": "generic",
+                                            "elements": [{
+                                                "title": ccEvents[i].name,
+                                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                                "image_url": ccEvents[i].imgUrl,
+                                                "buttons": [{
+                                                    "type": "web_url",
+                                                    "url": ccEvents[i].rsvpUrl,
+                                                    "title": "Learn More"
+                                                }]
+                                            }]
+                                        }
+                                    }
+                                };
+                            }
                         } else if (text.indexOf("non-profit") != -1 ||
-                                   text.indexOf("nonprofit") != -1 ||
-                                   text.indexOf("government") != -1) {
-                                     if (ccEvents[i].name == "Non-Profit & Government Career Fair") {
-                                         message = {
-                                             "attachment": {
-                                                 "type": "template",
-                                                 "payload": {
-                                                     "template_type": "generic",
-                                                     "elements": [{
-                                                         "title": ccEvents[i].name,
-                                                         "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                                         "image_url": ccEvents[i].imgUrl,
-                                                         "buttons": [{
-                                                             "type": "web_url",
-                                                             "url": ccEvents[i].rsvpUrl,
-                                                             "title": "Learn More"
-                                                         }]
-                                                     }]
-                                                 }
-                                             }
-                                         };
-                                     }
+                            text.indexOf("nonprofit") != -1 ||
+                            text.indexOf("government") != -1) {
+                            if (ccEvents[i].name == "Non-Profit & Government Career Fair") {
+                                message = {
+                                    "attachment": {
+                                        "type": "template",
+                                        "payload": {
+                                            "template_type": "generic",
+                                            "elements": [{
+                                                "title": ccEvents[i].name,
+                                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                                "image_url": ccEvents[i].imgUrl,
+                                                "buttons": [{
+                                                    "type": "web_url",
+                                                    "url": ccEvents[i].rsvpUrl,
+                                                    "title": "Learn More"
+                                                }]
+                                            }]
+                                        }
+                                    }
+                                };
+                            }
 
                         } else if (text.indexOf("engineering") != -1 ||
-                                   text.indexOf("technology") != -1) {
-                                     if (ccEvents[i].name == "Spring Tech Fest") {
-                                         message = {
-                                             "attachment": {
-                                                 "type": "template",
-                                                 "payload": {
-                                                     "template_type": "generic",
-                                                     "elements": [{
-                                                         "title": ccEvents[i].name,
-                                                         "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                                         "image_url": ccEvents[i].imgUrl,
-                                                         "buttons": [{
-                                                             "type": "web_url",
-                                                             "url": ccEvents[i].rsvpUrl,
-                                                             "title": "Learn More"
-                                                         }]
-                                                     }]
-                                                 }
-                                             }
-                                         };
-                                     }
-
-                        } else{
-                        if (ccEvents[i].name == "Spring Internship & Career Expo") {
-                            message = {
-                                "attachment": {
-                                    "type": "template",
-                                    "payload": {
-                                        "template_type": "generic",
-                                        "elements": [{
-                                            "title": ccEvents[i].name,
-                                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                            "image_url": ccEvents[i].imgUrl,
-                                            "buttons": [{
-                                                "type": "web_url",
-                                                "url": ccEvents[i].rsvpUrl,
-                                                "title": "Learn More"
+                            text.indexOf("technology") != -1) {
+                            if (ccEvents[i].name == "Spring Tech Fest") {
+                                message = {
+                                    "attachment": {
+                                        "type": "template",
+                                        "payload": {
+                                            "template_type": "generic",
+                                            "elements": [{
+                                                "title": ccEvents[i].name,
+                                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                                "image_url": ccEvents[i].imgUrl,
+                                                "buttons": [{
+                                                    "type": "web_url",
+                                                    "url": ccEvents[i].rsvpUrl,
+                                                    "title": "Learn More"
+                                                }]
                                             }]
-                                        }]
+                                        }
                                     }
-                                }
-                            };
+                                };
+                            }
+
+                        } else {
+                            if (ccEvents[i].name == "Spring Internship & Career Expo") {
+                                message = {
+                                    "attachment": {
+                                        "type": "template",
+                                        "payload": {
+                                            "template_type": "generic",
+                                            "elements": [{
+                                                "title": ccEvents[i].name,
+                                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                                "image_url": ccEvents[i].imgUrl,
+                                                "buttons": [{
+                                                    "type": "web_url",
+                                                    "url": ccEvents[i].rsvpUrl,
+                                                    "title": "Learn More"
+                                                }]
+                                            }]
+                                        }
+                                    }
+                                };
+                            }
                         }
-                      }
                     }
                 } else if (text.indexOf("job on campus") != -1 ||
                     text.indexOf("job on-campus") != -1 ||
