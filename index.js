@@ -494,7 +494,8 @@ function richMessage(recipientId, text) {
             text.indexOf("teachers") != -1 ||
             text.indexOf("teach") != -1 ||
             text.indexOf("network") != -1 ||
-            text.indexOf("networking") != -1) {
+            text.indexOf("networking") != -1 ||
+            text.indexOf("can i") != -1) {
 
             // tech fest
             if (text.indexOf("tech") != -1 ||
