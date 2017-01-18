@@ -122,6 +122,7 @@ function richMessage(recipientId, text) {
         text.indexOf("events") != -1 ||
         text.indexOf("happen") != -1 ||
         text.indexOf("happening") != -1 ||
+        text.indexOf("find") != -1 ||
         text.indexOf("can i") != -1) {
 
         // TODO: will migrate to json file
