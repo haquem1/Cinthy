@@ -854,7 +854,7 @@ function richMessage(recipientId, text) {
                         }
                     };
                     sendMessage(recipientId, {
-                        text: "Here is our upcoming event.\n\nAsk the assistant to see the events of this month, next month, and the semester!"
+                        text: "Here is our upcoming event:"
                     });
                     sendMessage(recipientId, message);
                     return true;
