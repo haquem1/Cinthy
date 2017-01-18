@@ -272,7 +272,7 @@ function richMessage(recipientId, text) {
             "imgUrl": "http://www.csun.edu/career/plan_your_future/images/LAUSD.png",
             "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/59b8238207ea66cf14695afbaa272498/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
             "tid": new Date("May 23, 2017")
-        }, ];
+        }];
 
         var count = 0; //for initial greeting
         // Looking for very specific event
