@@ -90,7 +90,7 @@ function richMessage(recipientId, text) {
        values[0] == "help" ||
        values[0] == "who") && values.length < 6){
 
-       message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\nOur hours\nOur upcoming events for this month, next month, and the semester\n\nI can also recommend events for you\nOr, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
+       message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
        sendMessage(recipientId, {text: message});
        return true;
     }
