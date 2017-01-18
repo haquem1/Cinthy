@@ -85,10 +85,10 @@ function richMessage(recipientId, text) {
 
     // get started
     if ((values[0] == "hello" ||
-            values[0] == "hi" ||
-            values[0] == "hey" ||
-            values[0] == "help" ||
-            values[0] == "who") && values.length < 6) {
+         values[0] == "hi" ||
+         values[0] == "hey" ||
+         values[0] == "help" ||
+         values[0] == "who") && values.length < 6) {
 
         message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
         sendMessage(recipientId, {
@@ -120,12 +120,12 @@ function richMessage(recipientId, text) {
     // events block
     // TODO display eveything as a catalogue instead of an enormous stream of messages
     else if (text.indexOf("when") != -1 ||
-        text.indexOf("event") != -1 ||
-        text.indexOf("events") != -1 ||
-        text.indexOf("happen") != -1 ||
-        text.indexOf("happening") != -1 ||
-        text.indexOf("find") != -1 ||
-        text.indexOf("can i") != -1) {
+             text.indexOf("event") != -1 ||
+             text.indexOf("events") != -1 ||
+             text.indexOf("happen") != -1 ||
+             text.indexOf("happening") != -1 ||
+             text.indexOf("find") != -1 ||
+             text.indexOf("can i") != -1) {
 
         // TODO: will migrate to json file
         var ccEvents = [{
@@ -346,9 +346,9 @@ function richMessage(recipientId, text) {
                         }
                     }
                 } else if (text.indexOf("fair") != -1 ||
-                    text.indexOf("career") != -1 ||
-                    text.indexOf("expo") != -1 ||
-                    text.indexOf("exposition") != -1) {
+                           text.indexOf("career") != -1 ||
+                           text.indexOf("expo") != -1 ||
+                           text.indexOf("exposition") != -1) {
 
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (text.indexOf("education") != -1) {
@@ -373,8 +373,8 @@ function richMessage(recipientId, text) {
                                 };
                             }
                         } else if (text.indexOf("non-profit") != -1 ||
-                            text.indexOf("nonprofit") != -1 ||
-                            text.indexOf("government") != -1) {
+                                   text.indexOf("nonprofit") != -1 ||
+                                   text.indexOf("government") != -1) {
                             if (ccEvents[i].name == "Non-Profit & Government Career Fair") {
                                 message = {
                                     "attachment": {
@@ -397,7 +397,7 @@ function richMessage(recipientId, text) {
                             }
 
                         } else if (text.indexOf("engineering") != -1 ||
-                            text.indexOf("technology") != -1) {
+                                   text.indexOf("technology") != -1) {
                             if (ccEvents[i].name == "Spring Tech Fest") {
                                 message = {
                                     "attachment": {
@@ -443,11 +443,11 @@ function richMessage(recipientId, text) {
                         }
                     }
                 } else if (text.indexOf("job on campus") != -1 ||
-                    text.indexOf("job on-campus") != -1 ||
-                    text.indexOf("job oncampus") != -1 ||
-                    text.indexOf("on campus job") != -1 ||
-                    text.indexOf("oncampus job") != -1 ||
-                    text.indexOf("on-campus job") != -1) {
+                           text.indexOf("job on-campus") != -1 ||
+                           text.indexOf("job oncampus") != -1 ||
+                           text.indexOf("on campus job") != -1 ||
+                           text.indexOf("oncampus job") != -1 ||
+                           text.indexOf("on-campus job") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
                             ccEvents[i].name == "How To Find a Job on Campus Fair") {
@@ -598,9 +598,9 @@ function richMessage(recipientId, text) {
             }
             //recent grad
             else if (text.indexOf("grad") != -1 ||
-                text.indexOf("graduate") != -1 ||
-                text.indexOf("alum") != -1 ||
-                text.indexOf("alumni") != -1) {
+                     text.indexOf("graduate") != -1 ||
+                     text.indexOf("alum") != -1 ||
+                     text.indexOf("alumni") != -1) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Recent Graduate & Alumni Fair" ||
                         ccEvents[i].name == "Spring Internship & Career Expo") {
@@ -631,9 +631,9 @@ function richMessage(recipientId, text) {
             }
             // non-profit
             else if (text.indexOf("non-profit") != -1 ||
-                text.indexOf("profit") != -1 ||
-                text.indexOf("nonprofit") != -1 ||
-                text.indexOf("government") != -1) {
+                     text.indexOf("profit") != -1 ||
+                     text.indexOf("nonprofit") != -1 ||
+                     text.indexOf("government") != -1) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Non-Profit & Government Career Fair" ||
                         ccEvents[i].name == "Spring Internship & Career Expo") {
@@ -664,10 +664,10 @@ function richMessage(recipientId, text) {
             }
             // education
             else if (text.indexOf("education") != -1 ||
-                text.indexOf("teacher") != -1 ||
-                text.indexOf("teachers") != -1 ||
-                text.indexOf("teaching") != -1 ||
-                text.indexOf("teach") != -1) {
+                     text.indexOf("teacher") != -1 ||
+                     text.indexOf("teachers") != -1 ||
+                     text.indexOf("teaching") != -1 ||
+                     text.indexOf("teach") != -1) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Education Expo" ||
                         ccEvents[i].name == "Spring Internship & Career Expo") {
