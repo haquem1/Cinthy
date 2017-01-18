@@ -113,7 +113,8 @@ function richMessage(recipientId, text) {
         text.indexOf("event") != -1 ||
         text.indexOf("events") != -1 ||
         text.indexOf("happen") != -1 ||
-        text.indexOf("happening") != -1) {
+        text.indexOf("happening") != -1 ||
+        text.indexOf("can i") != -1) {
 
         // TODO: will migrate to json file
         var ccEvents = [{
@@ -494,8 +495,7 @@ function richMessage(recipientId, text) {
             text.indexOf("teachers") != -1 ||
             text.indexOf("teach") != -1 ||
             text.indexOf("network") != -1 ||
-            text.indexOf("networking") != -1 ||
-            text.indexOf("can i") != -1) {
+            text.indexOf("networking") != -1) {
 
             // tech fest
             if (text.indexOf("tech") != -1 ||
