@@ -515,8 +515,7 @@ function richMessage(recipientId, text) {
                 text.indexOf("engineer") != -1) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Spring Tech Fest" ||
-                        ccEvents[i].name == "Spring Internship & Career Expo" ||
-                        ccEvents[i].name == "Recent Graduate & Alumni Fair") {
+                        ccEvents[i].name == "Spring Internship & Career Expo") {
                         message = {
                             "attachment": {
                                 "type": "template",
@@ -582,8 +581,7 @@ function richMessage(recipientId, text) {
                 text.indexOf("government") != -1) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Non-Profit & Government Career Fair" ||
-                        ccEvents[i].name == "Spring Internship & Career Expo" ||
-                        ccEvents[i].name == "Recent Graduate & Alumni Fair") {
+                        ccEvents[i].name == "Spring Internship & Career Expo") {
                         message = {
                             "attachment": {
                                 "type": "template",
@@ -617,8 +615,7 @@ function richMessage(recipientId, text) {
                 text.indexOf("teach") != -1) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Education Expo" ||
-                        ccEvents[i].name == "Spring Internship & Career Expo" ||
-                        ccEvents[i].name == "Recent Graduate & Alumni Fair") {
+                        ccEvents[i].name == "Spring Internship & Career Expo") {
                         message = {
                             "attachment": {
                                 "type": "template",
@@ -812,5 +809,5 @@ function richMessage(recipientId, text) {
             }
         }
     }
-    return false;
+    return true;
 };
