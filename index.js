@@ -210,7 +210,16 @@ function richMessage(recipientId, text) {
                 text.indexOf("on campus job") != -1 ||
                 text.indexOf("oncampus job") != -1 ||
                 text.indexOf("on-campus job") != -1 ||
-                text.indexOf("international") != -1) {
+                text.indexOf("international") != -1 ||
+                text.indexOf("non-profit") != -1 ||
+                text.indexOf("nonprofit") != -1 ||
+                text.indexOf("education") != -1 ||
+                text.indexOf("career fair") != -1 ||
+                text.indexOf("job fair") != -1 ||
+                text.indexOf("career expo") != -1 ||
+                text.indexOf("job expo") != -1 ||
+                text.indexOf("job exposition") != -1 ||
+                text.indexOf("career exposition") != -1) {
 
                 if (text.indexOf("techfest") != -1 ||
                     text.indexOf("tech fest") != -1) {
@@ -259,8 +268,81 @@ function richMessage(recipientId, text) {
                             };
                         }
                     }
-                } else if (text.indexOf("job fair") != -1 || text.indexOf("career fair") != -1) {
+                } else if (text.indexOf("fair") != -1 ||
+                           text.indexOf("career") != -1 ||
+                           text.indexOf("expo") != -1 ||
+                           text.indexOf("exposition") != -1){
+
                     for (var i = 0; i < ccEvents.length; i++) {
+                        if (text.indexOf("education") != -1){
+                          if (ccEvents[i].name == "Education Expo") {
+                              message = {
+                                  "attachment": {
+                                      "type": "template",
+                                      "payload": {
+                                          "template_type": "generic",
+                                          "elements": [{
+                                              "title": ccEvents[i].name,
+                                              "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                              "image_url": ccEvents[i].imgUrl,
+                                              "buttons": [{
+                                                  "type": "web_url",
+                                                  "url": "https://csun-csm.symplicity.com/events",
+                                                  "title": "Learn More"
+                                              }]
+                                          }]
+                                      }
+                                  }
+                              };
+                          }
+                        } else if (text.indexOf("non-profit") != -1 ||
+                                   text.indexOf("nonprofit") != -1 ||
+                                   text.indexOf("government") != -1) {
+                                     if (ccEvents[i].name == "Non-Profit & Government Career Fair") {
+                                         message = {
+                                             "attachment": {
+                                                 "type": "template",
+                                                 "payload": {
+                                                     "template_type": "generic",
+                                                     "elements": [{
+                                                         "title": ccEvents[i].name,
+                                                         "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                                         "image_url": ccEvents[i].imgUrl,
+                                                         "buttons": [{
+                                                             "type": "web_url",
+                                                             "url": "https://csun-csm.symplicity.com/events",
+                                                             "title": "Learn More"
+                                                         }]
+                                                     }]
+                                                 }
+                                             }
+                                         };
+                                     }
+
+                        } else if (text.indexOf("engineering") != -1 ||
+                                   text.indexOf("technology") != -1) {
+                                     if (ccEvents[i].name == "Spring Tech Fest") {
+                                         message = {
+                                             "attachment": {
+                                                 "type": "template",
+                                                 "payload": {
+                                                     "template_type": "generic",
+                                                     "elements": [{
+                                                         "title": ccEvents[i].name,
+                                                         "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                                         "image_url": ccEvents[i].imgUrl,
+                                                         "buttons": [{
+                                                             "type": "web_url",
+                                                             "url": "https://csun-csm.symplicity.com/events",
+                                                             "title": "Learn More"
+                                                         }]
+                                                     }]
+                                                 }
+                                             }
+                                         };
+                                     }
+
+                        } else{
                         if (ccEvents[i].name == "Spring Internship & Career Expo") {
                             message = {
                                 "attachment": {
@@ -281,6 +363,7 @@ function richMessage(recipientId, text) {
                                 }
                             };
                         }
+                      }
                     }
                 } else if (text.indexOf("job on campus") != -1 ||
                     text.indexOf("job on-campus") != -1 ||
