@@ -76,8 +76,15 @@ function richMessage(recipientId, text) {
     text = text.toLowerCase();
     values = text.split(' ');
 
+    // message for career center
+    if (text.indexOf("message") != -1 ||
+        text.indexOf("message:") != -1 ||
+        text.indexOf("msg") != -1 ){
+          return false;
+    }
+    
     // get started
-    if((values[0] == "hello" ||
+    if ((values[0] == "hello" ||
        values[0] == "hi" ||
        values[0] == "hey" ||
        values[0] == "help" ||
@@ -87,6 +94,7 @@ function richMessage(recipientId, text) {
        sendMessage(recipientId, {text: message});
        return true;
     }
+
     // hours block
     // TODO add special hours/closures
     if (text.indexOf("open") != -1 ||
