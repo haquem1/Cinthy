@@ -471,7 +471,7 @@ function richMessage(recipientId, text) {
                                     "type": "generic",
                                     "payload": {
                                         "template_type": "generic",
-                                        "items": items
+                                        "elements": items
                                     }
                                 }
                             };
