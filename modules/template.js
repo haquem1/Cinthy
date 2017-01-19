@@ -1,3 +1,4 @@
+/* module to process user language and return rich message with event(s) */
 function template(text) {
     var found = false;
     // TODO create dictionary with [keywords, index of events array]
@@ -8,9 +9,8 @@ function template(text) {
     var items = [];
     // iterate through dictionary
     for (var key in dict) {
-        // if a key is found in text string
-        if (text.indexOf("key") != -1) {
-            found = true;
+        // if key is substring of text
+        if (text.indexOf(key) != -1) {
             var index = dict[key];
             var item = {
               "title": events[index].name,
@@ -22,22 +22,21 @@ function template(text) {
                   "title": "Learn More"
               }]
             }
+            found = true;
             items.push(item);
         }
     }
-    if (found) {
-        message = {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "generic",
-                    "elements": items
-                }
-            }
-        };
-    }
+    if (!found) items.push({"title" : "not found"});
+
     message = {
-        "found": "none"
-    });
-return message;
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": items
+            }
+          }
+    };
+
+    return message;
 };

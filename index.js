@@ -448,31 +448,36 @@ function richMessage(recipientId, text) {
                            text.indexOf("job oncampus") != -1 ||
                            text.indexOf("on campus job") != -1 ||
                            text.indexOf("oncampus job") != -1 ||
-                           text.indexOf("on-campus job") != -1) {
+                           text.indexOf("on-campus job") != -1) { //TODO: test if previous error out of scope
+                             var items = [];
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
                             ccEvents[i].name == "How To Find a Job on Campus Fair") {
+                              var item = {
+                                  "title": ccEvents[i].name,
+                                  "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                  "image_url": ccEvents[i].imgUrl,
+                                  "buttons": [{
+                                      "type": "web_url",
+                                      "url": ccEvents[i].rsvpUrl,
+                                      "title": "Learn More"
+                                  }]
+                              };
+                              items.push(item);
+                            }
+                          }
                             message = {
                                 "attachment": {
                                     "type": "template",
                                     "payload": {
                                         "template_type": "generic",
-                                        "elements": [{
-                                            "title": ccEvents[i].name,
-                                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                            "image_url": ccEvents[i].imgUrl,
-                                            "buttons": [{
-                                                "type": "web_url",
-                                                "url": ccEvents[i].rsvpUrl,
-                                                "title": "Learn More"
-                                            }]
-                                        }]
+                                        "elements": items
                                     }
                                 }
                             };
                             if (++count == 1) sendMessage(recipientId, message);
-                        }
-                    }
+
+
 
                 } else if (text.indexOf("international") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
