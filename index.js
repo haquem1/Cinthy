@@ -468,10 +468,10 @@ function richMessage(recipientId, text) {
                           }
                             message = {
                                 "attachment": {
-                                    "type": "template",
+                                    "type": "catalogue",
                                     "payload": {
                                         "template_type": "generic",
-                                        "elements": items
+                                        "items": items
                                     }
                                 }
                             };
