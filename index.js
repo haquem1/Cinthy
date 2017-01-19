@@ -808,7 +808,7 @@ function richMessage(recipientId, text) {
             // all events for semester
             //TODO Maybe make all events a link to a calendar? Show catalogue of only key events
             sendMessage(recipientId, {
-                text: "Check out our calendar"
+                text: "Check out our calendar:"
             });
             message = {
                 "attachment": {
