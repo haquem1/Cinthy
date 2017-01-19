@@ -808,20 +808,27 @@ function richMessage(recipientId, text) {
             // all events for semester
             //TODO Maybe make all events a link to a calendar? Show catalogue of only key events
             sendMessage(recipientId, {
-                text: "Check out our calendar\nhttp://www.csun.edu/career/calendar"
+                text: "Check out our calendar"
             });
             message = {
                 "attachment": {
-                    "type": "image",
+                    "type": "template",
                     "payload": {
-                        "url": "http://www.csun.edu/career/calendar"
+                        "template_type": "generic",
+                        "elements": [{
+                            "title": Career Center Events,
+                            "image_url": ccEvents[i].imgUrl,
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": "https://cdn.pixabay.com/photo/2012/04/01/17/38/calendar-23684_1280.png",
+                                "title": "Go to calendar"
+                            }]
+                        }]
                     }
                 }
             };
-
-                sendMessage(recipientId, message);
-
             return true;
+
         } else {
             // show next event by default
             for (var i = 0; i < ccEvents.length; i++) {
