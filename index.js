@@ -468,13 +468,14 @@ function richMessage(recipientId, text) {
                           }
                             message = {
                                 "attachment": {
-                                    "type": "catalogue",
+                                    "type": "generic",
                                     "payload": {
                                         "template_type": "generic",
-                                        "items": items
+                                        "items": []
                                     }
                                 }
                             };
+                            message.attachment.payload.items = items;
                             sendMessage(recipientId, message);
 
 
