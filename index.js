@@ -810,6 +810,17 @@ function richMessage(recipientId, text) {
             sendMessage(recipientId, {
                 text: "Check out our calendar\nhttp://www.csun.edu/career/calendar"
             });
+            message = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "http://www.csun.edu/career/calendar"
+                    }
+                }
+            };
+
+                sendMessage(recipientId, message);
+
             return true;
         } else {
             // show next event by default
