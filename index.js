@@ -475,7 +475,7 @@ function richMessage(recipientId, text) {
                                     }
                                 }
                             };
-                            if (++count == 1) sendMessage(recipientId, message);
+                            sendMessage(recipientId, message);
 
 
 
