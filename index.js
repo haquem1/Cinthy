@@ -808,34 +808,11 @@ function richMessage(recipientId, text) {
             // all events for semester
             //TODO Maybe make all events a link to a calendar? Show catalogue of only key events
             sendMessage(recipientId, {
-                text: "Here are the events for the semester:"
+                text: "Check out our calendar\nhttp://www.csun.edu/career/calendar"
             });
-            for (var i = 0; i < ccEvents.length; i++) {
-                message = {
-                    "attachment": {
-                        "type": "template",
-                        "payload": {
-                            "template_type": "generic",
-                            "elements": [{
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }]
-                        }
-                    }
-                };
-                sendMessage(recipientId, message);
-
-            }
             return true;
         } else {
             // show next event by default
-            //TODO Add rich template for clickable calendar of all year's events
             for (var i = 0; i < ccEvents.length; i++) {
                 if (ccEvents[i].tid >= compare) {
                     message = {
