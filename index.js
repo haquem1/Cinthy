@@ -452,32 +452,27 @@ function richMessage(recipientId, text) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
                             ccEvents[i].name == "How To Find a Job on Campus Fair") {
-                              var items = [];
-                              var item = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                  }]
-                                };
-                              items.push(item);
-                            }
-                          }
                             message = {
                                 "attachment": {
-                                    "type": "generic",
+                                    "type": "template",
                                     "payload": {
                                         "template_type": "generic",
-                                        "elements": items
+                                        "elements": [{
+                                            "title": ccEvents[i].name,
+                                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                            "image_url": ccEvents[i].imgUrl,
+                                            "buttons": [{
+                                                "type": "web_url",
+                                                "url": ccEvents[i].rsvpUrl,
+                                                "title": "Learn More"
+                                            }]
+                                        }]
                                     }
                                 }
                             };
-                            sendMessage(recipientId, message);
-                            return true;
-
+                            if (++count == 1) sendMessage(recipientId, message);
+                        }
+                    }
 
                 } else if (text.indexOf("international") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
