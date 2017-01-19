@@ -476,7 +476,7 @@ function richMessage(recipientId, text) {
                                 }
                             };
                             sendMessage(recipientId, message);
-
+                            return true;
 
 
                 } else if (text.indexOf("international") != -1) {
