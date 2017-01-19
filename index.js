@@ -816,7 +816,7 @@ function richMessage(recipientId, text) {
                     "payload": {
                         "template_type": "generic",
                         "elements": [{
-                            "title": Career Center Events,
+                            "title": "Career Center Events",
                             "image_url": "https://cdn.pixabay.com/photo/2012/04/01/17/38/calendar-23684_1280.png",
                             "buttons": [{
                                 "type": "web_url",
