@@ -301,14 +301,19 @@ function richMessage(recipientId, text) {
 
                 if (text.indexOf("techfest") != -1 ||
                     text.indexOf("tech fest") != -1) {
+                      message = {
+                          "attachment": {
+                              "type": "template",
+                              "payload": {
+                                  "template_type": "generic",
+                                  "elements": []
+                                }
+                              }
+                            };
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "Spring Tech Fest") {
-                            message = {
-                                "attachment": {
-                                    "type": "template",
-                                    "payload": {
-                                        "template_type": "generic",
-                                        "elements": [{
+
+                          var card = {
                                             "title": ccEvents[i].name,
                                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
                                             "image_url": ccEvents[i].imgUrl,
@@ -317,10 +322,8 @@ function richMessage(recipientId, text) {
                                                 "url": ccEvents[i].rsvpUrl,
                                                 "title": "Learn More"
                                             }]
-                                        }]
-                                    }
-                                }
-                            };
+                                          }
+                                          message.elements.push(card);
                         }
                     }
                 } else if (text.indexOf("resumania") != -1) {
