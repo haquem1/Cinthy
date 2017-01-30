@@ -304,42 +304,22 @@ function richMessage(recipientId, text) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "Spring Tech Fest") {
                             message = {
-                              "type": "catalogue",
-            "msgid": "cat_212",
-            "items": [
-              {
-                "title": "White T Shirt",
-               "subtitle": "Soft cotton t-shirt \nXs, S, M, L \n$10",
-                "imgurl": "http://petersapparel.parseapp.com/img/item100-thumb.png",
-                "options":[
-                  {
-                    "type":"url",
-                    "title":"View Details",
-                    "url":"http://petersapparel.parseapp.com/img/item100-thumb.png"
-                  },
-                   {
-                    "type":"text",
-                    "title":"Buy"
-                   }
-                 ]
-              },
-              {
-                "title": "Grey T Shirt",
-                "subtitle": "Soft cotton t-shirt \nXs, S, M, L \n$12",
-                "imgurl": "http://petersapparel.parseapp.com/img/item101-thumb.png",
-                "options":[
-                  {
-                    "type":"url",
-                    "title":"View Details",
-                    "url":"http://petersapparel.parseapp.com/img/item101-thumb.png"
-                  },
-                   {
-                    "type":"text",
-                    "title":"Buy"
-                   }
-                  ]
-                }
-              ]
+                                "attachment": {
+                                    "type": "template",
+                                    "payload": {
+                                        "template_type": "generic",
+                                        "elements": [{
+                                            "title": ccEvents[i].name,
+                                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                            "image_url": ccEvents[i].imgUrl,
+                                            "buttons": [{
+                                                "type": "web_url",
+                                                "url": ccEvents[i].rsvpUrl,
+                                                "title": "Learn More"
+                                            }]
+                                        }]
+                                    }
+                                }
                             };
                         }
                     }
@@ -468,7 +448,7 @@ function richMessage(recipientId, text) {
                            text.indexOf("job oncampus") != -1 ||
                            text.indexOf("on campus job") != -1 ||
                            text.indexOf("oncampus job") != -1 ||
-                           text.indexOf("on-campus job") != -1) { //TODO: test if previous error out of scope
+                           text.indexOf("on-campus job") != -1) { //TODO: test if previous error out of sco
                              var items = [];
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
