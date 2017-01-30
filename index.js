@@ -301,6 +301,7 @@ function richMessage(recipientId, text) {
 
                 if (text.indexOf("techfest") != -1 ||
                     text.indexOf("tech fest") != -1) {
+                      var card;
                       message = {
                           "attachment": {
                               "type": "template",
@@ -313,7 +314,7 @@ function richMessage(recipientId, text) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "Spring Tech Fest") {
 
-                          var card = {
+                          card = {
                                             "title": ccEvents[i].name,
                                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
                                             "image_url": ccEvents[i].imgUrl,
@@ -323,7 +324,7 @@ function richMessage(recipientId, text) {
                                                 "title": "Learn More"
                                             }]
                                           }
-                                          message.elements.push(card);
+                                          message.attachment.payload.elements.push(card);
                         }
                     }
                 } else if (text.indexOf("resumania") != -1) {
