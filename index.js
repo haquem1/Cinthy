@@ -326,6 +326,20 @@ function richMessage(recipientId, text) {
                                           }
                                           message.attachment.payload.elements.push(card);
                         }
+                        if (ccEvents[i].name == "Mocktail Party") {
+
+                          card = {
+                                            "title": ccEvents[i].name,
+                                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                            "image_url": ccEvents[i].imgUrl,
+                                            "buttons": [{
+                                                "type": "web_url",
+                                                "url": ccEvents[i].rsvpUrl,
+                                                "title": "Learn More"
+                                            }]
+                                          }
+                                          message.attachment.payload.elements.push(card);
+                        }
                     }
                 } else if (text.indexOf("resumania") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
