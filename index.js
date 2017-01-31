@@ -534,9 +534,9 @@ function richMessage(recipientId, text) {
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
-                        sendMessage(recipientId, message);
                     }
                 }
+                sendMessage(recipientId, message);
             }
             //recent grad
             else if (text.indexOf("grad") != -1 ||
