@@ -419,18 +419,18 @@ function richMessage(recipientId, text) {
                     text.indexOf("on-campus job") != -1) { //TODO: test if previous error out of sco
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
-                            ccEvents[i].name == "How To Find a Job on Campus Fair") {
-                              var card = {
-                                  "title": ccEvents[i].name,
-                                  "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                  "image_url": ccEvents[i].imgUrl,
-                                  "buttons": [{
-                                      "type": "web_url",
-                                      "url": ccEvents[i].rsvpUrl,
-                                      "title": "Learn More"
-                                  }]
-                              }
-                              message.attachment.payload.elements.push(card);
+                            ccEvents[i].name == "How To Find a Job on Campus Job Fair") {
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
                         }
                     }
 
@@ -440,33 +440,33 @@ function richMessage(recipientId, text) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "Job Search Tips for International Students Workshop" ||
                             ccEvents[i].name == "Job Search Tips for International Students Panel") {
-                              var card = {
-                                  "title": ccEvents[i].name,
-                                  "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                  "image_url": ccEvents[i].imgUrl,
-                                  "buttons": [{
-                                      "type": "web_url",
-                                      "url": ccEvents[i].rsvpUrl,
-                                      "title": "Learn More"
-                                  }]
-                              }
-                              message.attachment.payload.elements.push(card);
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
                             if (++count == 1) sendMessage(recipientId, message);
                         }
                     }
 
                 } else {
-                  var card = {
-                      "title": ccEvents[i].name,
-                      "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                      "image_url": ccEvents[i].imgUrl,
-                      "buttons": [{
-                          "type": "web_url",
-                          "url": ccEvents[i].rsvpUrl,
-                          "title": "Learn More"
-                      }]
-                  }
-                  message.attachment.payload.elements.push(card);
+                    var card = {
+                        "title": ccEvents[i].name,
+                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                        "image_url": ccEvents[i].imgUrl,
+                        "buttons": [{
+                            "type": "web_url",
+                            "url": ccEvents[i].rsvpUrl,
+                            "title": "Learn More"
+                        }]
+                    }
+                    message.attachment.payload.elements.push(card);
                 }
                 sendMessage(recipientId, message);
                 return true;
@@ -520,17 +520,17 @@ function richMessage(recipientId, text) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Spring Tech Fest" ||
                         ccEvents[i].name == "Spring Internship & Career Expo") {
-                          var card = {
-                              "title": ccEvents[i].name,
-                              "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                              "image_url": ccEvents[i].imgUrl,
-                              "buttons": [{
-                                  "type": "web_url",
-                                  "url": ccEvents[i].rsvpUrl,
-                                  "title": "Learn More"
-                              }]
-                          }
-                          message.attachment.payload.elements.push(card);
+                        var card = {
+                            "title": ccEvents[i].name,
+                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                            "image_url": ccEvents[i].imgUrl,
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": ccEvents[i].rsvpUrl,
+                                "title": "Learn More"
+                            }]
+                        }
+                        message.attachment.payload.elements.push(card);
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
@@ -546,17 +546,17 @@ function richMessage(recipientId, text) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Recent Graduate & Alumni Fair" ||
                         ccEvents[i].name == "Spring Internship & Career Expo") {
-                          var card = {
-                              "title": ccEvents[i].name,
-                              "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                              "image_url": ccEvents[i].imgUrl,
-                              "buttons": [{
-                                  "type": "web_url",
-                                  "url": ccEvents[i].rsvpUrl,
-                                  "title": "Learn More"
-                              }]
-                          }
-                          message.attachment.payload.elements.push(card);
+                        var card = {
+                            "title": ccEvents[i].name,
+                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                            "image_url": ccEvents[i].imgUrl,
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": ccEvents[i].rsvpUrl,
+                                "title": "Learn More"
+                            }]
+                        }
+                        message.attachment.payload.elements.push(card);
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
@@ -572,17 +572,17 @@ function richMessage(recipientId, text) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Non-Profit & Government Career Fair" ||
                         ccEvents[i].name == "Spring Internship & Career Expo") {
-                          var card = {
-                              "title": ccEvents[i].name,
-                              "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                              "image_url": ccEvents[i].imgUrl,
-                              "buttons": [{
-                                  "type": "web_url",
-                                  "url": ccEvents[i].rsvpUrl,
-                                  "title": "Learn More"
-                              }]
-                          }
-                          message.attachment.payload.elements.push(card);
+                        var card = {
+                            "title": ccEvents[i].name,
+                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                            "image_url": ccEvents[i].imgUrl,
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": ccEvents[i].rsvpUrl,
+                                "title": "Learn More"
+                            }]
+                        }
+                        message.attachment.payload.elements.push(card);
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
@@ -599,17 +599,17 @@ function richMessage(recipientId, text) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Education Expo" ||
                         ccEvents[i].name == "Spring Internship & Career Expo") {
-                          var card = {
-                              "title": ccEvents[i].name,
-                              "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                              "image_url": ccEvents[i].imgUrl,
-                              "buttons": [{
-                                  "type": "web_url",
-                                  "url": ccEvents[i].rsvpUrl,
-                                  "title": "Learn More"
-                              }]
-                          }
-                          message.attachment.payload.elements.push(card);
+                        var card = {
+                            "title": ccEvents[i].name,
+                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                            "image_url": ccEvents[i].imgUrl,
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": ccEvents[i].rsvpUrl,
+                                "title": "Learn More"
+                            }]
+                        }
+                        message.attachment.payload.elements.push(card);
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
