@@ -743,11 +743,12 @@ function richMessage(recipientId, text) {
                     sendMessage(recipientId, {
                         text: "Here is our upcoming event:"
                     });
-                    sendMessage(recipientId, message);
-                    return true;
+                  //  sendMessage(recipientId, message);
+                  //  return true;
                 }
             }
         }
+        sendMessage(recipientId, message);
     }
     return true;
 };
