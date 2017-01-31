@@ -531,7 +531,7 @@ function richMessage(recipientId, text) {
                         });
                     }
                 }
-                sendMessage(recipientId, message);
+                //sendMessage(recipientId, message);
             }
             //recent grad
             else if (text.indexOf("grad") != -1 ||
@@ -555,7 +555,7 @@ function richMessage(recipientId, text) {
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
-                        sendMessage(recipientId, message);
+                      //  sendMessage(recipientId, message);
                     }
                 }
             }
@@ -581,7 +581,7 @@ function richMessage(recipientId, text) {
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
-                        sendMessage(recipientId, message);
+                      //  sendMessage(recipientId, message);
                     }
                 }
             }
@@ -608,7 +608,7 @@ function richMessage(recipientId, text) {
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
-                        sendMessage(recipientId, message);
+                      //  sendMessage(recipientId, message);
                     }
                 }
             }
@@ -633,10 +633,11 @@ function richMessage(recipientId, text) {
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
-                        sendMessage(recipientId, message);
+                        //sendMessage(recipientId, message);
                     }
                 }
             }
+            sendMessage(recipientId, message);
             return true;
         } else if (text.indexOf("month") != -1 || text.indexOf("week") != -1) {
             if (text.indexOf("next month") != -1) {
