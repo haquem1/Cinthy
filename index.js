@@ -11,7 +11,7 @@ app.listen((process.env.PORT || 3000));
 
 // Server frontpage
 app.get('/', function(req, res) {
-    res.send('This is TestBot Server');
+    res.send('This is Chatbot Server');
 });
 
 // Facebook Webhook
@@ -118,7 +118,6 @@ function richMessage(recipientId, text) {
     }
 
     // events block
-    // TODO display eveything as a catalogue instead of an enormous stream of messages
     else if (text.indexOf("when") != -1 ||
         text.indexOf("event") != -1 ||
         text.indexOf("events") != -1 ||
@@ -138,7 +137,7 @@ function richMessage(recipientId, text) {
             }
         };
 
-        // TODO: will migrate to json file
+        // TODO: migrate to json file
         var ccEvents = [{
             "name": "United States Peace Corps Information Session",
             "date": "Wednesday, February 8",
@@ -286,6 +285,7 @@ function richMessage(recipientId, text) {
         }];
 
         var count = 0; //for initial greeting
+
         // Looking for very specific event
         for (var i = 0; i < ccEvents.length; i++) {
             if (text.indexOf(ccEvents[i].name.toLowerCase()) != -1 ||
@@ -378,7 +378,6 @@ function richMessage(recipientId, text) {
                                 }
                                 message.attachment.payload.elements.push(card);
                             }
-
                         } else if (text.indexOf("engineering") != -1 ||
                             text.indexOf("technology") != -1) {
                             if (ccEvents[i].name == "Spring Tech Fest") {
@@ -394,7 +393,6 @@ function richMessage(recipientId, text) {
                                 }
                                 message.attachment.payload.elements.push(card);
                             }
-
                         } else {
                             if (ccEvents[i].name == "Spring Internship & Career Expo") {
                                 var card = {
@@ -608,7 +606,7 @@ function richMessage(recipientId, text) {
                     }
                 }
             }
-            // the other signature fairs and workshops
+            // other signature events
             else {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Spring Internship & Career Expo" ||
@@ -634,6 +632,8 @@ function richMessage(recipientId, text) {
             }
             sendMessage(recipientId, message);
             return true;
+
+          // events by month
         } else if (text.indexOf("month") != -1 || text.indexOf("week") != -1) {
             if (text.indexOf("next month") != -1) {
                 for (var i = 0; i < ccEvents.length; i++) {
@@ -650,20 +650,17 @@ function richMessage(recipientId, text) {
                             }]
                         }
                         message.attachment.payload.elements.push(card);
-                        if (++count == 1) {
-                            sendMessage(recipientId, {
-                                text: "Here are next month's events:"
-                            });
-                        }
+                        if (++count == 1) sendMessage(recipientId, {
+                            text: "Here are next month's events:"
+                        });
                         sendMessage(recipientId, message);
                     }
                 }
-                if (!found) {
-                    sendMessage(recipientId, {
-                        text: "No events next month!"
-                    });
-                }
+                if (!found) sendMessage(recipientId, {
+                    text: "No events next month!"
+                });
                 return true;
+
             } else {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth()) {
@@ -679,24 +676,18 @@ function richMessage(recipientId, text) {
                             }]
                         }
                         message.attachment.payload.elements.push(card);
-                        if (++count == 1) {
-                            sendMessage(recipientId, {
-                                text: "Here are this month's events:"
-                            });
-                        }
+                        if (++count == 1) sendMessage(recipientId, {
+                            text: "Here are this month's events:"
+                        });
                         sendMessage(recipientId, message);
                     }
                 }
-                if (!found) {
-                    sendMessage(recipientId, {
-                        text: "No events this month!"
-                    });
-                }
+                if (!found) sendMessage(recipientId, {
+                    text: "No events this month!"
+                });
                 return true;
             }
         } else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1) {
-            // all events for semester
-            //TODO Maybe make all events a link to a calendar? Show catalogue of only key events
             sendMessage(recipientId, {
                 text: "Check out our calendar:"
             });
@@ -721,8 +712,8 @@ function richMessage(recipientId, text) {
             sendMessage(recipientId, message);
             return true;
 
+          //show next event by default
         } else {
-            // show next event by default
             for (var i = 0; i < ccEvents.length; i++) {
                 if (ccEvents[i].tid >= compare) {
                     var card = {
