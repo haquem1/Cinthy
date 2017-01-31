@@ -433,9 +433,6 @@ function richMessage(recipientId, text) {
                             message.attachment.payload.elements.push(card);
                         }
                     }
-
-                    if (++count == 1) sendMessage(recipientId, message);
-
                 } else if (text.indexOf("international") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "Job Search Tips for International Students Workshop" ||
@@ -451,10 +448,8 @@ function richMessage(recipientId, text) {
                                 }]
                             }
                             message.attachment.payload.elements.push(card);
-                            if (++count == 1) sendMessage(recipientId, message);
                         }
                     }
-
                 } else {
                     var card = {
                         "title": ccEvents[i].name,
