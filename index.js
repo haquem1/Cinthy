@@ -740,17 +740,13 @@ function richMessage(recipientId, text) {
                         }]
                     }
                     message.attachment.payload.elements.push(card);
-                    // sendMessage(recipientId, {
-                    //     text: "Here is our upcoming event:"
-                    // });
-                    // sendMessage(recipientId, message);
-                    // return true;
+                    sendMessage(recipientId, {
+                        text: "Here is our upcoming event:"
+                    });
+                    sendMessage(recipientId, message);
+                    return true;
                 }
             }
-            sendMessage(recipientId, {
-                text: "Here is our upcoming event:"
-            });
-            sendMessage(recipientId, message);
         }
     }
     return true;
