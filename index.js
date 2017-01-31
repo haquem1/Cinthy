@@ -128,15 +128,15 @@ function richMessage(recipientId, text) {
         text.indexOf("can i") != -1 ||
         text.indexOf("do i") != -1) {
 
-          message = {
-              "attachment": {
-                  "type": "template",
-                  "payload": {
-                      "template_type": "generic",
-                      "elements": []
-                  }
-              }
-          };
+        message = {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "generic",
+                    "elements": []
+                }
+            }
+        };
 
         // TODO: will migrate to json file
         var ccEvents = [{
@@ -329,17 +329,17 @@ function richMessage(recipientId, text) {
                 } else if (text.indexOf("resumania") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "Resume Critique") {
-                          var card = {
-                              "title": ccEvents[i].name,
-                              "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                              "image_url": ccEvents[i].imgUrl,
-                              "buttons": [{
-                                  "type": "web_url",
-                                  "url": ccEvents[i].rsvpUrl,
-                                  "title": "Learn More"
-                              }]
-                          }
-                          message.attachment.payload.elements.push(card);
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
                         }
                     }
                 } else if (text.indexOf("fair") != -1 ||
@@ -350,64 +350,64 @@ function richMessage(recipientId, text) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (text.indexOf("education") != -1) {
                             if (ccEvents[i].name == "Education Expo") {
-                              var card = {
-                                  "title": ccEvents[i].name,
-                                  "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                  "image_url": ccEvents[i].imgUrl,
-                                  "buttons": [{
-                                      "type": "web_url",
-                                      "url": ccEvents[i].rsvpUrl,
-                                      "title": "Learn More"
-                                  }]
-                              }
-                              message.attachment.payload.elements.push(card);
+                                var card = {
+                                    "title": ccEvents[i].name,
+                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                    "image_url": ccEvents[i].imgUrl,
+                                    "buttons": [{
+                                        "type": "web_url",
+                                        "url": ccEvents[i].rsvpUrl,
+                                        "title": "Learn More"
+                                    }]
+                                }
+                                message.attachment.payload.elements.push(card);
                             }
                         } else if (text.indexOf("non-profit") != -1 ||
                             text.indexOf("nonprofit") != -1 ||
                             text.indexOf("government") != -1) {
                             if (ccEvents[i].name == "Non-Profit & Government Career Fair") {
-                              var card = {
-                                  "title": ccEvents[i].name,
-                                  "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                  "image_url": ccEvents[i].imgUrl,
-                                  "buttons": [{
-                                      "type": "web_url",
-                                      "url": ccEvents[i].rsvpUrl,
-                                      "title": "Learn More"
-                                  }]
-                              }
-                              message.attachment.payload.elements.push(card);
+                                var card = {
+                                    "title": ccEvents[i].name,
+                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                    "image_url": ccEvents[i].imgUrl,
+                                    "buttons": [{
+                                        "type": "web_url",
+                                        "url": ccEvents[i].rsvpUrl,
+                                        "title": "Learn More"
+                                    }]
+                                }
+                                message.attachment.payload.elements.push(card);
                             }
 
                         } else if (text.indexOf("engineering") != -1 ||
                             text.indexOf("technology") != -1) {
                             if (ccEvents[i].name == "Spring Tech Fest") {
-                              var card = {
-                                  "title": ccEvents[i].name,
-                                  "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                  "image_url": ccEvents[i].imgUrl,
-                                  "buttons": [{
-                                      "type": "web_url",
-                                      "url": ccEvents[i].rsvpUrl,
-                                      "title": "Learn More"
-                                  }]
-                              }
-                              message.attachment.payload.elements.push(card);
+                                var card = {
+                                    "title": ccEvents[i].name,
+                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                    "image_url": ccEvents[i].imgUrl,
+                                    "buttons": [{
+                                        "type": "web_url",
+                                        "url": ccEvents[i].rsvpUrl,
+                                        "title": "Learn More"
+                                    }]
+                                }
+                                message.attachment.payload.elements.push(card);
                             }
 
                         } else {
                             if (ccEvents[i].name == "Spring Internship & Career Expo") {
-                              var card = {
-                                  "title": ccEvents[i].name,
-                                  "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                  "image_url": ccEvents[i].imgUrl,
-                                  "buttons": [{
-                                      "type": "web_url",
-                                      "url": ccEvents[i].rsvpUrl,
-                                      "title": "Learn More"
-                                  }]
-                              }
-                              message.attachment.payload.elements.push(card);
+                                var card = {
+                                    "title": ccEvents[i].name,
+                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                    "image_url": ccEvents[i].imgUrl,
+                                    "buttons": [{
+                                        "type": "web_url",
+                                        "url": ccEvents[i].rsvpUrl,
+                                        "title": "Learn More"
+                                    }]
+                                }
+                                message.attachment.payload.elements.push(card);
                             }
                         }
                     }
@@ -420,77 +420,53 @@ function richMessage(recipientId, text) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
                             ccEvents[i].name == "How To Find a Job on Campus Fair") {
-                            var item = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            };
-                            items.push(item);
+                              var card = {
+                                  "title": ccEvents[i].name,
+                                  "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                  "image_url": ccEvents[i].imgUrl,
+                                  "buttons": [{
+                                      "type": "web_url",
+                                      "url": ccEvents[i].rsvpUrl,
+                                      "title": "Learn More"
+                                  }]
+                              }
+                              message.attachment.payload.elements.push(card);
                         }
                     }
-                    message = {
-                        "attachment": {
-                            "type": "template",
-                            "payload": {
-                                "template_type": "generic",
-                                "elements": items
-                            }
-                        }
-                    };
+
                     if (++count == 1) sendMessage(recipientId, message);
-
-
 
                 } else if (text.indexOf("international") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "Job Search Tips for International Students Workshop" ||
                             ccEvents[i].name == "Job Search Tips for International Students Panel") {
-                            message = {
-                                "attachment": {
-                                    "type": "template",
-                                    "payload": {
-                                        "template_type": "generic",
-                                        "elements": [{
-                                            "title": ccEvents[i].name,
-                                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                            "image_url": ccEvents[i].imgUrl,
-                                            "buttons": [{
-                                                "type": "web_url",
-                                                "url": ccEvents[i].rsvpUrl,
-                                                "title": "Learn More"
-                                            }]
-                                        }]
-                                    }
-                                }
-                            };
+                              var card = {
+                                  "title": ccEvents[i].name,
+                                  "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                  "image_url": ccEvents[i].imgUrl,
+                                  "buttons": [{
+                                      "type": "web_url",
+                                      "url": ccEvents[i].rsvpUrl,
+                                      "title": "Learn More"
+                                  }]
+                              }
+                              message.attachment.payload.elements.push(card);
                             if (++count == 1) sendMessage(recipientId, message);
                         }
                     }
 
                 } else {
-                    message = {
-                        "attachment": {
-                            "type": "template",
-                            "payload": {
-                                "template_type": "generic",
-                                "elements": [{
-                                    "title": ccEvents[i].name,
-                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                    "image_url": ccEvents[i].imgUrl,
-                                    "buttons": [{
-                                        "type": "web_url",
-                                        "url": ccEvents[i].rsvpUrl,
-                                        "title": "Learn More"
-                                    }]
-                                }]
-                            }
-                        }
-                    };
+                  var card = {
+                      "title": ccEvents[i].name,
+                      "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                      "image_url": ccEvents[i].imgUrl,
+                      "buttons": [{
+                          "type": "web_url",
+                          "url": ccEvents[i].rsvpUrl,
+                          "title": "Learn More"
+                      }]
+                  }
+                  message.attachment.payload.elements.push(card);
                 }
                 sendMessage(recipientId, message);
                 return true;
@@ -544,24 +520,17 @@ function richMessage(recipientId, text) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Spring Tech Fest" ||
                         ccEvents[i].name == "Spring Internship & Career Expo") {
-                        message = {
-                            "attachment": {
-                                "type": "template",
-                                "payload": {
-                                    "template_type": "generic",
-                                    "elements": [{
-                                        "title": ccEvents[i].name,
-                                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                        "image_url": ccEvents[i].imgUrl,
-                                        "buttons": [{
-                                            "type": "web_url",
-                                            "url": ccEvents[i].rsvpUrl,
-                                            "title": "Learn More"
-                                        }]
-                                    }]
-                                }
-                            }
-                        };
+                          var card = {
+                              "title": ccEvents[i].name,
+                              "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                              "image_url": ccEvents[i].imgUrl,
+                              "buttons": [{
+                                  "type": "web_url",
+                                  "url": ccEvents[i].rsvpUrl,
+                                  "title": "Learn More"
+                              }]
+                          }
+                          message.attachment.payload.elements.push(card);
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
@@ -577,24 +546,17 @@ function richMessage(recipientId, text) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Recent Graduate & Alumni Fair" ||
                         ccEvents[i].name == "Spring Internship & Career Expo") {
-                        message = {
-                            "attachment": {
-                                "type": "template",
-                                "payload": {
-                                    "template_type": "generic",
-                                    "elements": [{
-                                        "title": ccEvents[i].name,
-                                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                        "image_url": ccEvents[i].imgUrl,
-                                        "buttons": [{
-                                            "type": "web_url",
-                                            "url": ccEvents[i].rsvpUrl,
-                                            "title": "Learn More"
-                                        }]
-                                    }]
-                                }
-                            }
-                        };
+                          var card = {
+                              "title": ccEvents[i].name,
+                              "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                              "image_url": ccEvents[i].imgUrl,
+                              "buttons": [{
+                                  "type": "web_url",
+                                  "url": ccEvents[i].rsvpUrl,
+                                  "title": "Learn More"
+                              }]
+                          }
+                          message.attachment.payload.elements.push(card);
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
@@ -610,24 +572,17 @@ function richMessage(recipientId, text) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Non-Profit & Government Career Fair" ||
                         ccEvents[i].name == "Spring Internship & Career Expo") {
-                        message = {
-                            "attachment": {
-                                "type": "template",
-                                "payload": {
-                                    "template_type": "generic",
-                                    "elements": [{
-                                        "title": ccEvents[i].name,
-                                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                        "image_url": ccEvents[i].imgUrl,
-                                        "buttons": [{
-                                            "type": "web_url",
-                                            "url": ccEvents[i].rsvpUrl,
-                                            "title": "Learn More"
-                                        }]
-                                    }]
-                                }
-                            }
-                        };
+                          var card = {
+                              "title": ccEvents[i].name,
+                              "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                              "image_url": ccEvents[i].imgUrl,
+                              "buttons": [{
+                                  "type": "web_url",
+                                  "url": ccEvents[i].rsvpUrl,
+                                  "title": "Learn More"
+                              }]
+                          }
+                          message.attachment.payload.elements.push(card);
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
@@ -644,24 +599,17 @@ function richMessage(recipientId, text) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].name == "Education Expo" ||
                         ccEvents[i].name == "Spring Internship & Career Expo") {
-                        message = {
-                            "attachment": {
-                                "type": "template",
-                                "payload": {
-                                    "template_type": "generic",
-                                    "elements": [{
-                                        "title": ccEvents[i].name,
-                                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                        "image_url": ccEvents[i].imgUrl,
-                                        "buttons": [{
-                                            "type": "web_url",
-                                            "url": ccEvents[i].rsvpUrl,
-                                            "title": "Learn More"
-                                        }]
-                                    }]
-                                }
-                            }
-                        };
+                          var card = {
+                              "title": ccEvents[i].name,
+                              "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                              "image_url": ccEvents[i].imgUrl,
+                              "buttons": [{
+                                  "type": "web_url",
+                                  "url": ccEvents[i].rsvpUrl,
+                                  "title": "Learn More"
+                              }]
+                          }
+                          message.attachment.payload.elements.push(card);
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
@@ -676,24 +624,17 @@ function richMessage(recipientId, text) {
                         ccEvents[i].name == "Resume Critique" ||
                         ccEvents[i].name == "60 Seconds to Success" ||
                         ccEvents[i].name == "Recent Graduate & Alumni Fair") {
-                        message = {
-                            "attachment": {
-                                "type": "template",
-                                "payload": {
-                                    "template_type": "generic",
-                                    "elements": [{
-                                        "title": ccEvents[i].name,
-                                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                        "image_url": ccEvents[i].imgUrl,
-                                        "buttons": [{
-                                            "type": "web_url",
-                                            "url": ccEvents[i].rsvpUrl,
-                                            "title": "Learn More"
-                                        }]
-                                    }]
-                                }
-                            }
-                        };
+                        var card = {
+                            "title": ccEvents[i].name,
+                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                            "image_url": ccEvents[i].imgUrl,
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": ccEvents[i].rsvpUrl,
+                                "title": "Learn More"
+                            }]
+                        }
+                        message.attachment.payload.elements.push(card);
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
@@ -707,24 +648,17 @@ function richMessage(recipientId, text) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
                         found = true;
-                        message = {
-                            "attachment": {
-                                "type": "template",
-                                "payload": {
-                                    "template_type": "generic",
-                                    "elements": [{
-                                        "title": ccEvents[i].name,
-                                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                        "image_url": ccEvents[i].imgUrl,
-                                        "buttons": [{
-                                            "type": "web_url",
-                                            "url": ccEvents[i].rsvpUrl,
-                                            "title": "Learn More"
-                                        }]
-                                    }]
-                                }
-                            }
-                        };
+                        var card = {
+                            "title": ccEvents[i].name,
+                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                            "image_url": ccEvents[i].imgUrl,
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": ccEvents[i].rsvpUrl,
+                                "title": "Learn More"
+                            }]
+                        }
+                        message.attachment.payload.elements.push(card);
                         if (++count == 1) {
                             sendMessage(recipientId, {
                                 text: "Here are next month's events:"
@@ -743,24 +677,17 @@ function richMessage(recipientId, text) {
                 for (var i = 0; i < ccEvents.length; i++) {
                     if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth()) {
                         found = true;
-                        message = {
-                            "attachment": {
-                                "type": "template",
-                                "payload": {
-                                    "template_type": "generic",
-                                    "elements": [{
-                                        "title": ccEvents[i].name,
-                                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                        "image_url": ccEvents[i].imgUrl,
-                                        "buttons": [{
-                                            "type": "web_url",
-                                            "url": ccEvents[i].rsvpUrl,
-                                            "title": "Learn More"
-                                        }]
-                                    }]
-                                }
-                            }
-                        };
+                        var card = {
+                            "title": ccEvents[i].name,
+                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                            "image_url": ccEvents[i].imgUrl,
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": ccEvents[i].rsvpUrl,
+                                "title": "Learn More"
+                            }]
+                        }
+                        message.attachment.payload.elements.push(card);
                         if (++count == 1) {
                             sendMessage(recipientId, {
                                 text: "Here are this month's events:"
@@ -807,24 +734,17 @@ function richMessage(recipientId, text) {
             // show next event by default
             for (var i = 0; i < ccEvents.length; i++) {
                 if (ccEvents[i].tid >= compare) {
-                    message = {
-                        "attachment": {
-                            "type": "template",
-                            "payload": {
-                                "template_type": "generic",
-                                "elements": [{
-                                    "title": ccEvents[i].name,
-                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                    "image_url": ccEvents[i].imgUrl,
-                                    "buttons": [{
-                                        "type": "web_url",
-                                        "url": ccEvents[i].rsvpUrl,
-                                        "title": "Learn More"
-                                    }]
-                                }]
-                            }
-                        }
-                    };
+                    var card = {
+                        "title": ccEvents[i].name,
+                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                        "image_url": ccEvents[i].imgUrl,
+                        "buttons": [{
+                            "type": "web_url",
+                            "url": ccEvents[i].rsvpUrl,
+                            "title": "Learn More"
+                        }]
+                    }
+                    message.attachment.payload.elements.push(card);
                     sendMessage(recipientId, {
                         text: "Here is our upcoming event:"
                     });
