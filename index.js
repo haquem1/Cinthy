@@ -531,7 +531,6 @@ function richMessage(recipientId, text) {
                         });
                     }
                 }
-                //sendMessage(recipientId, message);
             }
             //recent grad
             else if (text.indexOf("grad") != -1 ||
@@ -555,7 +554,6 @@ function richMessage(recipientId, text) {
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
-                      //  sendMessage(recipientId, message);
                     }
                 }
             }
@@ -581,7 +579,6 @@ function richMessage(recipientId, text) {
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
-                      //  sendMessage(recipientId, message);
                     }
                 }
             }
@@ -608,7 +605,6 @@ function richMessage(recipientId, text) {
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
-                      //  sendMessage(recipientId, message);
                     }
                 }
             }
@@ -633,7 +629,6 @@ function richMessage(recipientId, text) {
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are some events to help you:"
                         });
-                        //sendMessage(recipientId, message);
                     }
                 }
             }
