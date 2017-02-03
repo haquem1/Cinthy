@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
-var card = require('app_modules/reader.js');
 var app = express();
 
 app.use(bodyParser.urlencoded({
@@ -314,17 +313,17 @@ function richMessage(recipientId, text) {
                     text.indexOf("tech fest") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "Spring Tech Fest") {
-                            // var card = {
-                            //     "title": ccEvents[i].name,
-                            //     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                            //     "image_url": ccEvents[i].imgUrl,
-                            //     "buttons": [{
-                            //         "type": "web_url",
-                            //         "url": ccEvents[i].rsvpUrl,
-                            //         "title": "Learn More"
-                            //     }]
-                            // }
-                            message.attachment.payload.elements.push(card(ccEvents[i]));
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
                         }
                     }
                 } else if (text.indexOf("resumania") != -1) {
@@ -660,6 +659,7 @@ function richMessage(recipientId, text) {
                 if (!found) sendMessage(recipientId, {
                     text: "No events next month!"
                 });
+
                 return true;
 
             } else {
@@ -686,6 +686,7 @@ function richMessage(recipientId, text) {
                 if (!found) sendMessage(recipientId, {
                     text: "No events this month!"
                 });
+
                 return true;
             }
         } else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1) {
