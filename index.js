@@ -203,7 +203,7 @@ function richMessage(recipientId, text) {
             "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?mode=form&id=151804da45844d582c4153d1fa8f7ba1&s=event&ss=is",
             "tid": new Date("February 21, 2017")
         }, {
-            "name": "Resume Critique",
+            "name": "Resu-Makeover",
             "date": "Wednesday, February 28",
             "time": "10:30am - 2:30pm",
             "location": "USU, Northridge Center",
@@ -328,7 +328,7 @@ function richMessage(recipientId, text) {
                     }
                 } else if (text.indexOf("resumania") != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Resume Critique") {
+                        if (ccEvents[i].name == "Resu-Makeover") {
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
