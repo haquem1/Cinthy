@@ -653,12 +653,14 @@ function richMessage(recipientId, text) {
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are next month's events:"
                         });
-                        sendMessage(recipientId, message);
                     }
                 }
                 if (!found) sendMessage(recipientId, {
                     text: "No events next month!"
                 });
+                else{
+                  sendMessage(recipientId, message);
+                }
 
                 return true;
 
@@ -680,12 +682,14 @@ function richMessage(recipientId, text) {
                         if (++count == 1) sendMessage(recipientId, {
                             text: "Here are this month's events:"
                         });
-                        sendMessage(recipientId, message);
                     }
                 }
                 if (!found) sendMessage(recipientId, {
                     text: "No events this month!"
                 });
+                else{
+                  sendMessage(recipientId, message);
+                }
 
                 return true;
             }
