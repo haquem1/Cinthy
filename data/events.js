@@ -1,4 +1,4 @@
-var ccEvents = [{
+var events = [{
     "name": "United States Peace Corps Information Session",
     "date": "Wednesday, February 8",
     "time": "2:00pm - 3:30pm",
@@ -19,7 +19,7 @@ var ccEvents = [{
     "date": "Thursday, February 16",
     "time": "11:00am - 3:00pm",
     "location": "USU, Grand Salon",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/generic.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/HOW_TO_FIND_A_JOB_ON_CAMPUS.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list", // not direct link
     "tid": new Date("February 16, 2017")
 }, {
@@ -35,7 +35,7 @@ var ccEvents = [{
     "date": "Wednesday, February 15",
     "time": "10:00am - 11:15am",
     "location": "Career Center, BH 410",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/generic.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/JOB_SEARCH_TIPS_FOR_INTERNATIONAL%20STUDENTS.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?mode=form&id=a4f4fff4066f2e6aebcf80cb54656e89&s=event&ss=ws",
     "tid": new Date("February 15, 2017")
 }, {
@@ -43,7 +43,7 @@ var ccEvents = [{
     "date": "Wednesday, February 15",
     "time": "11:30am - 12:30pm",
     "location": "Career Center, BH 410",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/generic.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/JOB_SEARCH_TIPS_FOR_INTERNATIONAL%20STUDENTS.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?mode=form&id=a4f4fff4066f2e6aebcf80cb54656e89&s=event&ss=ws",
     "tid": new Date("February 15, 2017")
 }, {
@@ -51,7 +51,7 @@ var ccEvents = [{
     "date": "Wednesday, February 21",
     "time": "10:00am - 3:00pm",
     "location": "USU, Northridge Center",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/STF17.jpg",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/SPRING_TECH_FEST.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/7b59e7d91ffe666a399650f3678892a7/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
     "tid": new Date("February 21, 2017")
 }, {
@@ -63,11 +63,11 @@ var ccEvents = [{
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?mode=form&id=151804da45844d582c4153d1fa8f7ba1&s=event&ss=is",
     "tid": new Date("February 21, 2017")
 }, {
-    "name": "Resume Critique",
+    "name": "Resu-Makeover",
     "date": "Wednesday, February 28",
     "time": "10:30am - 2:30pm",
     "location": "USU, Northridge Center",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/generic.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/RESUME_CRITIQUE.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list", // not direct link
     "tid": new Date("February 28, 2017")
 }, {
@@ -75,7 +75,7 @@ var ccEvents = [{
     "date": "Wednesday, March 1",
     "time": "4:00pm - 5:30pm",
     "location": "USU, Flintride Room",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/generic.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/INTERNSHIP_PANEL.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list", // not direct link
     "tid": new Date("March 1, 2017")
 }, {
@@ -91,7 +91,7 @@ var ccEvents = [{
     "date": "Tuesday, March 7",
     "time": "10:30am - 1:30pm",
     "location": "USU, Thousand Oaks Room",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/generic.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/60_SECONDS.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list", // not direct link
     "tid": new Date("March 7, 2017")
 }, {
@@ -99,7 +99,7 @@ var ccEvents = [{
     "date": "Wednesday, March 15",
     "time": "10:00am - 1:00pm",
     "location": "USU, Northridge Center & Grand Salon",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/SICE17.jpg",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/SPRING_INTERNSHIP_CAREER_EXPO.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/6b9940eb0974e6aae863515db76b3e38/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
     "tid": new Date("March 15, 2017")
 }, {
@@ -107,7 +107,7 @@ var ccEvents = [{
     "date": "Wednesday, March 29",
     "time": "10:00am - 1:00pm",
     "location": "USU, Northridge Center & Grand Salon",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/generic.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/NON-PROFIT&GOVERNMENT_CAREER_FAIR.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/80bc765c134a1fd686d8748e6cdc1077/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
     "tid": new Date("March 29, 2017")
 }, {
@@ -115,7 +115,7 @@ var ccEvents = [{
     "date": "Wednesday, April 12",
     "time": "12:00pm - 5:00pm",
     "location": "USU, Northridge Center",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/generic.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/EDUCATION_EXPO.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/111dab5806f0777db1e34c42a71ff629/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
     "tid": new Date("April 12, 2017")
 }, {
@@ -131,7 +131,7 @@ var ccEvents = [{
     "date": "Tuesday, April 25",
     "time": "6:30pm - 8:30pm",
     "location": "Orange Grove Bistro",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/generic.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/MOCKTAIL_PARTY.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list",
     "tid": new Date("April 25, 2017")
 }, {
@@ -139,7 +139,9 @@ var ccEvents = [{
     "date": "Wednesday, May 23",
     "time": "10:00am - 1:00pm",
     "location": "USU, Northridge Center & Grand Salon",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/generic.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/RECENT_GRADUATE_ALUMNI_FAIR.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/59b8238207ea66cf14695afbaa272498/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
     "tid": new Date("May 23, 2017")
 }];
+
+module.exports = events;

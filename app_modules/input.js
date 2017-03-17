@@ -2,3 +2,4 @@
 // JSON event file and update dictionary
 // add exact name of event into dictionary
 // should have a delete option and should clear itself every semester
+// should sort event before inserting
