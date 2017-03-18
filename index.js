@@ -130,6 +130,23 @@ function richMessage(recipientId, text) {
 
                 // Looking for very specific event
                 for (var i = 0; i < ccEvents.length; i++) {
+                    for (var i = 0; i < keys.tech_fest.length; i++) {
+                        if (text.indexOf(keys.tech_fest[i])) {
+                          if (ccEvents[i].name == "Spring Tech Fest") {
+                              var card = {
+                                  "title": ccEvents[i].name,
+                                  "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                  "image_url": ccEvents[i].imgUrl,
+                                  "buttons": [{
+                                      "type": "web_url",
+                                      "url": ccEvents[i].rsvpUrl,
+                                      "title": "Learn More"
+                                  }]
+                              }
+                              message.attachment.payload.elements.push(card);
+                          }
+                        }
+                    }
                     if (text.indexOf(ccEvents[i].name.toLowerCase()) != -1 ||
                         text.indexOf("techfest") != -1 ||
                         text.indexOf("tech fest") != -1 ||
@@ -150,6 +167,7 @@ function richMessage(recipientId, text) {
                         text.indexOf("job expo") != -1 ||
                         text.indexOf("job exposition") != -1 ||
                         text.indexOf("career exposition") != -1) {
+
 
                         if (text.indexOf("techfest") != -1 ||
                             text.indexOf("tech fest") != -1) {
