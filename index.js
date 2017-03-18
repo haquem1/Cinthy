@@ -138,6 +138,165 @@ function richMessage(recipientId, text) {
 
                 // Looking for very specific event
                 for (var i = 0; i < ccEvents.length; i++) {
+                    if (text.indexOf(keys.tech_fest[i]) != -1){
+                      for (var i = 0; i < ccEvents.length; i++) {
+                          if (ccEvents[i].name == "Spring Tech Fest") {
+                              var card = {
+                                  "title": ccEvents[i].name,
+                                  "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                  "image_url": ccEvents[i].imgUrl,
+                                  "buttons": [{
+                                      "type": "web_url",
+                                      "url": ccEvents[i].rsvpUrl,
+                                      "title": "Learn More"
+                                  }]
+                              }
+                              message.attachment.payload.elements.push(card);
+                          }
+                      }
+                    }
+                    if (text.indexOf(ccEvents[i].name.toLowerCase()) != -1 ||
+                        text.indexOf("techfest") != -1 ||
+                        text.indexOf("tech fest") != -1 ||
+                        text.indexOf("resumania") != -1 ||
+                        text.indexOf("job on campus") != -1 ||
+                        text.indexOf("job on-campus") != -1 ||
+                        text.indexOf("job oncampus") != -1 ||
+                        text.indexOf("on campus job") != -1 ||
+                        text.indexOf("oncampus job") != -1 ||
+                        text.indexOf("on-campus job") != -1 ||
+                        text.indexOf("international") != -1 ||
+                        text.indexOf("non-profit") != -1 ||
+                        text.indexOf("nonprofit") != -1 ||
+                        text.indexOf("education") != -1 ||
+                        text.indexOf("career fair") != -1 ||
+                        text.indexOf("job fair") != -1 ||
+                        text.indexOf("career expo") != -1 ||
+                        text.indexOf("job expo") != -1 ||
+                        text.indexOf("job exposition") != -1 ||
+                        text.indexOf("career exposition") != -1) {
+
+                        if (text.indexOf("techfest") != -1 ||
+                            text.indexOf("tech fest") != -1) {
+
+                        }
+                         else if (text.indexOf("fair") != -1 ||
+                            text.indexOf("career") != -1 ||
+                            text.indexOf("expo") != -1 ||
+                            text.indexOf("exposition") != -1) {
+
+                            for (var i = 0; i < ccEvents.length; i++) {
+                                if (text.indexOf("education") != -1) {
+                                    if (ccEvents[i].name == "Education Expo") {
+                                        var card = {
+                                            "title": ccEvents[i].name,
+                                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                            "image_url": ccEvents[i].imgUrl,
+                                            "buttons": [{
+                                                "type": "web_url",
+                                                "url": ccEvents[i].rsvpUrl,
+                                                "title": "Learn More"
+                                            }]
+                                        }
+                                        message.attachment.payload.elements.push(card);
+                                    }
+                                } else if (text.indexOf("non-profit") != -1 ||
+                                    text.indexOf("nonprofit") != -1 ||
+                                    text.indexOf("government") != -1) {
+                                    if (ccEvents[i].name == "Non-Profit & Government Career Fair") {
+                                        var card = {
+                                            "title": ccEvents[i].name,
+                                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                            "image_url": ccEvents[i].imgUrl,
+                                            "buttons": [{
+                                                "type": "web_url",
+                                                "url": ccEvents[i].rsvpUrl,
+                                                "title": "Learn More"
+                                            }]
+                                        }
+                                        message.attachment.payload.elements.push(card);
+                                    }
+                                } else if (text.indexOf("engineering") != -1 ||
+                                    text.indexOf("technology") != -1) {
+                                    if (ccEvents[i].name == "Spring Tech Fest") {
+                                        var card = {
+                                            "title": ccEvents[i].name,
+                                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                            "image_url": ccEvents[i].imgUrl,
+                                            "buttons": [{
+                                                "type": "web_url",
+                                                "url": ccEvents[i].rsvpUrl,
+                                                "title": "Learn More"
+                                            }]
+                                        }
+                                        message.attachment.payload.elements.push(card);
+                                    }
+                                } else {
+                                    if (ccEvents[i].name == "Spring Internship & Career Expo") {
+                                        var card = {
+                                            "title": ccEvents[i].name,
+                                            "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                            "image_url": ccEvents[i].imgUrl,
+                                            "buttons": [{
+                                                "type": "web_url",
+                                                "url": ccEvents[i].rsvpUrl,
+                                                "title": "Learn More"
+                                            }]
+                                        }
+                                        message.attachment.payload.elements.push(card);
+                                    }
+                                }
+                            }
+                        } else if (text.indexOf("job on campus") != -1 ||
+                            text.indexOf("job on-campus") != -1 ||
+                            text.indexOf("job oncampus") != -1 ||
+                            text.indexOf("on campus job") != -1 ||
+                            text.indexOf("oncampus job") != -1 ||
+                            text.indexOf("on-campus job") != -1) {
+                            for (var i = 0; i < ccEvents.length; i++) {
+                                if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
+                                    ccEvents[i].name == "How To Find a Job on Campus Job Fair") {
+                                    var card = {
+                                        "title": ccEvents[i].name,
+                                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                        "image_url": ccEvents[i].imgUrl,
+                                        "buttons": [{
+                                            "type": "web_url",
+                                            "url": ccEvents[i].rsvpUrl,
+                                            "title": "Learn More"
+                                        }]
+                                    }
+                                    message.attachment.payload.elements.push(card);
+                                }
+                            }
+                        } else if (text.indexOf("international") != -1) {
+                            for (var i = 0; i < ccEvents.length; i++) {
+                                if (ccEvents[i].name == "Job Search Tips for International Students Workshop" ||
+                                    ccEvents[i].name == "Job Search Tips for International Students Panel") {
+                                    var card = {
+                                        "title": ccEvents[i].name,
+                                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                        "image_url": ccEvents[i].imgUrl,
+                                        "buttons": [{
+                                            "type": "web_url",
+                                            "url": ccEvents[i].rsvpUrl,
+                                            "title": "Learn More"
+                                        }]
+                                    }
+                                    message.attachment.payload.elements.push(card);
+                                }
+                            }
+                        } else {
+                            sendMessage(recipientId, { //shouldn't reach block
+                                text: "I'm very sorry, but I cannot help you. Type 'message:' followed by your question so that a staff member may assist you or to leave me feedback so I can better help you in the future"
+                            });
+                        }
+                        sendMessage(recipientId, message);
+                        return true;
+                    }
+                }
+
+                for (var i = 0; i < ccEvents.length; i++) {
                     if (text.indexOf(ccEvents[i].name.toLowerCase()) != -1 ||
                         text.indexOf("techfest") != -1 ||
                         text.indexOf("tech fest") != -1 ||
