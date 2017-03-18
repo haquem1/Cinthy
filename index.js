@@ -99,18 +99,18 @@ function richMessage(recipientId, text) {
     // hours block
     for (var i = 0; i < keys.hours.length; i++) {
         if (text.indexOf(keys.hours[i]) != -1) {
-          if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1))
-              message = "The Career Center is now open\n";
-          else
-              message = "The Career Center is now closed\n";
+            if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1))
+                message = "The Career Center is now open\n";
+            else
+                message = "The Career Center is now closed\n";
 
-          message = message +
-              "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
+            message = message +
+                "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
 
-          sendMessage(recipientId, {
-              text: message
-          });
-          return true;
+            sendMessage(recipientId, {
+                text: message
+            });
+            return true;
         }
     }
 
@@ -124,7 +124,7 @@ function richMessage(recipientId, text) {
                         "template_type": "generic",
                         "elements": []
                     }
-                  }
+                }
             };
 
             var count = 0; //for initial greeting
@@ -333,7 +333,9 @@ function richMessage(recipientId, text) {
                         text: "No events next month!"
                     });
                     else {
-                        sendMessage(recipientId, {text: "Here are next month's events:"})
+                        sendMessage(recipientId, {
+                            text: "Here are next month's events:"
+                        })
                         sendMessage(recipientId, message);
                     }
                     return true;
@@ -362,7 +364,9 @@ function richMessage(recipientId, text) {
                         text: "No events this month!"
                     });
                     else {
-                        sendMessage(recipientId, {text: "Here are this month's events:"})
+                        sendMessage(recipientId, {
+                            text: "Here are this month's events:"
+                        })
                         sendMessage(recipientId, message);
                     }
                     return true;
@@ -371,29 +375,29 @@ function richMessage(recipientId, text) {
 
             for (var i = 0; i < keys.all_events.length; i++) {
                 if (text.indexOf(keys.all_events[i]) != -1) {
-                          sendMessage(recipientId, {
-                              text: "Check out our calendar:"
-                          });
-                          message = {
-                              "attachment": {
-                                  "type": "template",
-                                  "payload": {
-                                      "template_type": "generic",
-                                      "elements": [{
-                                          "title": "Career Center Events",
-                                          "subtitle": "",
-                                          "image_url": "https://cdn.pixabay.com/photo/2012/04/01/17/38/calendar-23684_1280.png",
-                                          "buttons": [{
-                                              "type": "web_url",
-                                              "url": "http://www.csun.edu/career/calendar/",
-                                              "title": "Go to calendar"
-                                          }]
-                                      }]
-                                  }
-                              }
-                          };
-                          sendMessage(recipientId, message);
-                          return true;
+                    sendMessage(recipientId, {
+                        text: "Check out our calendar:"
+                    });
+                    message = {
+                        "attachment": {
+                            "type": "template",
+                            "payload": {
+                                "template_type": "generic",
+                                "elements": [{
+                                    "title": "Career Center Events",
+                                    "subtitle": "",
+                                    "image_url": "https://cdn.pixabay.com/photo/2012/04/01/17/38/calendar-23684_1280.png",
+                                    "buttons": [{
+                                        "type": "web_url",
+                                        "url": "http://www.csun.edu/career/calendar/",
+                                        "title": "Go to calendar"
+                                    }]
+                                }]
+                            }
+                        }
+                    };
+                    sendMessage(recipientId, message);
+                    return true;
                 }
             }
 
@@ -420,45 +424,23 @@ function richMessage(recipientId, text) {
                         text: "No events!"
                     });
                     else {
-                        sendMessage(recipientId, {text: "Here is our next event:"})
+                        sendMessage(recipientId, {
+                            text: "Here is our next event:"
+                        })
                         sendMessage(recipientId, message);
                     }
                     return true;
                 }
             }
 
-            if (message.attachment.payload.elements.length > 0) {
-                sendMessage(recipientId, {
-                  text: "This could be helpful"
-              });
-              sendMessage(recipientId, message);
-            }
-            return true;
-            //         //show next event by default
-            //     } else {
-            //         for (var i = 0; i < ccEvents.length; i++) {
-            //             if (ccEvents[i].tid >= compare) {
-            //                 var card = {
-            //                     "title": ccEvents[i].name,
-            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-            //                     "image_url": ccEvents[i].imgUrl,
-            //                     "buttons": [{
-            //                         "type": "web_url",
-            //                         "url": ccEvents[i].rsvpUrl,
-            //                         "title": "Learn More"
-            //                     }]
-            //                 }
-            //                 message.attachment.payload.elements.push(card);
-            //                 sendMessage(recipientId, {
-            //                     text: "Here is our upcoming event:"
-            //                 });
-            //                 sendMessage(recipientId, message);
-            //                 return true;
-            //             }
-            //         }
-            //     }
-
-          }
         }
-        return true;
+    }
+
+    if (message.attachment.payload.elements.length > 0) {
+        sendMessage(recipientId, {
+            text: "This could be helpful"
+        });
+        sendMessage(recipientId, message);
+    }
+    return true;
 };
