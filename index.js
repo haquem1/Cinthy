@@ -314,36 +314,37 @@ function richMessage(recipientId, text) {
             for (var i = 0; i < keys.next_month.length; i++) {
                 if (text.indexOf(keys.next_month[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                      if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
-                                          found = true;
-                                          var card = {
-                                              "title": ccEvents[i].name,
-                                              "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                              "image_url": ccEvents[i].imgUrl,
-                                              "buttons": [{
-                                                  "type": "web_url",
-                                                  "url": ccEvents[i].rsvpUrl,
-                                                  "title": "Learn More"
-                                              }]
-                                          }
+                        if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
+                            found = true;
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
                             message.attachment.payload.elements.push(card);
                         }
                     }
                     if (!found) sendMessage(recipientId, {
-                                    text: "No events next month!"
-                                });
-                                else {
-                                    sendMessage(recipientId, {text: "Here are next month's events:"})
-                                    sendMessage(recipientId, message);
-                                }
+                        text: "No events next month!"
+                    });
+                    else {
+                        sendMessage(recipientId, {text: "Here are next month's events:"})
+                        sendMessage(recipientId, message);
+                    }
                 }
+                return true;
             }
 
             for (var i = 0; i < keys.this_month.length; i++) {
                 if (text.indexOf(keys.this_month[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Job Search Tips for International Students Workshop" ||
-                            ccEvents[i].name == "Job Search Tips for International Students Panel") {
+                        if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth()) {
+                            found = true;
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
@@ -357,14 +358,22 @@ function richMessage(recipientId, text) {
                             message.attachment.payload.elements.push(card);
                         }
                     }
+                    if (!found) sendMessage(recipientId, {
+                        text: "No events this month!"
+                    });
+                    else {
+                        sendMessage(recipientId, {text: "Here are this month's events:"})
+                        sendMessage(recipientId, message);
+                    }
                 }
+                return true;
             }
 
             for (var i = 0; i < keys.all_events.length; i++) {
                 if (text.indexOf(keys.all_events[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Job Search Tips for International Students Workshop" ||
-                            ccEvents[i].name == "Job Search Tips for International Students Panel") {
+                        if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
+                            found = true;
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
@@ -378,6 +387,42 @@ function richMessage(recipientId, text) {
                             message.attachment.payload.elements.push(card);
                         }
                     }
+                    if (!found) sendMessage(recipientId, {
+                        text: "No events next month!"
+                    });
+                    else {
+                        sendMessage(recipientId, {text: "Here are next month's events:"})
+                        sendMessage(recipientId, message);
+                    }
+                }
+                return true;
+            }
+
+            for (var i = 0; i < keys.all_events.length; i++) {
+                if (text.indexOf(keys.all_events[i]) != -1) {
+                          sendMessage(recipientId, {
+                              text: "Check out our calendar:"
+                          });
+                          message = {
+                              "attachment": {
+                                  "type": "template",
+                                  "payload": {
+                                      "template_type": "generic",
+                                      "elements": [{
+                                          "title": "Career Center Events",
+                                          "subtitle": "",
+                                          "image_url": "https://cdn.pixabay.com/photo/2012/04/01/17/38/calendar-23684_1280.png",
+                                          "buttons": [{
+                                              "type": "web_url",
+                                              "url": "http://www.csun.edu/career/calendar/",
+                                              "title": "Go to calendar"
+                                          }]
+                                      }]
+                                  }
+                              }
+                          };
+                          sendMessage(recipientId, message);
+                          return true;
                 }
             }
 
