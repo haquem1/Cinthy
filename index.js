@@ -84,22 +84,22 @@ function richMessage(recipientId, text) {
     text = text.toLowerCase();
     values = text.split(' ');
 
-    // message for career center
-    if (values[0] == "message:") return false;
-
-    // get started
-    if ((values[0] == "hello" ||
-            values[0] == "hi" ||
-            values[0] == "hey" ||
-            values[0] == "help" ||
-            values[0] == "who") && values.length < 6) {
-
-        message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
-        sendMessage(recipientId, {
-            text: message
-        });
-        return true;
-    }
+    // // message for career center
+    // if (values[0] == "message:") return false;
+    //
+    // // get started
+    // if ((values[0] == "hello" ||
+    //         values[0] == "hi" ||
+    //         values[0] == "hey" ||
+    //         values[0] == "help" ||
+    //         values[0] == "who") && values.length < 6) {
+    //
+    //     message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
+    //     sendMessage(recipientId, {
+    //         text: message
+    //     });
+    //     return true;
+    // }
 
     // hours block
     // TODO add special hours/closures
