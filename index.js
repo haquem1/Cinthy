@@ -87,21 +87,23 @@ function richMessage(recipientId, text) {
     // message for staff
     if (keys.message.indexOf(values[0]) != -1) return false;
 
-
-    // for (var i = 0; i < keys.message.length; i++) {
-    //    if (values[0] == keys.message[i]) return false;
-    // }
-
     // get started
-    for (var i = 0; i < keys.help.length; i++) {
-       if (values[0] == keys.help[i]){
-             message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
-             sendMessage(recipientId, {
-                 text: message
-             });
-             return true;
-       }
+    if (keys.help.indexOf(values[0]) != -1) {
+          message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
+          sendMessage(recipientId, {
+              text: message
+          });
+          return true;
     }
+    // for (var i = 0; i < keys.help.length; i++) {
+    //    if (values[0] == keys.help[i]){
+    //          message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
+    //          sendMessage(recipientId, {
+    //              text: message
+    //          });
+    //          return true;
+    //    }
+    // }
 
     // hours block
     if (text.indexOf("open") != -1 ||
