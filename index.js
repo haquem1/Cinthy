@@ -426,9 +426,11 @@ function richMessage(recipientId, text) {
                 }
             }
 
-            sendMessage(recipientId, {
-                text: "This could be helpful"
-            });
+            if (message.attachment.payload.elements.length > 0) {
+                sendMessage(recipientId, {
+                  text: "This could be helpful"
+              });
+            }
             sendMessage(recipientId, message);
             return true;
             // if (text.indexOf("month") != -1 || text.indexOf("week") != -1) {
