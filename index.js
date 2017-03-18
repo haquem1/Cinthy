@@ -127,27 +127,31 @@ function richMessage(recipientId, text) {
                   }
             };
 
-                var count = 0; //for initial greeting
+            var count = 0; //for initial greeting
 
-                // Looking for very specific event
-                for (var i = 0; i < ccEvents.length; i++) {
-                    for (var i = 0; i < keys.tech_fest.length; i++) {
-                        if (text.indexOf(keys.tech_fest[i])) {
-                          if (ccEvents[i].name == "Spring Tech Fest") {
-                              var card = {
-                                  "title": ccEvents[i].name,
-                                  "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                  "image_url": ccEvents[i].imgUrl,
-                                  "buttons": [{
-                                      "type": "web_url",
-                                      "url": ccEvents[i].rsvpUrl,
-                                      "title": "Learn More"
-                                  }]
-                              }
-                              message.attachment.payload.elements.push(card);
-                          }
+            for (var i = 0; i < keys.tech_fest.length; i++) {
+                if (text.indexOf(keys.tech_fest[i]) != -1) {
+                    for (var i = 0; i < ccEvents.length; i++) {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
                         }
                     }
+                }
+            }
+
+            // Looking for very specific event
+            for (var i = 0; i < ccEvents.length; i++) {
+
                     if (text.indexOf(ccEvents[i].name.toLowerCase()) != -1 ||
                         text.indexOf("techfest") != -1 ||
                         text.indexOf("tech fest") != -1 ||
