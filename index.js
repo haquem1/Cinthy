@@ -329,6 +329,13 @@ function richMessage(recipientId, text) {
                             message.attachment.payload.elements.push(card);
                         }
                     }
+                    if (!found) sendMessage(recipientId, {
+                                    text: "No events next month!"
+                                });
+                                else {
+                                    sendMessage(recipientId, {text: "Here are next month's events:"})
+                                    sendMessage(recipientId, message);
+                                }
                 }
             }
 
