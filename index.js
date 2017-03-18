@@ -312,37 +312,6 @@ function richMessage(recipientId, text) {
             }
 
             //TODO add month-based queries here
-            for (var i = 0; i < keys.next.length; i++) {
-                if (text.indexOf(keys.next[i]) != -1) {
-                  for (var i = 0; i < ccEvents.length; i++) {
-                                  if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
-                                      found = true;
-                                      var card = {
-                                          "title": ccEvents[i].name,
-                                          "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                          "image_url": ccEvents[i].imgUrl,
-                                          "buttons": [{
-                                              "type": "web_url",
-                                              "url": ccEvents[i].rsvpUrl,
-                                              "title": "Learn More"
-                                          }]
-                                      }
-                                      message.attachment.payload.elements.push(card);
-                                      if (++count == 1) sendMessage(recipientId, {
-                                          text: "Here are next month's events:"
-                                      });
-                                  }
-                              }
-                              if (!found) sendMessage(recipientId, {
-                                  text: "No events next month!"
-                              });
-                              else {
-                                  sendMessage(recipientId, message);
-                              }
-
-                              return true;
-                }
-            }
             sendMessage(recipientId, {
                 text: "This could be helpful"
             });
