@@ -76,8 +76,9 @@ function richMessage(recipientId, text) {
     var compare = date;
     var found = false;
     compare.setHours(0, 0, 0, 0);
-    text = text || "";
+
     //sanitize
+    text = text || "";
     text = text.toLowerCase();
     values = text.split(' ');
 
@@ -87,6 +88,8 @@ function richMessage(recipientId, text) {
         values.indexOf("msg") == 0) {
         return false;
     }
+
+    if (keys.message.indexOf(values[0])) return false;
 
     // get started
     if ((values[0] == "hello" ||
