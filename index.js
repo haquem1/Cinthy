@@ -75,32 +75,62 @@ function richMessage(recipientId, text) {
     var date = new Date();
     var compare = date;
     var found = false;
+    var i = 0;
+
     compare.setHours(0, 0, 0, 0);
+
+    // sanitize
     text = text || "";
-    //sanitize
     text = text.toLowerCase();
     values = text.split(' ');
 
-    // message for career center
-    if (values.indexOf("message") == 0||
-        values.indexOf("message:") == 0 ||
-        values.indexOf("msg") == 0) {
-        return false;
+    // process input
+    for (var type in keys) {
+        while (i++ < keys[type].length) {
+          // message for staff
+          if (values.indexOf(keys.message[i]) != -1) return false;
+
+          // get started
+          if (values.indexOf(keys.help[i]) != -1 && values.length < 6) {
+            message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
+            sendMessage(recipientId, {text: message});
+            return true;
+          }
+
+          // hours block
+          if (values.indexOf(keys.hours[i]) != -1) {
+              if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1)) {
+                  message = "The Career Center is now open\n";
+              } else {
+                  message = "The Career Center is now closed\n";
+              }
+              message = message +
+                  "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
+
+              sendMessage(recipientId, {
+                  text: message
+              });
+              return true;
+          }
+        }
     }
 
-    // get started
-    if ((values[0] == "hello" ||
-            values[0] == "hi" ||
-            values[0] == "hey" ||
-            values[0] == "help" ||
-            values[0] == "who") && values.length < 6) {
-
-        message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
-        sendMessage(recipientId, {
-            text: message
-        });
-        return true;
-    }
+    // // message for career center
+    // if (values[0] == "message:") return false;
+    //
+    // // get started
+    // if ((values[0] == "hello" ||
+    //         values[0] == "hi" ||
+    //         values[0] == "hey" ||
+    //         values[0] == "help" ||
+    //         values[0] == "who") && values.length < 6) {
+    //
+    //     message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
+    //     sendMessage(recipientId, {
+    //         text: message
+    //     });
+    //     return true;
+    // }
 
     // hours block
     // TODO add special hours/closures
