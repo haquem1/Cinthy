@@ -1,6 +1,7 @@
 {
   "message": ["message:"],
   "help": ["hello", "hi", "hey", "help"],
+  "hours": ["open", "close", "closed", "hours"],
   "general": ["when", "event", "events", "happen", "happening", "find", "can i", "do i", "job"],
   "upcoming": ["next month", "month", "week", "all", "semester", "year"],
   "fairs": ["internship", "career", "fair", "expo", "exposition", "networking", "network"],

@@ -96,17 +96,23 @@ function richMessage(recipientId, text) {
         return true;
     }
 
-    // for (var i = 0; i < keys.help.length; i++) {
-    //    if (values[0] == keys.help[i]){
-    //          message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
-    //          sendMessage(recipientId, {
-    //              text: message
-    //          });
-    //          return true;
-    //    }
-    // }
-
     // hours block
+    for (var i = 0; i < keys.hours.length; i++) {
+        if (text.indexOf(keys.hours[i]) != -1) {
+          if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1))
+              message = "The Career Center is now open\n";
+          else
+              message = "The Career Center is now closed\n";
+
+          message = message +
+              "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
+
+          sendMessage(recipientId, {
+              text: message
+          });
+          return true;
+        }
+    }
     if (text.indexOf("open") != -1 ||
         text.indexOf("close") != -1 ||
         text.indexOf("closed") != -1 ||
