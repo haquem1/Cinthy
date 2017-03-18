@@ -79,7 +79,7 @@ function richMessage(recipientId, text) {
 
     compare.setHours(0, 0, 0, 0);
 
-    //sanitize
+    // sanitize
     text = text || "";
     text = text.toLowerCase();
     values = text.split(' ');
@@ -114,6 +114,7 @@ function richMessage(recipientId, text) {
         }
     }
 
+    // events block
         for (var i = 0; i < keys.general.length; i++) {
             if (text.indexOf(keys.general[i]) != -1) {
                 message = {
@@ -169,24 +170,25 @@ function richMessage(recipientId, text) {
                         text.indexOf("career exposition") != -1) {
 
 
-                        if (text.indexOf("techfest") != -1 ||
-                            text.indexOf("tech fest") != -1) {
-                            for (var i = 0; i < ccEvents.length; i++) {
-                                if (ccEvents[i].name == "Spring Tech Fest") {
-                                    var card = {
-                                        "title": ccEvents[i].name,
-                                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                        "image_url": ccEvents[i].imgUrl,
-                                        "buttons": [{
-                                            "type": "web_url",
-                                            "url": ccEvents[i].rsvpUrl,
-                                            "title": "Learn More"
-                                        }]
-                                    }
-                                    message.attachment.payload.elements.push(card);
-                                }
-                            }
-                        } else if (text.indexOf("resumania") != -1) {
+                        // if (text.indexOf("techfest") != -1 ||
+                        //     text.indexOf("tech fest") != -1) {
+                        //     for (var i = 0; i < ccEvents.length; i++) {
+                        //         if (ccEvents[i].name == "Spring Tech Fest") {
+                        //             var card = {
+                        //                 "title": ccEvents[i].name,
+                        //                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                        //                 "image_url": ccEvents[i].imgUrl,
+                        //                 "buttons": [{
+                        //                     "type": "web_url",
+                        //                     "url": ccEvents[i].rsvpUrl,
+                        //                     "title": "Learn More"
+                        //                 }]
+                        //             }
+                        //             message.attachment.payload.elements.push(card);
+                        //         }
+                        //     }
+                        // }
+                        else if (text.indexOf("resumania") != -1) {
                             for (var i = 0; i < ccEvents.length; i++) {
                                 if (ccEvents[i].name == "Resu-Makeover") {
                                     var card = {
