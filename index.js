@@ -155,7 +155,7 @@ function richMessage(recipientId, text) {
             for (var i = 0; i < keys.resu_makeover.length; i++) {
                 if (text.indexOf(keys.resu_makeover[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Resu-Makeover") {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
@@ -175,7 +175,7 @@ function richMessage(recipientId, text) {
             for (var i = 0; i < keys.sixty_seconds_to_success.length; i++) {
                 if (text.indexOf(keys.sixty_seconds_to_success[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "60 Seconds to Success") {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
@@ -195,7 +195,7 @@ function richMessage(recipientId, text) {
             for (var i = 0; i < keys.general_career_fair.length; i++) {
                 if (text.indexOf(keys.general_career_fair[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Spring Internship & Career Expo") {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
@@ -215,7 +215,7 @@ function richMessage(recipientId, text) {
             for (var i = 0; i < keys.non_profit_gov_career_fair.length; i++) {
                 if (text.indexOf(keys.non_profit_gov_career_fair[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Non-Profit & Government Career Fair") {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
@@ -235,7 +235,7 @@ function richMessage(recipientId, text) {
             for (var i = 0; i < keys.education_career_fair.length; i++) {
                 if (text.indexOf(keys.education_career_fair[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Education Expo") {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
@@ -255,7 +255,7 @@ function richMessage(recipientId, text) {
             for (var i = 0; i < keys.alumni_career_fair.length; i++) {
                 if (text.indexOf(keys.alumni_career_fair[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Recent Graduate & Alumni Fair") {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
@@ -275,8 +275,7 @@ function richMessage(recipientId, text) {
             for (var i = 0; i < keys.on_campus_jobs.length; i++) {
                 if (text.indexOf(keys.on_campus_jobs[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
-                            ccEvents[i].name == "How To Find a Job on Campus Job Fair") {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
@@ -296,8 +295,7 @@ function richMessage(recipientId, text) {
             for (var i = 0; i < keys.international.length; i++) {
                 if (text.indexOf(keys.international[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Job Search Tips for International Students Workshop" ||
-                            ccEvents[i].name == "Job Search Tips for International Students Panel") {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
@@ -313,7 +311,177 @@ function richMessage(recipientId, text) {
                     }
                 }
             }
-            else if (text.indexOf("month") != -1 || text.indexOf("week") != -1) {
+
+                //TODO Add block for key career center events -- expand later to be all events
+                if (text.indexOf("critique") != -1 ||
+                    text.indexOf("internship") != -1 ||
+                    text.indexOf("internships") != -1 ||
+                    text.indexOf("job") != -1 ||
+                    text.indexOf("jobs") != -1 ||
+                    text.indexOf("fair") != -1 ||
+                    text.indexOf("expo") != -1 ||
+                    text.indexOf("exposition") != -1 ||
+                    text.indexOf("resume") != -1 ||
+                    text.indexOf("resumes") != -1 ||
+                    text.indexOf("interview") != -1 ||
+                    text.indexOf("practice") != -1 ||
+                    text.indexOf("prep") != -1 ||
+                    text.indexOf("preparation") != -1 ||
+                    text.indexOf("prepare") != -1 ||
+                    text.indexOf("graduate") != -1 ||
+                    text.indexOf("alumni") != -1 ||
+                    text.indexOf("alum") != -1 ||
+                    text.indexOf("grad") != -1 ||
+                    text.indexOf("tech") != -1 ||
+                    text.indexOf("technology") != -1 ||
+                    text.indexOf("engineering") != -1 ||
+                    text.indexOf("computers") != -1 ||
+                    text.indexOf("computer") != -1 ||
+                    text.indexOf("engineer") != -1 ||
+                    text.indexOf("government") != -1 ||
+                    text.indexOf("non-profit") != -1 ||
+                    text.indexOf("nonprofit") != -1 ||
+                    text.indexOf("profit") != -1 ||
+                    text.indexOf("education") != -1 ||
+                    text.indexOf("teacher") != -1 ||
+                    text.indexOf("teaching") != -1 ||
+                    text.indexOf("teachers") != -1 ||
+                    text.indexOf("teach") != -1 ||
+                    text.indexOf("network") != -1 ||
+                    text.indexOf("networking") != -1) {
+
+                    // tech fest
+                    if (text.indexOf("tech") != -1 ||
+                        text.indexOf("technology") != -1 ||
+                        text.indexOf("engineering") != -1 ||
+                        text.indexOf("computers") != -1 ||
+                        text.indexOf("computer") != -1 ||
+                        text.indexOf("engineer") != -1) {
+                        for (var i = 0; i < ccEvents.length; i++) {
+                            if (ccEvents[i].name == "Spring Tech Fest" ||
+                                ccEvents[i].name == "Spring Internship & Career Expo") {
+                                var card = {
+                                    "title": ccEvents[i].name,
+                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                    "image_url": ccEvents[i].imgUrl,
+                                    "buttons": [{
+                                        "type": "web_url",
+                                        "url": ccEvents[i].rsvpUrl,
+                                        "title": "Learn More"
+                                    }]
+                                }
+                                message.attachment.payload.elements.push(card);
+                                if (++count == 1) sendMessage(recipientId, {
+                                    text: "Here are some events to help you:"
+                                });
+                            }
+                        }
+                    }
+                    //recent grad
+                    else if (text.indexOf("grad") != -1 ||
+                        text.indexOf("graduate") != -1 ||
+                        text.indexOf("alum") != -1 ||
+                        text.indexOf("alumni") != -1) {
+                        for (var i = 0; i < ccEvents.length; i++) {
+                            if (ccEvents[i].name == "Recent Graduate & Alumni Fair" ||
+                                ccEvents[i].name == "Spring Internship & Career Expo") {
+                                var card = {
+                                    "title": ccEvents[i].name,
+                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                    "image_url": ccEvents[i].imgUrl,
+                                    "buttons": [{
+                                        "type": "web_url",
+                                        "url": ccEvents[i].rsvpUrl,
+                                        "title": "Learn More"
+                                    }]
+                                }
+                                message.attachment.payload.elements.push(card);
+                                if (++count == 1) sendMessage(recipientId, {
+                                    text: "Here are some events to help you:"
+                                });
+                            }
+                        }
+                    }
+                    // non-profit
+                    else if (text.indexOf("non-profit") != -1 ||
+                        text.indexOf("profit") != -1 ||
+                        text.indexOf("nonprofit") != -1 ||
+                        text.indexOf("government") != -1) {
+                        for (var i = 0; i < ccEvents.length; i++) {
+                            if (ccEvents[i].name == "Non-Profit & Government Career Fair" ||
+                                ccEvents[i].name == "Spring Internship & Career Expo") {
+                                var card = {
+                                    "title": ccEvents[i].name,
+                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                    "image_url": ccEvents[i].imgUrl,
+                                    "buttons": [{
+                                        "type": "web_url",
+                                        "url": ccEvents[i].rsvpUrl,
+                                        "title": "Learn More"
+                                    }]
+                                }
+                                message.attachment.payload.elements.push(card);
+                                if (++count == 1) sendMessage(recipientId, {
+                                    text: "Here are some events to help you:"
+                                });
+                            }
+                        }
+                    }
+                    // education
+                    else if (text.indexOf("education") != -1 ||
+                        text.indexOf("teacher") != -1 ||
+                        text.indexOf("teachers") != -1 ||
+                        text.indexOf("teaching") != -1 ||
+                        text.indexOf("teach") != -1) {
+                        for (var i = 0; i < ccEvents.length; i++) {
+                            if (ccEvents[i].name == "Education Expo" ||
+                                ccEvents[i].name == "Spring Internship & Career Expo") {
+                                var card = {
+                                    "title": ccEvents[i].name,
+                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                    "image_url": ccEvents[i].imgUrl,
+                                    "buttons": [{
+                                        "type": "web_url",
+                                        "url": ccEvents[i].rsvpUrl,
+                                        "title": "Learn More"
+                                    }]
+                                }
+                                message.attachment.payload.elements.push(card);
+                                if (++count == 1) sendMessage(recipientId, {
+                                    text: "Here are some events to help you:"
+                                });
+                            }
+                        }
+                    }
+                    // other signature events
+                    else {
+                        for (var i = 0; i < ccEvents.length; i++) {
+                            if (ccEvents[i].name == "Spring Internship & Career Expo" ||
+                                ccEvents[i].name == "Resume Critique" ||
+                                ccEvents[i].name == "60 Seconds to Success" ||
+                                ccEvents[i].name == "Recent Graduate & Alumni Fair") {
+                                var card = {
+                                    "title": ccEvents[i].name,
+                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                    "image_url": ccEvents[i].imgUrl,
+                                    "buttons": [{
+                                        "type": "web_url",
+                                        "url": ccEvents[i].rsvpUrl,
+                                        "title": "Learn More"
+                                    }]
+                                }
+                                message.attachment.payload.elements.push(card);
+                                if (++count == 1) sendMessage(recipientId, {
+                                    text: "Here are some events to help you:"
+                                });
+                            }
+                        }
+                    }
+                    sendMessage(recipientId, message);
+                    return true;
+
+                    // events by month
+                } else if (text.indexOf("month") != -1 || text.indexOf("week") != -1) {
                     if (text.indexOf("next month") != -1) {
                         for (var i = 0; i < ccEvents.length; i++) {
                             if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
