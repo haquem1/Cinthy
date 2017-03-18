@@ -84,6 +84,10 @@ function richMessage(recipientId, text) {
     text = text.toLowerCase();
     values = text.split(' ');
 
+    // message for staff
+    for (var i = 0; i < keys.message.length; i++) {
+       if (values[0] == keys.message[i] != -1) return false;
+    }
     // // message for career center
     // if (values[0] == "message:") return false;
     //
