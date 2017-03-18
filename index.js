@@ -82,9 +82,9 @@ function richMessage(recipientId, text) {
     values = text.split(' ');
 
     // message for career center
-    if (text.indexOf("message") != -1 ||
-        text.indexOf("message:") != -1 ||
-        text.indexOf("msg") != -1) {
+    if (values.indexOf("message") == 0||
+        values.indexOf("message:") == 0 ||
+        values.indexOf("msg") == 0) {
         return false;
     }
 
@@ -586,6 +586,6 @@ function richMessage(recipientId, text) {
                 }
           }
         }
-        return false;
+        return true;
     }
 };
