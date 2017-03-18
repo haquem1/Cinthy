@@ -314,113 +314,113 @@ function richMessage(recipientId, text) {
 
             sendMessage(recipientId, message);
             return true;
-            if (text.indexOf("month") != -1 || text.indexOf("week") != -1) {
-                    if (text.indexOf("next month") != -1) {
-                        for (var i = 0; i < ccEvents.length; i++) {
-                            if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
-                                found = true;
-                                var card = {
-                                    "title": ccEvents[i].name,
-                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                    "image_url": ccEvents[i].imgUrl,
-                                    "buttons": [{
-                                        "type": "web_url",
-                                        "url": ccEvents[i].rsvpUrl,
-                                        "title": "Learn More"
-                                    }]
-                                }
-                                message.attachment.payload.elements.push(card);
-                                if (++count == 1) sendMessage(recipientId, {
-                                    text: "Here are next month's events:"
-                                });
-                            }
-                        }
-                        if (!found) sendMessage(recipientId, {
-                            text: "No events next month!"
-                        });
-                        else {
-                            sendMessage(recipientId, message);
-                        }
-
-                        return true;
-
-                    } else {
-                        for (var i = 0; i < ccEvents.length; i++) {
-                            if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth()) {
-                                found = true;
-                                var card = {
-                                    "title": ccEvents[i].name,
-                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                    "image_url": ccEvents[i].imgUrl,
-                                    "buttons": [{
-                                        "type": "web_url",
-                                        "url": ccEvents[i].rsvpUrl,
-                                        "title": "Learn More"
-                                    }]
-                                }
-                                message.attachment.payload.elements.push(card);
-                                if (++count == 1) sendMessage(recipientId, {
-                                    text: "Here are this month's events:"
-                                });
-                            }
-                        }
-                        if (!found) sendMessage(recipientId, {
-                            text: "No events this month!"
-                        });
-                        else {
-                            sendMessage(recipientId, message);
-                        }
-
-                        return true;
-                    }
-                } else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1) {
-                    sendMessage(recipientId, {
-                        text: "Check out our calendar:"
-                    });
-                    message = {
-                        "attachment": {
-                            "type": "template",
-                            "payload": {
-                                "template_type": "generic",
-                                "elements": [{
-                                    "title": "Career Center Events",
-                                    "subtitle": "",
-                                    "image_url": "https://cdn.pixabay.com/photo/2012/04/01/17/38/calendar-23684_1280.png",
-                                    "buttons": [{
-                                        "type": "web_url",
-                                        "url": "http://www.csun.edu/career/calendar/",
-                                        "title": "Go to calendar"
-                                    }]
-                                }]
-                            }
-                        }
-                    };
-                    sendMessage(recipientId, message);
-                    return true;
-
-                    //show next event by default
-                } else {
-                    for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].tid >= compare) {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                            sendMessage(recipientId, {
-                                text: "Here is our upcoming event:"
-                            });
-                            sendMessage(recipientId, message);
-                            return true;
-                        }
-                    }
-                }
+            // if (text.indexOf("month") != -1 || text.indexOf("week") != -1) {
+            //         if (text.indexOf("next month") != -1) {
+            //             for (var i = 0; i < ccEvents.length; i++) {
+            //                 if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
+            //                     found = true;
+            //                     var card = {
+            //                         "title": ccEvents[i].name,
+            //                         "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                         "image_url": ccEvents[i].imgUrl,
+            //                         "buttons": [{
+            //                             "type": "web_url",
+            //                             "url": ccEvents[i].rsvpUrl,
+            //                             "title": "Learn More"
+            //                         }]
+            //                     }
+            //                     message.attachment.payload.elements.push(card);
+            //                     if (++count == 1) sendMessage(recipientId, {
+            //                         text: "Here are next month's events:"
+            //                     });
+            //                 }
+            //             }
+            //             if (!found) sendMessage(recipientId, {
+            //                 text: "No events next month!"
+            //             });
+            //             else {
+            //                 sendMessage(recipientId, message);
+            //             }
+            //
+            //             return true;
+            //
+            //         } else {
+            //             for (var i = 0; i < ccEvents.length; i++) {
+            //                 if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth()) {
+            //                     found = true;
+            //                     var card = {
+            //                         "title": ccEvents[i].name,
+            //                         "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                         "image_url": ccEvents[i].imgUrl,
+            //                         "buttons": [{
+            //                             "type": "web_url",
+            //                             "url": ccEvents[i].rsvpUrl,
+            //                             "title": "Learn More"
+            //                         }]
+            //                     }
+            //                     message.attachment.payload.elements.push(card);
+            //                     if (++count == 1) sendMessage(recipientId, {
+            //                         text: "Here are this month's events:"
+            //                     });
+            //                 }
+            //             }
+            //             if (!found) sendMessage(recipientId, {
+            //                 text: "No events this month!"
+            //             });
+            //             else {
+            //                 sendMessage(recipientId, message);
+            //             }
+            //
+            //             return true;
+            //         }
+            //     } else if (text.indexOf("all") != -1 || text.indexOf("semester") != -1 || text.indexOf("year") != -1) {
+            //         sendMessage(recipientId, {
+            //             text: "Check out our calendar:"
+            //         });
+            //         message = {
+            //             "attachment": {
+            //                 "type": "template",
+            //                 "payload": {
+            //                     "template_type": "generic",
+            //                     "elements": [{
+            //                         "title": "Career Center Events",
+            //                         "subtitle": "",
+            //                         "image_url": "https://cdn.pixabay.com/photo/2012/04/01/17/38/calendar-23684_1280.png",
+            //                         "buttons": [{
+            //                             "type": "web_url",
+            //                             "url": "http://www.csun.edu/career/calendar/",
+            //                             "title": "Go to calendar"
+            //                         }]
+            //                     }]
+            //                 }
+            //             }
+            //         };
+            //         sendMessage(recipientId, message);
+            //         return true;
+            //
+            //         //show next event by default
+            //     } else {
+            //         for (var i = 0; i < ccEvents.length; i++) {
+            //             if (ccEvents[i].tid >= compare) {
+            //                 var card = {
+            //                     "title": ccEvents[i].name,
+            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                     "image_url": ccEvents[i].imgUrl,
+            //                     "buttons": [{
+            //                         "type": "web_url",
+            //                         "url": ccEvents[i].rsvpUrl,
+            //                         "title": "Learn More"
+            //                     }]
+            //                 }
+            //                 message.attachment.payload.elements.push(card);
+            //                 sendMessage(recipientId, {
+            //                     text: "Here is our upcoming event:"
+            //                 });
+            //                 sendMessage(recipientId, message);
+            //                 return true;
+            //             }
+            //         }
+            //     }
                 sendMessage(recipientId, message);
                 return true;
           }
