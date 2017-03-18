@@ -6,6 +6,7 @@
   "next_month": ["next month"],
   "this_month": ["month", "week"],
   "all_events": ["all", "semester", "year"],
+  "next_event": ["next event"],
   "on_campus_jobs": ["oncampus", "on-campus"],
   "international": ["international"],
   "tech_fest": ["techfest", "tech fest", "engineering", "technology", "engineer"],
