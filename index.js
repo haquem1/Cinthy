@@ -113,25 +113,7 @@ function richMessage(recipientId, text) {
           return true;
         }
     }
-    // if (text.indexOf("open") != -1 ||
-    //     text.indexOf("close") != -1 ||
-    //     text.indexOf("closed") != -1 ||
-    //     text.indexOf("hours") != -1) {
-    //     if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1))
-    //         message = "The Career Center is now open\n";
-    //     else
-    //         message = "The Career Center is now closed\n";
-    //
-    //     message = message +
-    //         "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
-    //
-    //     sendMessage(recipientId, {
-    //         text: message
-    //     });
-    //     return true;
-    // }
-    // events block
-  //  else {
+
         for (var i = 0; i < keys.general.length; i++) {
             if (text.indexOf(keys.general[i]) != -1) {
                 message = {
@@ -596,5 +578,4 @@ function richMessage(recipientId, text) {
           }
         }
         return true;
-  //  }
 };
