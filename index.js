@@ -71,7 +71,7 @@ function sendMessage(recipientId, message) {
 
 // send rich message for hours and events
 function richMessage(recipientId, text) {
-    return true;
+
     var date = new Date();
     var compare = date;
     var found = false;
@@ -439,7 +439,6 @@ function richMessage(recipientId, text) {
                 });
                 sendMessage(recipientId, message);
             }
-            return true;
         }
     }
     return true;
