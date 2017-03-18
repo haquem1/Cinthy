@@ -413,6 +413,7 @@ function richMessage(recipientId, text) {
                                 }]
                             }
                             message.attachment.payload.elements.push(card);
+                            break;
                         }
                     }
                     if (!found) sendMessage(recipientId, {
