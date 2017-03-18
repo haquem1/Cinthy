@@ -90,7 +90,7 @@ function richMessage(recipientId, text) {
        if (values[0] == keys.message[i]) return false;
     }
 
-    if (keys.message.indexOf(values[0])) return false;
+    if (keys.message.indexOf(values[0]) != -1) return false;
 
     // get started
     for (var i = 0; i < keys.help.length; i++) {
