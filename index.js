@@ -397,12 +397,9 @@ function richMessage(recipientId, text) {
                 }
             }
 
-            for (var i = 0; i < keys.next_event; i++) {
+            for (var i = 0; i < keys.next_event.length; i++) {
                 if (text.indexOf(keys.next_event[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                      sendMessage(recipientId, {
-                          text: "Check out our calendar:"
-                      });
                         if (ccEvents[i].tid >= compare) {
                             found = true;
                             var card = {
