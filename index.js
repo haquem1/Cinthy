@@ -85,7 +85,10 @@ function richMessage(recipientId, text) {
     values = text.split(' ');
 
     // message for staff
-    if (keys.message.indexOf(values[0]) != -1) return false;
+    
+    for (var i = 0; i < keys.message.length; i++) {
+       if (values[0] == keys.message[i]) return false;
+    }
 
     // get started
     for (var i = 0; i < keys.help.length; i++) {
