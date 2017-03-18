@@ -312,6 +312,9 @@ function richMessage(recipientId, text) {
                 }
             }
 
+            sendMessage(recipientId, message);
+            return true;
+
                 //TODO Add block for key career center events -- expand later to be all events
                 if (text.indexOf("critique") != -1 ||
                     text.indexOf("internship") != -1 ||
