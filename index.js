@@ -116,6 +116,9 @@ function richMessage(recipientId, text) {
 
     // events block
     for (var i = 0; i < keys.general.length; i++) {
+        sendMessage(recipientId, {
+            text: "This could be helpful"
+        });
         if (text.indexOf(keys.general[i]) != -1) {
             message = {
                 "attachment": {
@@ -131,6 +134,166 @@ function richMessage(recipientId, text) {
 
             for (var i = 0; i < keys.tech_fest.length; i++) {
                 if (text.indexOf(keys.tech_fest[i]) != -1) {
+                    for (var i = 0; i < ccEvents.length; i++) {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
+                        }
+                    }
+                }
+            }
+
+            for (var i = 0; i < keys.resu_makeover.length; i++) {
+                if (text.indexOf(keys.resu_makeover[i]) != -1) {
+                    for (var i = 0; i < ccEvents.length; i++) {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
+                        }
+                    }
+                }
+            }
+
+            for (var i = 0; i < keys.sixty_seconds_to_success.length; i++) {
+                if (text.indexOf(keys.sixty_seconds_to_success[i]) != -1) {
+                    for (var i = 0; i < ccEvents.length; i++) {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
+                        }
+                    }
+                }
+            }
+
+            for (var i = 0; i < keys.general_career_fair.length; i++) {
+                if (text.indexOf(keys.general_career_fair[i]) != -1) {
+                    for (var i = 0; i < ccEvents.length; i++) {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
+                        }
+                    }
+                }
+            }
+
+            for (var i = 0; i < keys.non_profit_gov_career_fair.length; i++) {
+                if (text.indexOf(keys.non_profit_gov_career_fair[i]) != -1) {
+                    for (var i = 0; i < ccEvents.length; i++) {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
+                        }
+                    }
+                }
+            }
+
+            for (var i = 0; i < keys.education_career_fair.length; i++) {
+                if (text.indexOf(keys.education_career_fair[i]) != -1) {
+                    for (var i = 0; i < ccEvents.length; i++) {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
+                        }
+                    }
+                }
+            }
+
+            for (var i = 0; i < keys.alumni_career_fair.length; i++) {
+                if (text.indexOf(keys.alumni_career_fair[i]) != -1) {
+                    for (var i = 0; i < ccEvents.length; i++) {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
+                        }
+                    }
+                }
+            }
+
+            for (var i = 0; i < keys.on_campus_jobs.length; i++) {
+                if (text.indexOf(keys.on_campus_jobs[i]) != -1) {
+                    for (var i = 0; i < ccEvents.length; i++) {
+                        if (ccEvents[i].name == "Spring Tech Fest") {
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
+                        }
+                    }
+                }
+            }
+
+            for (var i = 0; i < keys.international.length; i++) {
+                if (text.indexOf(keys.international[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
                         if (ccEvents[i].name == "Spring Tech Fest") {
                             var card = {
