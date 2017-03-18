@@ -314,7 +314,7 @@ function richMessage(recipientId, text) {
 
             sendMessage(recipientId, message);
             return true;
-            else if (text.indexOf("month") != -1 || text.indexOf("week") != -1) {
+            if (text.indexOf("month") != -1 || text.indexOf("week") != -1) {
                     if (text.indexOf("next month") != -1) {
                         for (var i = 0; i < ccEvents.length; i++) {
                             if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
