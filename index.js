@@ -101,16 +101,15 @@ function richMessage(recipientId, text) {
     }
 
     // hours block
-    // TODO add special hours/closures
     if (text.indexOf("open") != -1 ||
         text.indexOf("close") != -1 ||
         text.indexOf("closed") != -1 ||
         text.indexOf("hours") != -1) {
-        if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1)) {
+        if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1))
             message = "The Career Center is now open\n";
-        } else {
+        else
             message = "The Career Center is now closed\n";
-        }
+  
         message = message +
             "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
 
