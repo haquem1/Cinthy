@@ -1,4 +1,5 @@
 /* module to process user language and return rich message with event(s) */
+// TODO: state to process time based event and name based
 function template(text) {
     var found = false;
     // TODO create dictionary with [keywords, index of events array]

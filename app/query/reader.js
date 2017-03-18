@@ -1,3 +1,4 @@
+/* Module to fill in card programmatically*/
 module.exports = function(ccEvents) {
     var card = {
         "title": ccEvents.name,
