@@ -433,14 +433,14 @@ function richMessage(recipientId, text) {
                 }
             }
 
+            if (message.attachment.payload.elements.length > 0) {
+                sendMessage(recipientId, {
+                    text: "This could be helpful"
+                });
+                sendMessage(recipientId, message);
+            }
+            return true;
         }
-    }
-
-    if (message.attachment.payload.elements.length > 0) {
-        sendMessage(recipientId, {
-            text: "This could be helpful"
-        });
-        sendMessage(recipientId, message);
     }
     return true;
 };
