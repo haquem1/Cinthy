@@ -385,7 +385,7 @@ function richMessage(recipientId, text) {
                                 "elements": [{
                                     "title": "Career Center Events",
                                     "subtitle": "",
-                                    "image_url": "https://cdn.pixabay.com/photo/2012/04/01/17/38/calendar-23684_1280.png",
+                                    "image_url": "http://www.csun.edu/sites/default/files/styles/slideshow_full/public/field_image/field_slideshow_slides/Calendar_0.jpg?itok=onQCLNsE",
                                     "buttons": [{
                                         "type": "web_url",
                                         "url": "http://www.csun.edu/career/calendar/",
