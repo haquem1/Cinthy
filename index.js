@@ -6,6 +6,7 @@ var app = express();
 var ccEvents = require('./models/events');
 var hours = require('./models/hours');
 var keys = require('./models/keys.json');
+var query = require('./app/query');
 
 app.use(bodyParser.urlencoded({
     extended: false
@@ -96,22 +97,26 @@ function richMessage(recipientId, text) {
     }
 
     // hours block
-    for (var i = 0; i < keys.hours.length; i++) {
-        if (text.indexOf(keys.hours[i]) != -1) {
-            if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1))
-                message = "The Career Center is now open\n";
-            else
-                message = "The Career Center is now closed\n";
-
-            message = message +
-                "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
-
-            sendMessage(recipientId, {
-                text: message
-            });
-            return true;
-        }
-    }
+    // for (var i = 0; i < keys.hours.length; i++) {
+    //     if (text.indexOf(keys.hours[i]) != -1) {
+    //         if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1))
+    //             message = "The Career Center is now open\n";
+    //         else
+    //             message = "The Career Center is now closed\n";
+    //
+    //         message = message +
+    //             "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
+    //
+    //         sendMessage(recipientId, {
+    //             text: message
+    //         });
+    //         return true;
+    //     }
+    // }
+    sendMessage(recipientId, {
+        text: query()
+    });
+    return true;
 
     // events block
     for (var i = 0; i < keys.general.length; i++) {

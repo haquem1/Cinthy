@@ -1,43 +1,36 @@
 /* module to process user language and return rich message with event(s) */
 // TODO: state to process time based event and name based
-function template(text) {
-    var found = false;
-    // TODO create dictionary with [keywords, index of events array]
-    var dict = {};
-    // TODO create element array template for catalogue look in message template
-    var events = [];
-    // TODO create items array for catalogue look
-    var items = [];
-    // iterate through dictionary
-    for (var key in dict) {
-        // if key is substring of text
-        if (text.indexOf(key) != -1) {
-            var index = dict[key];
-            var item = {
-              "title": events[index].name,
-              "subtitle": events[index].date + "\n" + events[index].time + "\n" + events[index].location + "\n",
-              "image_url": events[index].imgUrl,
-              "buttons": [{
-                  "type": "web_url",
-                  "url": events[index].rsvpUrl,
-                  "title": "Learn More"
-              }]
-            }
-            found = true;
-            items.push(item);
-        }
+var events = require('./models/events.js');
+var hours = require('./models/hours.js');
+var keys = require('./models/keys.json');
+
+module.exports = function (){
+  for (var i = 0; i < keys.hours.length; i++) {
+      if (text.indexOf(keys.hours[i]) != -1) {
+          if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1))
+              this.message = "The Career Center is now open\n";
+          else
+              this.message = "The Career Center is now closed\n";
+
+          this.message = this.message +
+              "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
+
+          var card = fill();
+          return this.message;
+      }
+  }
+}
+
+function fill() {
+    var card = {
+        "title": events.name,
+        "subtitle": events.date + "\n" + events.time + "\n" + events.location + "\n",
+        "image_url": events.imgUrl,
+        "buttons": [{
+            "type": "web_url",
+            "url": events.rsvpUrl,
+            "title": "Learn More"
+        }]
     }
-    if (!found) items.push({"title" : "not found"});
-
-    message = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": items
-            }
-          }
-    };
-
-    return message;
-};
+    return card;
+}
