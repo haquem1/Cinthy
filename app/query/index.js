@@ -4,19 +4,20 @@ var events = require('./models/events.js');
 var hours = require('./models/hours.js');
 var keys = require('./models/keys.json');
 
-module.exports = function (){
+var message = function (){
+  var result;
   for (var i = 0; i < keys.hours.length; i++) {
       if (text.indexOf(keys.hours[i]) != -1) {
           if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1))
-              this.message = "The Career Center is now open\n";
+              result = "The Career Center is now open\n";
           else
-              this.message = "The Career Center is now closed\n";
+              result = "The Career Center is now closed\n";
 
           this.message = this.message +
               "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
 
           var card = fill();
-          return this.message;
+          return result;
       }
   }
 }
@@ -33,4 +34,8 @@ function fill() {
         }]
     }
     return card;
+}
+
+module.exports = function{
+    message: message;
 }
