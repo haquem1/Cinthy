@@ -11,7 +11,7 @@ var events = [{
     "date": "Tuesday, February 14",
     "time": "11:00am - 3:00pm",
     "location": "USU, Grand Salon",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/generic.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/testingoncampusjob.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list", // not direct link
     "tid": new Date("February 14, 2017")
 }, {
@@ -19,7 +19,7 @@ var events = [{
     "date": "Thursday, February 16",
     "time": "11:00am - 3:00pm",
     "location": "USU, Grand Salon",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/HOW_TO_FIND_A_JOB_ON_CAMPUS.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/testingoncampusjob.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list", // not direct link
     "tid": new Date("February 16, 2017")
 }, {
