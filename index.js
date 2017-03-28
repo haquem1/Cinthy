@@ -268,26 +268,26 @@ function richMessage(recipientId, text) {
                 }
             }
 
-            for (var i = 0; i < keys.on_campus_jobs.length; i++) {
-                if (text.indexOf(keys.on_campus_jobs[i]) != -1) {
-                    for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
-                            ccEvents[i].name == "How To Find a Job on Campus Job Fair") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
+            // for (var i = 0; i < keys.on_campus_jobs.length; i++) {
+            //     if (text.indexOf(keys.on_campus_jobs[i]) != -1) {
+            //         for (var i = 0; i < ccEvents.length; i++) {
+            //             if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
+            //                 ccEvents[i].name == "How To Find a Job on Campus Job Fair") {
+            //                 var card = {
+            //                     "title": ccEvents[i].name,
+            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                     "image_url": ccEvents[i].imgUrl,
+            //                     "buttons": [{
+            //                         "type": "web_url",
+            //                         "url": ccEvents[i].rsvpUrl,
+            //                         "title": "Learn More"
+            //                     }]
+            //                 }
+            //                 message.attachment.payload.elements.push(card);
+            //             }
+            //         }
+            //     }
+            // }
 
             for (var i = 0; i < keys.international.length; i++) {
                 if (text.indexOf(keys.international[i]) != -1) {
