@@ -438,6 +438,7 @@ function richMessage(recipientId, text) {
                 });
                 sendMessage(recipientId, message);
             }
+            return true;
         }
     }
     return true;
