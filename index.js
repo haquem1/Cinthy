@@ -88,7 +88,7 @@ function richMessage(recipientId, text) {
 
     // get started
     if (keys.help.indexOf(values[0]) != -1) {
-      message = {
+      message2 = {
           "attachment":{
             "type":"image",
             "payload":{
@@ -96,9 +96,8 @@ function richMessage(recipientId, text) {
             }
           }
         }
-        sendMessage(recipientId, message);
         message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
-        sendMessage(recipientId, {
+        sendMessage(recipientId, message2).sendMessage(recipientId, {
             text: message
         });
         return true;
