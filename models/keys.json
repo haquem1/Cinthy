@@ -15,5 +15,7 @@
   "general_career_fair": ["internship", "career", "fair", "grad", "graduate", "alum", "alumni", "network", "networking", "prep", "preparation"],
   "non_profit_gov_career_fair": ["non-profit", "nonprofit", "government", "gov"],
   "education_career_fair": ["education", "teacher", "teaching", "teach"],
-  "alumni_career_fair": ["grad", "graduate", "alum", "alumni", "network", "networking"]
+  "alumni_career_fair": ["grad", "graduate", "alum", "alumni", "network", "networking"],
+  "sunlink": ["sunlink", "password"],
+  "location": ["located", "location"]
 }

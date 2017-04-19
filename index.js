@@ -98,14 +98,33 @@ function richMessage(recipientId, text) {
           }
         }
         if (sendMessage(recipientId, message)){
-        message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!"
+        message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!\n\n\nVisit us at http://csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall"
         sendMessage(recipientId, {
             text: message
         });
       }
         return true;
     }
-
+    // sunlink block
+    for (var i = 0; i < keys.sunlink.length; i++) {
+        if (text.indexOf(keys.sunlink[i]) != -1) {
+                message = "If you are a current student, your Sunlink password is #CareerCenter for your first log in\n\nPlease contact the Career Center if you are not a current student or the password is not working.\n\nVisit us at http://csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall";
+            sendMessage(recipientId, {
+                text: message
+            });
+            return true;
+        }
+    }
+    // location block
+    for (var i = 0; i < keys.location.length; i++) {
+        if (text.indexOf(keys.location[i]) != -1) {
+                message = "The Career Center is located on the 4th floor of Bayramian Hall\n";
+            sendMessage(recipientId, {
+                text: message
+            });
+            return true;
+        }
+    }
     // hours block
     for (var i = 0; i < keys.hours.length; i++) {
         if (text.indexOf(keys.hours[i]) != -1) {
