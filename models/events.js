@@ -67,7 +67,7 @@ var events = [{
     "date": "Wednesday, February 28",
     "time": "10:30am - 2:30pm",
     "location": "USU, Northridge Center",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/RESUME_CRITIQUE.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/60_SECONDS.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list", // not direct link
     "tid": new Date("February 28, 2017")
 }, {
@@ -91,7 +91,7 @@ var events = [{
     "date": "Tuesday, March 7",
     "time": "10:30am - 1:30pm",
     "location": "USU, Thousand Oaks Room",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/60_SECONDS.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/60_SECONDS.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list", // not direct link
     "tid": new Date("March 7, 2017")
 }, {
