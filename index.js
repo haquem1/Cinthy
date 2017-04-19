@@ -108,7 +108,7 @@ function richMessage(recipientId, text) {
     // sunlink block
     for (var i = 0; i < keys.sunlink.length; i++) {
         if (text.indexOf(keys.sunlink[i]) != -1) {
-                message = "If you are a current student, your Sunlink password is #CareerCenter for your first log in\n\nPlease contact the Career Center if you are not a current student or the password is not working.\n\nVisit us at http://csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall";
+                message = "If you are a current student, your Sunlink password is #CareerCenter for your first log in.\n\nPlease contact the Career Center if you are not a current student or the password is not working.\n\nVisit us at http://csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall";
             sendMessage(recipientId, {
                 text: message
             });
