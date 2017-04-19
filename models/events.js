@@ -51,7 +51,7 @@ var events = [{
     "date": "Wednesday, February 21",
     "time": "10:00am - 3:00pm",
     "location": "USU, Northridge Center",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/SPRING_TECH_FEST.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/elephant.gif",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/7b59e7d91ffe666a399650f3678892a7/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
     "tid": new Date("February 21, 2017")
 }, {
