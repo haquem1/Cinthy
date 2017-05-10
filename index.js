@@ -93,8 +93,9 @@ function richMessage(recipientId, text) {
         sendMessage(recipientId, {
             text: message
         });
-      }
         return true;
+      }
+
     // sunlink block
     for (var i = 0; i < keys.sunlink.length; i++) {
         if (text.indexOf(keys.sunlink[i]) != -1) {
