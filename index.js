@@ -89,22 +89,12 @@ function richMessage(recipientId, text) {
 
     // get started
     if (keys.help.indexOf(values[0]) != -1) {
-      message = {
-          "attachment":{
-            "type":"image",
-            "payload":{
-              "url":"http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/elephant.gif"
-            }
-          }
-        }
-        if (sendMessage(recipientId, message)){
         message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!\n\n\nVisit us at http://www.csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall"
         sendMessage(recipientId, {
             text: message
         });
       }
         return true;
-    }
     // sunlink block
     for (var i = 0; i < keys.sunlink.length; i++) {
         if (text.indexOf(keys.sunlink[i]) != -1) {
