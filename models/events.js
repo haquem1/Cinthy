@@ -47,13 +47,13 @@ var events = [{
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?mode=form&id=a4f4fff4066f2e6aebcf80cb54656e89&s=event&ss=ws",
     "tid": new Date("February 15, 2017")
 }, {
-    "name": "Spring Tech Fest",
-    "date": "Wednesday, February 21",
+    "name": "Fall Tech Fest",
+    "date": "Tuesday, September 19",
     "time": "10:00am - 3:00pm",
     "location": "USU, Northridge Center",
     "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/7b59e7d91ffe666a399650f3678892a7/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
-    "tid": new Date("February 21, 2017")
+    "tid": new Date("September 19, 2017")
 }, {
     "name": "NAVAIR Information Session",
     "date": "Wednesday, February 21",
@@ -95,13 +95,13 @@ var events = [{
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list", // not direct link
     "tid": new Date("March 7, 2017")
 }, {
-    "name": "Spring Internship & Career Expo",
-    "date": "Wednesday, March 15",
+    "name": "Fall Internship & Career Expo",
+    "date": "Tuesday, October 24",
     "time": "10:00am - 1:00pm",
     "location": "USU, Northridge Center & Grand Salon",
     "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/6b9940eb0974e6aae863515db76b3e38/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
-    "tid": new Date("March 15, 2017")
+    "tid": new Date("October 24, 2017")
 }, {
     "name": "Non-Profit & Government Career Fair",
     "date": "Wednesday, March 29",
@@ -134,6 +134,14 @@ var events = [{
     "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list",
     "tid": new Date("April 25, 2017")
+}, {
+    "name": "Graduate School Info Day",
+    "date": "Thursday, November 9",
+    "time": "11:00am - 2:00pm",
+    "location": "USU, Northridge Center",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
+    "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/59b8238207ea66cf14695afbaa272498/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
+    "tid": new Date("November 9, 2017")
 }, {
     "name": "Recent Graduate & Alumni Fair",
     "date": "Wednesday, May 23",
