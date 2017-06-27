@@ -1,8 +1,8 @@
-var ccEvents = require('./models/events');
-var hours = require('./models/hours');
-var keys = require('./models/keys.json');
+var ccEvents = require('../models/events');
+var hours = require('../models/hours');
+var keys = require('../models/keys.json');
 
-var sendMessage = require('./config/facebook');
+var sendMessage = require('../config/facebook');
 
 const routes = require('express').Router();
 
