@@ -4,12 +4,12 @@ var keys = require('../../models/keys.json');
 var sendMessage = require('../../config/facebook');
 
 // send rich message for hours and events
-function richMessage(recipientId, text) {
+richMessage = function (recipientId, text) {
 
     var date = new Date();
     var compare = date;
     var found = false;
-    i = 0;
+    var i = 0;
 
     compare.setHours(0, 0, 0, 0);
 
@@ -418,3 +418,5 @@ function richMessage(recipientId, text) {
     }
     return true;
 }
+
+module.exports = richMessage;
