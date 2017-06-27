@@ -16,6 +16,7 @@
   "non_profit_gov_career_fair": ["non-profit", "nonprofit", "government", "gov"],
   "education_career_fair": ["education", "teacher", "teaching", "teach"],
   "alumni_career_fair": ["grad", "graduate", "alum", "alumni", "network", "networking"],
+  "grad_school": ["grad school", "graduate school", "masters", "phd", "doctorate"],
   "sunlink": ["sunlink", "password"],
   "location": ["located", "location"]
 }

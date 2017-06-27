@@ -289,6 +289,26 @@ function richMessage(recipientId, text) {
                 }
             }
 
+            for (i = 0; i < keys.grad_school.length; i++) {
+                if (text.indexOf(keys.grad_school[i]) != -1) {
+                    for (i = 0; i < ccEvents.length; i++) {
+                        if (ccEvents[i].name == "Graduate School Info Day") {
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            }
+                            message.attachment.payload.elements.push(card);
+                        }
+                    }
+                }
+            }
+
             for (i = 0; i < keys.on_campus_jobs.length; i++) {
                 if (text.indexOf(keys.on_campus_jobs[i]) != -1) {
                     for (i = 0; i < ccEvents.length; i++) {
