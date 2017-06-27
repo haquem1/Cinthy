@@ -1,6 +1,6 @@
-var ccEvents = require('../models/events');
-var hours = require('../models/hours');
-var keys = require('../models/keys.json');
+var ccEvents = require('../../models/events');
+var hours = require('../../models/hours');
+var keys = require('../../models/keys.json');
 
 // send rich message for hours and events
 function richMessage(recipientId, text) {
