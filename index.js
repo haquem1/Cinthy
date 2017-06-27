@@ -7,7 +7,7 @@ var ccEvents = require('./models/events');
 var hours = require('./models/hours');
 var keys = require('./models/keys.json');
 
-var sendMessage = require('./config/sendMessage.js');
+var sendMessage = require('./config/sendMessage');
 
 app.use(bodyParser.urlencoded({
     extended: false
