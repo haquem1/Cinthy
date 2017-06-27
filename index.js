@@ -152,7 +152,7 @@ function richMessage(recipientId, text) {
             for (var i = 0; i < keys.tech_fest.length; i++) {
                 if (text.indexOf(keys.tech_fest[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Spring Tech Fest") {
+                        if (ccEvents[i].name == "Fall Tech Fest") {
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
@@ -212,7 +212,7 @@ function richMessage(recipientId, text) {
             for (var i = 0; i < keys.general_career_fair.length; i++) {
                 if (text.indexOf(keys.general_career_fair[i]) != -1) {
                     for (var i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Spring Internship & Career Expo") {
+                        if (ccEvents[i].name == "Fall Internship & Career Expo") {
                             var card = {
                                 "title": ccEvents[i].name,
                                 "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
