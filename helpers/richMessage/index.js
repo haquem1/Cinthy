@@ -1,6 +1,7 @@
 var ccEvents = require('../../models/events');
 var hours = require('../../models/hours');
 var keys = require('../../models/keys.json');
+var sendMessage = require('../../config/facebook');
 
 // send rich message for hours and events
 function richMessage(recipientId, text) {
