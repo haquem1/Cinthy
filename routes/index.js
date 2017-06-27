@@ -4,7 +4,7 @@ var keys = require('./models/keys.json');
 
 var sendMessage = require('./config/facebook');
 
-const routes = require('express')();
+const routes = require('express').Router();
 
 // Server frontpage
 routes.get('/', function(req, res) {
@@ -453,3 +453,5 @@ function richMessage(recipientId, text) {
     }
     return true;
 }
+
+module.exports = routes;
