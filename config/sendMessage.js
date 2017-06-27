@@ -1,4 +1,4 @@
-module.exports = function (recipientId, message) {
+sendMessage = function (recipientId, message) {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {
@@ -19,3 +19,5 @@ module.exports = function (recipientId, message) {
         }
     });
 };
+
+module.exports = sendMessage;

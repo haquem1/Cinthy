@@ -7,6 +7,8 @@ var ccEvents = require('./models/events');
 var hours = require('./models/hours');
 var keys = require('./models/keys.json');
 
+var sendMessage = require('./config/sendMessage.js');
+
 app.use(bodyParser.urlencoded({
     extended: false
 }));
@@ -45,29 +47,29 @@ app.post('/webhook', function(req, res) {
     res.sendStatus(200);
 });
 
-// generic function sending messages --TODO move to config file
-function sendMessage(recipientId, message) {
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {
-            access_token: process.env.PAGE_ACCESS_TOKEN
-        },
-        method: 'POST',
-        json: {
-            recipient: {
-                id: recipientId
-            },
-            message: message,
-        }
-    }, function(error, response, body) {
-        if (error) {
-            console.log('Error sending message: ', error);
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error);
-        }
-    });
-    return true;
-};
+// // generic function sending messages
+// function sendMessage(recipientId, message) {
+//     request({
+//         url: 'https://graph.facebook.com/v2.6/me/messages',
+//         qs: {
+//             access_token: process.env.PAGE_ACCESS_TOKEN
+//         },
+//         method: 'POST',
+//         json: {
+//             recipient: {
+//                 id: recipientId
+//             },
+//             message: message,
+//         }
+//     }, function(error, response, body) {
+//         if (error) {
+//             console.log('Error sending message: ', error);
+//         } else if (response.body.error) {
+//             console.log('Error: ', response.body.error);
+//         }
+//     });
+//     return true;
+// }
 
 // send rich message for hours and events
 function richMessage(recipientId, text) {
