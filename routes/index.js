@@ -4,7 +4,7 @@ var keys = require('./models/keys.json');
 
 var sendMessage = require('./config/facebook');
 
-const routes = require('express').Router();
+const routes = require('express')();
 
 // Server frontpage
 routes.get('/', function(req, res) {
