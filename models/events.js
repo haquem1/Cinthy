@@ -52,7 +52,7 @@ var events = [{
     "time": "10:00am - 3:00pm",
     "location": "USU, Northridge Center",
     "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
-    "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/7b59e7d91ffe666a399650f3678892a7/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
+    "rsvpUrl": "https://csun-csm.symplicity.com/events/tech17",
     "tid": new Date("September 19, 2017")
 }, {
     "name": "NAVAIR Information Session",
@@ -100,7 +100,7 @@ var events = [{
     "time": "10:00am - 1:00pm",
     "location": "USU, Northridge Center & Grand Salon",
     "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
-    "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/6b9940eb0974e6aae863515db76b3e38/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
+    "rsvpUrl": "https://csun-csm.symplicity.com/events/fall17",
     "tid": new Date("October 24, 2017")
 }, {
     "name": "Non-Profit & Government Career Fair",
@@ -140,7 +140,7 @@ var events = [{
     "time": "11:00am - 2:00pm",
     "location": "USU, Northridge Center",
     "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
-    "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/59b8238207ea66cf14695afbaa272498/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
+    "rsvpUrl": "https://csun-csm.symplicity.com/events/grad17",
     "tid": new Date("November 9, 2017")
 }, {
     "name": "Recent Graduate & Alumni Fair",
