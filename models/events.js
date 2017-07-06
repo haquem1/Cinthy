@@ -52,7 +52,7 @@ var events = [{
     "time": "10:00am - 3:00pm",
     "location": "USU, Northridge Center",
     "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
-    "rsvpUrl": "https://csun-csm.symplicity.com/events/tech17",
+    "rsvpUrl": "https://csun-csm.symplicity.com/events/ftech17",
     "tid": new Date("September 19, 2017")
 }, {
     "name": "NAVAIR Information Session",
@@ -140,7 +140,7 @@ var events = [{
     "time": "11:00am - 2:00pm",
     "location": "USU, Northridge Center",
     "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
-    "rsvpUrl": "https://csun-csm.symplicity.com/events/grad17",
+    "rsvpUrl": "https://csun-csm.symplicity.com/events/Grad17",
     "tid": new Date("November 9, 2017")
 }, {
     "name": "Recent Graduate & Alumni Fair",
