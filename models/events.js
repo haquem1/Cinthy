@@ -51,7 +51,7 @@ var events = [{
     "date": "Tuesday, September 19",
     "time": "10:00am - 3:00pm",
     "location": "USU, Northridge Center",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/fb_thumbnail_techfest.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/events/ftech17",
     "tid": new Date("September 19, 2017")
 }, {
@@ -75,7 +75,7 @@ var events = [{
     "date": "Wednesday, March 1",
     "time": "4:00pm - 5:30pm",
     "location": "USU, Flintride Room",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/fb_thumbnail.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list", // not direct link
     "tid": new Date("March 1, 2017")
 }, {
@@ -139,7 +139,7 @@ var events = [{
     "date": "Thursday, November 9",
     "time": "11:00am - 2:00pm",
     "location": "USU, Northridge Center",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/gradflyerFacebook.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/events/Grad17",
     "tid": new Date("November 9, 2017")
 }, {
