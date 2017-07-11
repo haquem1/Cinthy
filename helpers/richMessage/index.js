@@ -86,46 +86,46 @@ richMessage = function (recipientId, text) {
             // signature events
 
 
-            // for (i = 0; i < keys.tech_fest.length; i++) {
-            //     if (text.indexOf(keys.tech_fest[i]) != -1) {
-            //         for (i = 0; i < ccEvents.length; i++) {
-            //             if (ccEvents[i].name == "Fall Tech Fest") {
-            //                 var card = {
-            //                     "title": ccEvents[i].name,
-            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-            //                     "image_url": ccEvents[i].imgUrl,
-            //                     "buttons": [{
-            //                         "type": "web_url",
-            //                         "url": ccEvents[i].rsvpUrl,
-            //                         "title": "Learn More"
-            //                     }]
-            //                 };
-            //                 message.attachment.payload.elements.push(card);
-            //             }
-            //         }
-            //     }
-            // }
             for (i = 0; i < keys.tech_fest.length; i++) {
-                if (text.indexOf(keys.tech_fest.keys[i]) != -1) {
+                if (text.indexOf(keys.tech_fest[i]) != -1) {
                     for (i = 0; i < ccEvents.length; i++) {
-                        for (var j = 0; j < keys.tech_fest.name.length; i++) {
-                            if (ccEvents[i].name == keys.tech_fest.name[j]) {
-                                var card = {
-                                    "title": ccEvents[i].name,
-                                    "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                    "image_url": ccEvents[i].imgUrl,
-                                    "buttons": [{
-                                        "type": "web_url",
-                                        "url": ccEvents[i].rsvpUrl,
-                                        "title": "Learn More"
-                                    }]
-                                };
-                                message.attachment.payload.elements.push(card);
-                            }
+                        if (ccEvents[i].name == "Fall Tech Fest") {
+                            var card = {
+                                "title": ccEvents[i].name,
+                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                                "image_url": ccEvents[i].imgUrl,
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": ccEvents[i].rsvpUrl,
+                                    "title": "Learn More"
+                                }]
+                            };
+                            message.attachment.payload.elements.push(card);
                         }
                     }
                 }
             }
+            // for (i = 0; i < keys.tech_fest.length; i++) {
+            //     if (text.indexOf(keys.tech_fest.keys[i]) != -1) {
+            //         for (i = 0; i < ccEvents.length; i++) {
+            //             for (var j = 0; j < keys.tech_fest.name.length; i++) {
+            //                 if (ccEvents[i].name == keys.tech_fest.name[j]) {
+            //                     var card = {
+            //                         "title": ccEvents[i].name,
+            //                         "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                         "image_url": ccEvents[i].imgUrl,
+            //                         "buttons": [{
+            //                             "type": "web_url",
+            //                             "url": ccEvents[i].rsvpUrl,
+            //                             "title": "Learn More"
+            //                         }]
+            //                     };
+            //                     message.attachment.payload.elements.push(card);
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
 
             for (i = 0; i < keys.resu_makeover.length; i++) {
                 if (text.indexOf(keys.resu_makeover[i]) != -1) {
