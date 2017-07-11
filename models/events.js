@@ -99,7 +99,7 @@ var events = [{
     "date": "Tuesday, October 24",
     "time": "10:00am - 1:00pm",
     "location": "USU, Northridge Center & Grand Salon",
-    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/CC_logo.png",
+    "imgUrl": "http://www.csun.edu/career/plan_your_future/images/chatbot/new_fone/fb_thumbnail.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/events/fall17",
     "tid": new Date("October 24, 2017")
 }, {
