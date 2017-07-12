@@ -3,6 +3,30 @@ var hours = require('../../models/hours');
 var keys = require('../../models/keys.json');
 var sendMessage = require('../../config/facebook');
 
+// generic event template
+genericEvent = function (key, name) {
+    for (i = 0; i < keys[key].length; i++) {
+        if (text.indexOf(keys[key][i]) != -1) {
+            for (i = 0; i < ccEvents.length; i++) {
+                if (ccEvents[i].name == name) {
+                    var card = {
+                        "title": ccEvents[i].name,
+                        "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+                        "image_url": ccEvents[i].imgUrl,
+                        "buttons": [{
+                            "type": "web_url",
+                            "url": ccEvents[i].rsvpUrl,
+                            "title": "Learn More"
+                        }]
+                    };
+                    message.attachment.payload.elements.push(card);
+                }
+            }
+        }
+    }
+    return card;
+}
+
 // send rich message for hours and events
 richMessage = function (recipientId, text) {
 
@@ -83,207 +107,218 @@ richMessage = function (recipientId, text) {
 
             var count = 0; //for initial greeting
 
-            for (i = 0; i < keys.tech_fest.length; i++) {
-                if (text.indexOf(keys.tech_fest[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Fall Tech Fest") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            };
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
+            message.attachment.payload.elements.push(genericEvent("tech_fest", "Fall Tech Fest"));
+            message.attachment.payload.elements.push(genericEvent("resu_makeover", "Resu-Makeover"));
+            message.attachment.payload.elements.push(genericEvent("sixty_seconds_to_success", "60 Seconds to Success"));
+            message.attachment.payload.elements.push(genericEvent("general_career_fair", "Fall Internship & Career Expo"));
+            message.attachment.payload.elements.push(genericEvent("education_career_fair", "Education Expo"));
+            message.attachment.payload.elements.push(genericEvent("alumni_career_fair", "Recent Graduate & Alumni Fair"));
+            message.attachment.payload.elements.push(genericEvent("grad_school", "Graduate School Info Day"));
+            message.attachment.payload.elements.push(genericEvent("on_campus_job", "How To Find a Job on Campus Workshop"));
+            message.attachment.payload.elements.push(genericEvent("on_campus_job", "How To Find a Job on Campus Job Fair"));
+            message.attachment.payload.elements.push(genericEvent("international", "Job Search Tips for International Students Workshop"));
+            message.attachment.payload.elements.push(genericEvent("international", "Job Search Tips for International Students Panel"));
+            // for (i = 0; i < keys.tech_fest.length; i++) {
+            //     if (text.indexOf(keys.tech_fest[i]) != -1) {
+            //         for (i = 0; i < ccEvents.length; i++) {
+            //             if (ccEvents[i].name == "Fall Tech Fest") {
+            //                 var card = {
+            //                     "title": ccEvents[i].name,
+            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                     "image_url": ccEvents[i].imgUrl,
+            //                     "buttons": [{
+            //                         "type": "web_url",
+            //                         "url": ccEvents[i].rsvpUrl,
+            //                         "title": "Learn More"
+            //                     }]
+            //                 };
+            //                 message.attachment.payload.elements.push(card);
+            //             }
+            //         }
+            //     }
+            // }
 
-            for (i = 0; i < keys.resu_makeover.length; i++) {
-                if (text.indexOf(keys.resu_makeover[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Resu-Makeover") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
+            // for (i = 0; i < keys.resu_makeover.length; i++) {
+            //     if (text.indexOf(keys.resu_makeover[i]) != -1) {
+            //         for (i = 0; i < ccEvents.length; i++) {
+            //             if (ccEvents[i].name == "Resu-Makeover") {
+            //                 var card = {
+            //                     "title": ccEvents[i].name,
+            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                     "image_url": ccEvents[i].imgUrl,
+            //                     "buttons": [{
+            //                         "type": "web_url",
+            //                         "url": ccEvents[i].rsvpUrl,
+            //                         "title": "Learn More"
+            //                     }]
+            //                 }
+            //                 message.attachment.payload.elements.push(card);
+            //             }
+            //         }
+            //     }
+            // }
 
-            for (i = 0; i < keys.sixty_seconds_to_success.length; i++) {
-                if (text.indexOf(keys.sixty_seconds_to_success[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "60 Seconds to Success") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
+            // for (i = 0; i < keys.sixty_seconds_to_success.length; i++) {
+            //     if (text.indexOf(keys.sixty_seconds_to_success[i]) != -1) {
+            //         for (i = 0; i < ccEvents.length; i++) {
+            //             if (ccEvents[i].name == "60 Seconds to Success") {
+            //                 var card = {
+            //                     "title": ccEvents[i].name,
+            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                     "image_url": ccEvents[i].imgUrl,
+            //                     "buttons": [{
+            //                         "type": "web_url",
+            //                         "url": ccEvents[i].rsvpUrl,
+            //                         "title": "Learn More"
+            //                     }]
+            //                 }
+            //                 message.attachment.payload.elements.push(card);
+            //             }
+            //         }
+            //     }
+            // }
 
-            for (i = 0; i < keys.general_career_fair.length; i++) {
-                if (text.indexOf(keys.general_career_fair[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Fall Internship & Career Expo") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
+            // for (i = 0; i < keys.general_career_fair.length; i++) {
+            //     if (text.indexOf(keys.general_career_fair[i]) != -1) {
+            //         for (i = 0; i < ccEvents.length; i++) {
+            //             if (ccEvents[i].name == "Fall Internship & Career Expo") {
+            //                 var card = {
+            //                     "title": ccEvents[i].name,
+            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                     "image_url": ccEvents[i].imgUrl,
+            //                     "buttons": [{
+            //                         "type": "web_url",
+            //                         "url": ccEvents[i].rsvpUrl,
+            //                         "title": "Learn More"
+            //                     }]
+            //                 }
+            //                 message.attachment.payload.elements.push(card);
+            //             }
+            //         }
+            //     }
+            // }
 
-            for (i = 0; i < keys.non_profit_gov_career_fair.length; i++) {
-                if (text.indexOf(keys.non_profit_gov_career_fair[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Non-Profit & Government Career Fair") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
+            // for (i = 0; i < keys.non_profit_gov_career_fair.length; i++) {
+            //     if (text.indexOf(keys.non_profit_gov_career_fair[i]) != -1) {
+            //         for (i = 0; i < ccEvents.length; i++) {
+            //             if (ccEvents[i].name == "Non-Profit & Government Career Fair") {
+            //                 var card = {
+            //                     "title": ccEvents[i].name,
+            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                     "image_url": ccEvents[i].imgUrl,
+            //                     "buttons": [{
+            //                         "type": "web_url",
+            //                         "url": ccEvents[i].rsvpUrl,
+            //                         "title": "Learn More"
+            //                     }]
+            //                 }
+            //                 message.attachment.payload.elements.push(card);
+            //             }
+            //         }
+            //     }
+            // }
 
-            for (i = 0; i < keys.education_career_fair.length; i++) {
-                if (text.indexOf(keys.education_career_fair[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Education Expo") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
+            // for (i = 0; i < keys.education_career_fair.length; i++) {
+            //     if (text.indexOf(keys.education_career_fair[i]) != -1) {
+            //         for (i = 0; i < ccEvents.length; i++) {
+            //             if (ccEvents[i].name == "Education Expo") {
+            //                 var card = {
+            //                     "title": ccEvents[i].name,
+            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                     "image_url": ccEvents[i].imgUrl,
+            //                     "buttons": [{
+            //                         "type": "web_url",
+            //                         "url": ccEvents[i].rsvpUrl,
+            //                         "title": "Learn More"
+            //                     }]
+            //                 }
+            //                 message.attachment.payload.elements.push(card);
+            //             }
+            //         }
+            //     }
+            // }
 
-            for (i = 0; i < keys.alumni_career_fair.length; i++) {
-                if (text.indexOf(keys.alumni_career_fair[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Recent Graduate & Alumni Fair") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
+            // for (i = 0; i < keys.alumni_career_fair.length; i++) {
+            //     if (text.indexOf(keys.alumni_career_fair[i]) != -1) {
+            //         for (i = 0; i < ccEvents.length; i++) {
+            //             if (ccEvents[i].name == "Recent Graduate & Alumni Fair") {
+            //                 var card = {
+            //                     "title": ccEvents[i].name,
+            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                     "image_url": ccEvents[i].imgUrl,
+            //                     "buttons": [{
+            //                         "type": "web_url",
+            //                         "url": ccEvents[i].rsvpUrl,
+            //                         "title": "Learn More"
+            //                     }]
+            //                 }
+            //                 message.attachment.payload.elements.push(card);
+            //             }
+            //         }
+            //     }
+            // }
 
-            for (i = 0; i < keys.grad_school.length; i++) {
-                if (text.indexOf(keys.grad_school[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Graduate School Info Day") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
+            // for (i = 0; i < keys.grad_school.length; i++) {
+            //     if (text.indexOf(keys.grad_school[i]) != -1) {
+            //         for (i = 0; i < ccEvents.length; i++) {
+            //             if (ccEvents[i].name == "Graduate School Info Day") {
+            //                 var card = {
+            //                     "title": ccEvents[i].name,
+            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                     "image_url": ccEvents[i].imgUrl,
+            //                     "buttons": [{
+            //                         "type": "web_url",
+            //                         "url": ccEvents[i].rsvpUrl,
+            //                         "title": "Learn More"
+            //                     }]
+            //                 }
+            //                 message.attachment.payload.elements.push(card);
+            //             }
+            //         }
+            //     }
+            // }
 
-            for (i = 0; i < keys.on_campus_jobs.length; i++) {
-                if (text.indexOf(keys.on_campus_jobs[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
-                            ccEvents[i].name == "How To Find a Job on Campus Job Fair") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
+            // for (i = 0; i < keys.on_campus_jobs.length; i++) {
+            //     if (text.indexOf(keys.on_campus_jobs[i]) != -1) {
+            //         for (i = 0; i < ccEvents.length; i++) {
+            //             if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
+            //                 ccEvents[i].name == "How To Find a Job on Campus Job Fair") {
+            //                 var card = {
+            //                     "title": ccEvents[i].name,
+            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                     "image_url": ccEvents[i].imgUrl,
+            //                     "buttons": [{
+            //                         "type": "web_url",
+            //                         "url": ccEvents[i].rsvpUrl,
+            //                         "title": "Learn More"
+            //                     }]
+            //                 }
+            //                 message.attachment.payload.elements.push(card);
+            //             }
+            //         }
+            //     }
+            // }
 
-            for (i = 0; i < keys.international.length; i++) {
-                if (text.indexOf(keys.international[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Job Search Tips for International Students Workshop" ||
-                            ccEvents[i].name == "Job Search Tips for International Students Panel") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
+            // for (i = 0; i < keys.international.length; i++) {
+            //     if (text.indexOf(keys.international[i]) != -1) {
+            //         for (i = 0; i < ccEvents.length; i++) {
+            //             if (ccEvents[i].name == "Job Search Tips for International Students Workshop" ||
+            //                 ccEvents[i].name == "Job Search Tips for International Students Panel") {
+            //                 var card = {
+            //                     "title": ccEvents[i].name,
+            //                     "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+            //                     "image_url": ccEvents[i].imgUrl,
+            //                     "buttons": [{
+            //                         "type": "web_url",
+            //                         "url": ccEvents[i].rsvpUrl,
+            //                         "title": "Learn More"
+            //                     }]
+            //                 }
+            //                 message.attachment.payload.elements.push(card);
+            //             }
+            //         }
+            //     }
+            // }
 
             for (i = 0; i < keys.next_month.length; i++) {
                 if (text.indexOf(keys.next_month[i]) != -1) {
