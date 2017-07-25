@@ -96,7 +96,8 @@ richMessage = function (recipientId, text) {
                             //         "title": "Learn More"
                             //     }]
                             // };
-                            message.attachment.payload.elements.push(attachCard(ccEvents[i]));
+                            var card = attachCard(ccEvents[i]);
+                            message.attachment.payload.elements.push(card);
                         }
                     }
                 }
