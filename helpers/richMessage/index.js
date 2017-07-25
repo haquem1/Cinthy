@@ -188,15 +188,15 @@ richMessage = function (recipientId, text) {
                             message.attachment.payload.elements.push(attachCard(events[i]));
                         }
                     }
-                    if (!found) { sendMessage(recipientId, {
-                        text: "No events next month!"
-                    });
-                    } else {
-                        sendMessage(recipientId, {
-                            text: "Here are next month's events:"
-                        });
-                        sendMessage(recipientId, message);
-                      }
+                    // if (!found) { sendMessage(recipientId, {
+                    //     text: "No events next month!"
+                    // });
+                    // } else {
+                    //     sendMessage(recipientId, {
+                    //         text: "Here are next month's events:"
+                    //     });
+                    //     sendMessage(recipientId, message);
+                    //   }
                     return true;
                 }
             }
