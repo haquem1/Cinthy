@@ -68,7 +68,7 @@ richMessage = function (recipientId, text) {
     }
 
     // events block
-    for (i = 0; i < keys.general.length; i++){
+    for (i = 0; i < keys.general.length; i++) {
         if (text.indexOf(keys.general[i]) != -1) {
             message = {
                 "attachment": {
@@ -100,6 +100,9 @@ richMessage = function (recipientId, text) {
                 }
             }
         }
+        sendMessage(recipientId, {
+            text: "This could be helpful"
+        });
         sendMessage(recipientId, message);
         return true;
     }
