@@ -180,26 +180,26 @@ richMessage = function (recipientId, text) {
                 }
             }
 
-        //     for (i = 0; i < keys.next_month.length; i++) {
-        //         if (text.indexOf(keys.next_month[i]) != -1) {
-        //             for (i = 0; i < ccEvents.length; i++) {
-        //                 if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
-        //                     found = true;
-        //                     message.attachment.payload.elements.push(attachCard(events[i]));
-        //                 }
-        //             }
-        //             if (!found) { sendMessage(recipientId, {
-        //                 text: "No events next month!"
-        //             });
-        //             } else {
-        //                 sendMessage(recipientId, {
-        //                     text: "Here are next month's events:"
-        //                 });
-        //                 sendMessage(recipientId, message);
-        //               }
-        //             return true;
-        //         }
-        //     }
+            for (i = 0; i < keys.next_month.length; i++) {
+                if (text.indexOf(keys.next_month[i]) != -1) {
+                    for (i = 0; i < ccEvents.length; i++) {
+                        if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
+                            found = true;
+                            message.attachment.payload.elements.push(attachCard(events[i]));
+                        }
+                    }
+                    if (!found) { sendMessage(recipientId, {
+                        text: "No events next month!"
+                    });
+                    } else {
+                        sendMessage(recipientId, {
+                            text: "Here are next month's events:"
+                        });
+                        sendMessage(recipientId, message);
+                      }
+                    return true;
+                }
+            }
         //
         //     for (i = 0; i < keys.this_month.length; i++) {
         //         if (text.indexOf(keys.this_month[i]) != -1) {
