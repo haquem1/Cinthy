@@ -284,13 +284,16 @@ richMessage = function (recipientId, text) {
 // generic event finder
 findEvent = function (key, name) {
     for (i = 0; i < keys[key].length; i++) {
-        if (text.indexOf(keys[key][i]) != -1) {
-            for (i = 0; i < events.length; i++) {
-                if (events[i].name == name) {
-                    message.attachment.payload.elements.push(attachCard(events[i]));
-                }
-            }
-        }
+      sendMessage(recipientId, {
+          text: "This could be helpful"
+      });
+        // if (text.indexOf(keys[key][i]) != -1) {
+        //     for (i = 0; i < events.length; i++) {
+        //         if (events[i].name == name) {
+        //             message.attachment.payload.elements.push(attachCard(events[i]));
+        //         }
+        //     }
+        // }
     }
 }
 // attaches card
