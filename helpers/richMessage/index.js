@@ -14,6 +14,7 @@ attachCard = function (item) {
           "title": "Learn More"
       }]
   };
+  return card;
 }
 
 // send rich message for hours and events
@@ -97,9 +98,6 @@ richMessage = function (recipientId, text) {
                 if (text.indexOf(keys.general[i]) != -1) {
                     for (i = 0; i < events.length; i++) {
                         if (events[i].name == "Fall Tech Fest") {
-                          sendMessage(recipientId, {
-                              text: "Got here"
-                          });
                             message.attachment.payload.elements.push(attachCard(events[i]));
                         }
                     }
