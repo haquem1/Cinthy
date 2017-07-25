@@ -80,9 +80,7 @@ richMessage = function (recipientId, text) {
                 }
             };
         }
-        sendMessage(recipientId, {
-            text: message
-        });
+        sendMessage(recipientId, message);
         return true;
     }
     // for (i = 0; i < keys.general.length; i++) {
