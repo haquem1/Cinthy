@@ -418,21 +418,4 @@ richMessage = function (recipientId, text) {
     return true;
 }
 
-attachCard = function (events) {
-
-  var card = {
-      "title": events[i].name,
-      "subtitle": events[i].date + "\n" + events[i].time + "\n" + events[i].location + "\n",
-      "image_url": events[i].imgUrl,
-      "buttons": [{
-          "type": "web_url",
-          "url": events[i].rsvpUrl,
-          "title": "Learn More"
-      }]
-  };
-
-  return card;
-
-}
-
 module.exports = richMessage;
