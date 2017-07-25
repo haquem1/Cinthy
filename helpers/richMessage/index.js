@@ -96,16 +96,7 @@ richMessage = function (recipientId, text) {
                                     "title": "Learn More"
                                 }]
                             };
-                            message.attachment.payload.elements.push({
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            });
+                            message.attachment.payload.elements.push(card);
                         }
                     }
                 }
@@ -427,15 +418,15 @@ richMessage = function (recipientId, text) {
     return true;
 }
 
-attachCard = function (item) {
+attachCard = function (events) {
 
   var card = {
-      "title": item.name,
-      "subtitle": item.date + "\n" + item.time + "\n" + item.location + "\n",
-      "image_url": item.imgUrl,
+      "title": events[i].name,
+      "subtitle": events[i].date + "\n" + events[i].time + "\n" + events[i].location + "\n",
+      "image_url": events[i].imgUrl,
       "buttons": [{
           "type": "web_url",
-          "url": item.rsvpUrl,
+          "url": events[i].rsvpUrl,
           "title": "Learn More"
       }]
   };
