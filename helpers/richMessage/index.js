@@ -79,16 +79,16 @@ richMessage = function (recipientId, text) {
                     }
                 }
             };
-
-            for (i = 0; i < keys.tech_fest.length; i++) {
-                if (text.indexOf(keys.tech_fest[i]) != -1) {
-                    for (i = 0; i < events.length; i++) {
-                        if (events[i].name == "Fall Tech Fest") {
-                            message.attachment.payload.elements.push(attachCard(events[i]));
-                        }
-                    }
-                }
-            }
+            findEvent("tech_fest", "Fall Tech Fest");
+            // for (i = 0; i < keys.tech_fest.length; i++) {
+            //     if (text.indexOf(keys.tech_fest[i]) != -1) {
+            //         for (i = 0; i < events.length; i++) {
+            //             if (events[i].name == "Fall Tech Fest") {
+            //                 message.attachment.payload.elements.push(attachCard(events[i]));
+            //             }
+            //         }
+            //     }
+            // }
 
             for (i = 0; i < keys.resu_makeover.length; i++) {
                 if (text.indexOf(keys.resu_makeover[i]) != -1) {
@@ -281,7 +281,18 @@ richMessage = function (recipientId, text) {
     }
     return true;
 }
-
+// generic event finder
+findEvent = function (key, name) {
+    for (i = 0; i < keys[key].length; i++) {
+        if (text.indexOf(keys[key][i]) != -1) {
+            for (i = 0; i < events.length; i++) {
+                if (events[i].name == name) {
+                    message.attachment.payload.elements.push(attachCard(events[i]));
+                }
+            }
+        }
+    }
+}
 // attaches card
 attachCard = function (item) {
     var card = {
