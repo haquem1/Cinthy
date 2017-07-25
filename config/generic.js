@@ -14,3 +14,5 @@ request({
   var json = JSON.parse(res.body);
   console.log("Access Token:", json.access_token);
 });
+
+// This authorizes other clients connected internally developed
