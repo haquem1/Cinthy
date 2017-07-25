@@ -1,4 +1,4 @@
-var ccEvents = require('../../models/events');
+var events = require('../../models/events');
 var keys = require('../../models/keys.json');
 var sendMessage = require('../../config/facebook');
 
@@ -68,6 +68,14 @@ richMessage = function (recipientId, text) {
     }
 
     // events block
+    for (i = 0; i < keys.general.length; i++){
+        if (text.indexOf(keys.general[i]) != -1) {
+          sendMessage(recipientId, {
+              text: "this is working"
+          });
+        }
+        return true;
+    }
     // for (i = 0; i < keys.general.length; i++) {
     //     if (text.indexOf(keys.general[i]) != -1) {
     //         message = {
