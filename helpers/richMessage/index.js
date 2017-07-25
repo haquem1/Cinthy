@@ -103,10 +103,13 @@ richMessage = function (recipientId, text) {
                     }
                 }
             }
-            sendMessage(recipientId, {
-                text: "This could be helpful"
-            });
-            sendMessage(recipientId, message);
+
+            if (message.attachment.payload.elements.length > 0) {
+                sendMessage(recipientId, {
+                    text: "This could be helpful"
+                });
+                sendMessage(recipientId, message);
+            }
         }
     }
     // for (i = 0; i < keys.general.length; i++) {
