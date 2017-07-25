@@ -70,10 +70,19 @@ richMessage = function (recipientId, text) {
     // events block
     for (i = 0; i < keys.general.length; i++){
         if (text.indexOf(keys.general[i]) != -1) {
-          sendMessage(recipientId, {
-              text: "this is working"
-          });
+            message = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": []
+                    }
+                }
+            };
         }
+        sendMessage(recipientId, {
+            text: message
+        });
         return true;
     }
     // for (i = 0; i < keys.general.length; i++) {
