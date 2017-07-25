@@ -68,353 +68,353 @@ richMessage = function (recipientId, text) {
     }
 
     // events block
-    for (i = 0; i < keys.general.length; i++) {
-        if (text.indexOf(keys.general[i]) != -1) {
-            message = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "generic",
-                        "elements": []
-                    }
-                }
-            };
-
-            var count = 0; //for initial greeting
-
-            for (i = 0; i < keys.tech_fest.length; i++) {
-                if (text.indexOf(keys.tech_fest[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Fall Tech Fest") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            };
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.resu_makeover.length; i++) {
-                if (text.indexOf(keys.resu_makeover[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Resu-Makeover") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.sixty_seconds_to_success.length; i++) {
-                if (text.indexOf(keys.sixty_seconds_to_success[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "60 Seconds to Success") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.general_career_fair.length; i++) {
-                if (text.indexOf(keys.general_career_fair[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Fall Internship & Career Expo") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.non_profit_gov_career_fair.length; i++) {
-                if (text.indexOf(keys.non_profit_gov_career_fair[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Non-Profit & Government Career Fair") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.education_career_fair.length; i++) {
-                if (text.indexOf(keys.education_career_fair[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Education Expo") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.alumni_career_fair.length; i++) {
-                if (text.indexOf(keys.alumni_career_fair[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Recent Graduate & Alumni Fair") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.grad_school.length; i++) {
-                if (text.indexOf(keys.grad_school[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Graduate School Info Day") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.on_campus_jobs.length; i++) {
-                if (text.indexOf(keys.on_campus_jobs[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
-                            ccEvents[i].name == "How To Find a Job on Campus Job Fair") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.international.length; i++) {
-                if (text.indexOf(keys.international[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].name == "Job Search Tips for International Students Workshop" ||
-                            ccEvents[i].name == "Job Search Tips for International Students Panel") {
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.next_month.length; i++) {
-                if (text.indexOf(keys.next_month[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
-                            found = true;
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            }
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                    if (!found) sendMessage(recipientId, {
-                        text: "No events next month!"
-                    });
-                    else {
-                        sendMessage(recipientId, {
-                            text: "Here are next month's events:"
-                        });
-                        sendMessage(recipientId, message);
-                    }
-                    return true;
-                }
-            }
-
-            for (i = 0; i < keys.this_month.length; i++) {
-                if (text.indexOf(keys.this_month[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth()) {
-                            found = true;
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            };
-                            message.attachment.payload.elements.push(card);
-                        }
-                    }
-                    if (!found) sendMessage(recipientId, {
-                        text: "No events this month!"
-                    });
-                    else {
-                        sendMessage(recipientId, {
-                            text: "Here are this month's events:"
-                        });
-                        sendMessage(recipientId, message);
-                    }
-                    return true;
-                }
-            }
-
-            for (i = 0; i < keys.all_events.length; i++) {
-                if (text.indexOf(keys.all_events[i]) != -1) {
-                    sendMessage(recipientId, {
-                        text: "Check out our calendar:"
-                    });
-                    message = {
-                        "attachment": {
-                            "type": "template",
-                            "payload": {
-                                "template_type": "generic",
-                                "elements": [{
-                                    "title": "Career Center Events",
-                                    "subtitle": "",
-                                    "image_url": "http://www.csun.edu/sites/default/files/styles/slideshow_full/public/field_image/field_slideshow_slides/Calendar_0.jpg?itok=onQCLNsE",
-                                    "buttons": [{
-                                        "type": "web_url",
-                                        "url": "http://www.csun.edu/career/calendar/",
-                                        "title": "Go to calendar"
-                                    }]
-                                }]
-                            }
-                        }
-                    };
-                    sendMessage(recipientId, message);
-                    return true;
-                }
-            }
-
-            for (i = 0; i < keys.next_event.length; i++) {
-                if (text.indexOf(keys.next_event[i]) != -1) {
-                    for (i = 0; i < ccEvents.length; i++) {
-                        if (ccEvents[i].tid >= compare) {
-                            found = true;
-                            var card = {
-                                "title": ccEvents[i].name,
-                                "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
-                                "image_url": ccEvents[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": ccEvents[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            };
-                            message.attachment.payload.elements.push(card);
-                            break;
-                        }
-                    }
-                    if (!found) sendMessage(recipientId, {
-                        text: "No events!"
-                    });
-                    else {
-                        sendMessage(recipientId, {
-                            text: "Here is our next event:"
-                        });
-                        sendMessage(recipientId, message);
-                    }
-                    return true;
-                }
-            }
-
-            if (message.attachment.payload.elements.length > 0) {
-                sendMessage(recipientId, {
-                    text: "This could be helpful"
-                });
-                sendMessage(recipientId, message);
-            }
-            return true;
-        }
-    }
+    // for (i = 0; i < keys.general.length; i++) {
+    //     if (text.indexOf(keys.general[i]) != -1) {
+    //         message = {
+    //             "attachment": {
+    //                 "type": "template",
+    //                 "payload": {
+    //                     "template_type": "generic",
+    //                     "elements": []
+    //                 }
+    //             }
+    //         };
+    //
+    //         var count = 0; //for initial greeting
+    //
+    //         for (i = 0; i < keys.tech_fest.length; i++) {
+    //             if (text.indexOf(keys.tech_fest[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].name == "Fall Tech Fest") {
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         };
+    //                         message.attachment.payload.elements.push(card);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.resu_makeover.length; i++) {
+    //             if (text.indexOf(keys.resu_makeover[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].name == "Resu-Makeover") {
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         }
+    //                         message.attachment.payload.elements.push(card);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.sixty_seconds_to_success.length; i++) {
+    //             if (text.indexOf(keys.sixty_seconds_to_success[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].name == "60 Seconds to Success") {
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         }
+    //                         message.attachment.payload.elements.push(card);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.general_career_fair.length; i++) {
+    //             if (text.indexOf(keys.general_career_fair[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].name == "Fall Internship & Career Expo") {
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         }
+    //                         message.attachment.payload.elements.push(card);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.non_profit_gov_career_fair.length; i++) {
+    //             if (text.indexOf(keys.non_profit_gov_career_fair[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].name == "Non-Profit & Government Career Fair") {
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         }
+    //                         message.attachment.payload.elements.push(card);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.education_career_fair.length; i++) {
+    //             if (text.indexOf(keys.education_career_fair[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].name == "Education Expo") {
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         }
+    //                         message.attachment.payload.elements.push(card);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.alumni_career_fair.length; i++) {
+    //             if (text.indexOf(keys.alumni_career_fair[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].name == "Recent Graduate & Alumni Fair") {
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         }
+    //                         message.attachment.payload.elements.push(card);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.grad_school.length; i++) {
+    //             if (text.indexOf(keys.grad_school[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].name == "Graduate School Info Day") {
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         }
+    //                         message.attachment.payload.elements.push(card);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.on_campus_jobs.length; i++) {
+    //             if (text.indexOf(keys.on_campus_jobs[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].name == "How To Find a Job on Campus Workshop" ||
+    //                         ccEvents[i].name == "How To Find a Job on Campus Job Fair") {
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         }
+    //                         message.attachment.payload.elements.push(card);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.international.length; i++) {
+    //             if (text.indexOf(keys.international[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].name == "Job Search Tips for International Students Workshop" ||
+    //                         ccEvents[i].name == "Job Search Tips for International Students Panel") {
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         }
+    //                         message.attachment.payload.elements.push(card);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.next_month.length; i++) {
+    //             if (text.indexOf(keys.next_month[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
+    //                         found = true;
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         }
+    //                         message.attachment.payload.elements.push(card);
+    //                     }
+    //                 }
+    //                 if (!found) sendMessage(recipientId, {
+    //                     text: "No events next month!"
+    //                 });
+    //                 else {
+    //                     sendMessage(recipientId, {
+    //                         text: "Here are next month's events:"
+    //                     });
+    //                     sendMessage(recipientId, message);
+    //                 }
+    //                 return true;
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.this_month.length; i++) {
+    //             if (text.indexOf(keys.this_month[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth()) {
+    //                         found = true;
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         };
+    //                         message.attachment.payload.elements.push(card);
+    //                     }
+    //                 }
+    //                 if (!found) sendMessage(recipientId, {
+    //                     text: "No events this month!"
+    //                 });
+    //                 else {
+    //                     sendMessage(recipientId, {
+    //                         text: "Here are this month's events:"
+    //                     });
+    //                     sendMessage(recipientId, message);
+    //                 }
+    //                 return true;
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.all_events.length; i++) {
+    //             if (text.indexOf(keys.all_events[i]) != -1) {
+    //                 sendMessage(recipientId, {
+    //                     text: "Check out our calendar:"
+    //                 });
+    //                 message = {
+    //                     "attachment": {
+    //                         "type": "template",
+    //                         "payload": {
+    //                             "template_type": "generic",
+    //                             "elements": [{
+    //                                 "title": "Career Center Events",
+    //                                 "subtitle": "",
+    //                                 "image_url": "http://www.csun.edu/sites/default/files/styles/slideshow_full/public/field_image/field_slideshow_slides/Calendar_0.jpg?itok=onQCLNsE",
+    //                                 "buttons": [{
+    //                                     "type": "web_url",
+    //                                     "url": "http://www.csun.edu/career/calendar/",
+    //                                     "title": "Go to calendar"
+    //                                 }]
+    //                             }]
+    //                         }
+    //                     }
+    //                 };
+    //                 sendMessage(recipientId, message);
+    //                 return true;
+    //             }
+    //         }
+    //
+    //         for (i = 0; i < keys.next_event.length; i++) {
+    //             if (text.indexOf(keys.next_event[i]) != -1) {
+    //                 for (i = 0; i < ccEvents.length; i++) {
+    //                     if (ccEvents[i].tid >= compare) {
+    //                         found = true;
+    //                         var card = {
+    //                             "title": ccEvents[i].name,
+    //                             "subtitle": ccEvents[i].date + "\n" + ccEvents[i].time + "\n" + ccEvents[i].location + "\n",
+    //                             "image_url": ccEvents[i].imgUrl,
+    //                             "buttons": [{
+    //                                 "type": "web_url",
+    //                                 "url": ccEvents[i].rsvpUrl,
+    //                                 "title": "Learn More"
+    //                             }]
+    //                         };
+    //                         message.attachment.payload.elements.push(card);
+    //                         break;
+    //                     }
+    //                 }
+    //                 if (!found) sendMessage(recipientId, {
+    //                     text: "No events!"
+    //                 });
+    //                 else {
+    //                     sendMessage(recipientId, {
+    //                         text: "Here is our next event:"
+    //                     });
+    //                     sendMessage(recipientId, message);
+    //                 }
+    //                 return true;
+    //             }
+    //         }
+    //
+    //         if (message.attachment.payload.elements.length > 0) {
+    //             sendMessage(recipientId, {
+    //                 text: "This could be helpful"
+    //             });
+    //             sendMessage(recipientId, message);
+    //         }
+    //         return true;
+    //     }
+    // }
     return true;
 }
 
