@@ -96,8 +96,7 @@ richMessage = function (recipientId, text) {
                             //         "title": "Learn More"
                             //     }]
                             // };
-                            var card = attachCard(ccEvents[i]);
-                            message.attachment.payload.elements.push(card);
+                            message.attachment.payload.elements.push(attachCard(ccEvents[i]));
                         }
                     }
                 }
@@ -419,7 +418,7 @@ richMessage = function (recipientId, text) {
     return true;
 }
 
-attachCard = function (item, stuff) {
+attachCard = function (item) {
 
   var card = {
       "title": item.name,
