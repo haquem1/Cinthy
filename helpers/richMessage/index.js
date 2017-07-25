@@ -183,7 +183,7 @@ richMessage = function (recipientId, text) {
             for (i = 0; i < keys.next_month.length; i++) {
                 if (text.indexOf(keys.next_month[i]) != -1) {
                     for (i = 0; i < events.length; i++) {
-                        if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
+                        if (events[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
                             found = true;
                             message.attachment.payload.elements.push(attachCard(events[i]));
                         }
@@ -204,7 +204,7 @@ richMessage = function (recipientId, text) {
             for (i = 0; i < keys.this_month.length; i++) {
                 if (text.indexOf(keys.this_month[i]) != -1) {
                     for (i = 0; i < events.length; i++) {
-                        if (ccEvents[i].tid.getUTCMonth() == compare.getUTCMonth()) {
+                        if (events[i].tid.getUTCMonth() == compare.getUTCMonth()) {
                             found = true;
                             message.attachment.payload.elements.push(attachCard(events[i]));
                         }
@@ -225,7 +225,7 @@ richMessage = function (recipientId, text) {
             for (i = 0; i < keys.next_event.length; i++) {
                 if (text.indexOf(keys.next_event[i]) != -1) {
                     for (i = 0; i < events.length; i++) {
-                        if (ccEvents[i].tid >= compare) {
+                        if (events[i].tid >= compare) {
                             found = true;
                             message.attachment.payload.elements.push(attachCard(events[i]));
                         }
@@ -243,33 +243,33 @@ richMessage = function (recipientId, text) {
                 }
             }
 
-            // for (i = 0; i < keys.all_events.length; i++) {
-            //     if (text.indexOf(keys.all_events[i]) != -1) {
-            //         sendMessage(recipientId, {
-            //             text: "Check out our calendar:"
-            //         });
-            //         message = {
-            //             "attachment": {
-            //                 "type": "template",
-            //                 "payload": {
-            //                     "template_type": "generic",
-            //                     "elements": [{
-            //                         "title": "Career Center Events",
-            //                         "subtitle": "",
-            //                         "image_url": "http://www.csun.edu/sites/default/files/styles/slideshow_full/public/field_image/field_slideshow_slides/Calendar_0.jpg?itok=onQCLNsE",
-            //                         "buttons": [{
-            //                             "type": "web_url",
-            //                             "url": "http://www.csun.edu/career/calendar/",
-            //                             "title": "Go to calendar"
-            //                         }]
-            //                     }]
-            //                 }
-            //             }
-            //         };
-            //         sendMessage(recipientId, message);
-            //         return true;
-            //     }
-            // }
+            for (i = 0; i < keys.all_events.length; i++) {
+                if (text.indexOf(keys.all_events[i]) != -1) {
+                    sendMessage(recipientId, {
+                        text: "Check out our calendar:"
+                    });
+                    message = {
+                        "attachment": {
+                            "type": "template",
+                            "payload": {
+                                "template_type": "generic",
+                                "elements": [{
+                                    "title": "Career Center Events",
+                                    "subtitle": "",
+                                    "image_url": "http://www.csun.edu/sites/default/files/styles/slideshow_full/public/field_image/field_slideshow_slides/Calendar_0.jpg?itok=onQCLNsE",
+                                    "buttons": [{
+                                        "type": "web_url",
+                                        "url": "http://www.csun.edu/career/calendar/",
+                                        "title": "Go to calendar"
+                                    }]
+                                }]
+                            }
+                        }
+                    };
+                    sendMessage(recipientId, message);
+                    return true;
+                }
+            }
 
             if (message.attachment.payload.elements.length > 0) {
                 sendMessage(recipientId, {
