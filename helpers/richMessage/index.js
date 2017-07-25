@@ -82,10 +82,7 @@ richMessage = function (recipientId, text) {
             for (i = 0; i < keys.tech_fest.length; i++) {
                 if (text.indexOf(keys.general[i]) != -1) {
                     for (i = 0; i < events.length; i++) {
-                        if (events.name == "Fall Tech Fest") {
-                          sendMessage(recipientId, {
-                              text: "Got here"
-                          });
+                        if (events[i].name == "Fall Tech Fest") {
                             var card = {
                                 "title": events[i].name,
                                 "subtitle": events[i].date + "\n" + events[i].time + "\n" + events[i].location + "\n",
