@@ -1,5 +1,5 @@
 var ccEvents = require('../../models/events');
-var hours = require('../../models/hours');
+// var hours = require('../../models/hours');
 var keys = require('../../models/keys.json');
 var sendMessage = require('../../config/facebook');
 
@@ -22,7 +22,7 @@ richMessage = function (recipientId, text) {
     if (keys.message.indexOf(values[0]) != -1) return false;
 
     // get started
-    if (keys.help.indexOf(values[0]) != -1) {
+    if (keys.help.indexOf(values[0]) != -1 && values.length < 6) {
         message = "Hi! This is Cinthy the Career Center Assistant.\n\nYou can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!\n\n\nVisit us at http://www.csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall";
         sendMessage(recipientId, {
             text: message
@@ -43,7 +43,7 @@ richMessage = function (recipientId, text) {
     // location block
     for (i = 0; i < keys.location.length; i++) {
         if (text.indexOf(keys.location[i]) != -1) {
-                message = "The Career Center is located on the 4th floor of Bayramian Hall\n";
+                message = "The Career Center is located on the 4th floor of Bayramian Hall\n\nIf this did not answer your question, please call us at 818-304-2506\n\nVisit us at http://www.csun.edu/career or call us 818-677-2878";
             sendMessage(recipientId, {
                 text: message
             });
@@ -59,7 +59,7 @@ richMessage = function (recipientId, text) {
                 message = "The Career Center is now closed\n";
 
             message = message +
-                "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
+                "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm\n\nIf this did not answer your question, please call us at 818-304-2506\n\nVisit us at http://www.csun.edu/career or call us 818-677-2878";
 
             sendMessage(recipientId, {
                 text: message
