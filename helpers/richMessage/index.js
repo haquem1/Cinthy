@@ -2,6 +2,20 @@ var events = require('../../models/events');
 var keys = require('../../models/keys.json');
 var sendMessage = require('../../config/facebook');
 
+// attaches card
+attachCard = function (item) {
+  var card = {
+      "title": item.name,
+      "subtitle": item.date + "\n" + item.time + "\n" + item.location + "\n",
+      "image_url": item.imgUrl,
+      "buttons": [{
+          "type": "web_url",
+          "url": item.rsvpUrl,
+          "title": "Learn More"
+      }]
+  };
+}
+
 // send rich message for hours and events
 richMessage = function (recipientId, text) {
 
@@ -83,18 +97,7 @@ richMessage = function (recipientId, text) {
                 if (text.indexOf(keys.general[i]) != -1) {
                     for (i = 0; i < events.length; i++) {
                         if (events[i].name == "Fall Tech Fest") {
-                            var card = {
-                                "title": events[i].name,
-                                "subtitle": events[i].date + "\n" + events[i].time + "\n" + events[i].location + "\n",
-                                "image_url": events[i].imgUrl,
-                                "buttons": [{
-                                    "type": "web_url",
-                                    "url": events[i].rsvpUrl,
-                                    "title": "Learn More"
-                                }]
-                            };
-                            message.attachment.payload.elements.push(card);
-                            break;
+                            message.attachment.payload.elements.push(attachCard(events[i]));
                         }
                     }
                 }
