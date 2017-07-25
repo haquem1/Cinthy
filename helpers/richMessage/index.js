@@ -79,7 +79,7 @@ richMessage = function (recipientId, text) {
                     }
                 }
             };
-            findEvent("tech_fest", "Fall Tech Fest");
+            findEvent("tech_fest", "Fall Tech Fest", message);
             // for (i = 0; i < keys.tech_fest.length; i++) {
             //     if (text.indexOf(keys.tech_fest[i]) != -1) {
             //         for (i = 0; i < events.length; i++) {
@@ -282,18 +282,15 @@ richMessage = function (recipientId, text) {
     return true;
 }
 // generic event finder
-findEvent = function (key, name) {
+findEvent = function (key, name, message) {
     for (i = 0; i < keys[key].length; i++) {
-      sendMessage(recipientId, {
-          text: "This could be helpful"
-      });
-        // if (text.indexOf(keys[key][i]) != -1) {
-        //     for (i = 0; i < events.length; i++) {
-        //         if (events[i].name == name) {
-        //             message.attachment.payload.elements.push(attachCard(events[i]));
-        //         }
-        //     }
-        // }
+        if (text.indexOf(keys[key][i]) != -1) {
+            for (i = 0; i < events.length; i++) {
+                if (events[i].name == name) {
+                    message.attachment.payload.elements.push(attachCard(events[i]));
+                }
+            }
+        }
     }
 }
 // attaches card
