@@ -51,7 +51,7 @@ var events = [{
     "date": "Tuesday, September 19",
     "time": "10:00am - 3:00pm",
     "location": "USU, Northridge Center",
-    "imgUrl": "http://www.vidteamcc.com/Cinthy/fb_thumbnail_techfest.png",
+    "imgUrl": "thumbnails/tech_fest17.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/events/ftech17",
     "tid": new Date("September 19, 2017")
 }, {
