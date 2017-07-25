@@ -68,19 +68,6 @@ richMessage = function (recipientId, text) {
     }
 
     // events block
-    
-    // generic event finder
-    findEvent = function (key, name) {
-        for (i = 0; i < keys[key].length; i++) {
-            if (text.indexOf(keys[key][i]) != -1) {
-                for (i = 0; i < events.length; i++) {
-                    if (events[i].name == name) {
-                        message.attachment.payload.elements.push(attachCard(events[i]));
-                    }
-                }
-            }
-        }
-    }
 
     for (i = 0; i < keys.general.length; i++) {
         if (text.indexOf(keys.general[i]) != -1) {
@@ -93,6 +80,19 @@ richMessage = function (recipientId, text) {
                     }
                 }
             };
+            
+            // generic event finder
+            findEvent = function (key, name) {
+                for (i = 0; i < keys[key].length; i++) {
+                    if (text.indexOf(keys[key][i]) != -1) {
+                        for (i = 0; i < events.length; i++) {
+                            if (events[i].name == name) {
+                                message.attachment.payload.elements.push(attachCard(events[i]));
+                            }
+                        }
+                    }
+                }
+            }
 
             findEvent("tech_fest", "Fall Tech Fest");
             // for (i = 0; i < keys.tech_fest.length; i++) {
