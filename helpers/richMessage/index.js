@@ -80,7 +80,7 @@ richMessage = function (recipientId, text) {
                     }
                 }
             };
-            
+
             // generic event finder
             findEvent = function (key, name) {
                 for (i = 0; i < keys[key].length; i++) {
@@ -95,6 +95,18 @@ richMessage = function (recipientId, text) {
             }
 
             findEvent("tech_fest", "Fall Tech Fest");
+            findEvent("resu_makeover", "Resu-Makeover");
+            findEvent("sixty_seconds_to_success", "60 Seconds to Success");
+            findEvent("general_career_fair", "Fall Internship & Career Expo");
+            findEvent("non_profit_gov_career_fair", "Non-Profit & Government Career Fair");
+            findEvent("education_career_fair", "Education Expo");
+            findEvent("alumni_career_fair", "Recent Graduate & Alumni Fair");
+            findEvent("grad_school", "Graduate School Info Day");
+            findEvent("on_campus_jobs", "How To Find a Job on Campus Workshop");
+            findEvent("on_campus_jobs", "How To Find a Job on Campus Job Fair");
+            findEvent("international", "Job Search Tips for International Students Workshop");
+            findEvent("international", "Job Search Tips for International Students Panel");
+
             // for (i = 0; i < keys.tech_fest.length; i++) {
             //     if (text.indexOf(keys.tech_fest[i]) != -1) {
             //         for (i = 0; i < events.length; i++) {
@@ -105,95 +117,95 @@ richMessage = function (recipientId, text) {
             //     }
             // }
 
-            for (i = 0; i < keys.resu_makeover.length; i++) {
-                if (text.indexOf(keys.resu_makeover[i]) != -1) {
-                    for (i = 0; i < events.length; i++) {
-                        if (events[i].name == "Resu-Makeover") {
-                            message.attachment.payload.elements.push(attachCard(events[i]));
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.sixty_seconds_to_success.length; i++) {
-                if (text.indexOf(keys.sixty_seconds_to_success[i]) != -1) {
-                    for (i = 0; i < events.length; i++) {
-                        if (events[i].name == "60 Seconds to Success") {
-                            message.attachment.payload.elements.push(attachCard(events[i]));
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.general_career_fair.length; i++) {
-                if (text.indexOf(keys.general_career_fair[i]) != -1) {
-                    for (i = 0; i < events.length; i++) {
-                        if (events[i].name == "Fall Internship & Career Expo") {
-                            message.attachment.payload.elements.push(attachCard(events[i]));
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.non_profit_gov_career_fair.length; i++) {
-                if (text.indexOf(keys.non_profit_gov_career_fair[i]) != -1) {
-                    for (i = 0; i < events.length; i++) {
-                        if (events[i].name == "Non-Profit & Government Career Fair") {
-                            message.attachment.payload.elements.push(attachCard(events[i]));
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.education_career_fair.length; i++) {
-                if (text.indexOf(keys.education_career_fair[i]) != -1) {
-                    for (i = 0; i < events.length; i++) {
-                        if (events[i].name == "Education Expo") {
-                            message.attachment.payload.elements.push(attachCard(events[i]));
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.alumni_career_fair.length; i++) {
-                if (text.indexOf(keys.alumni_career_fair[i]) != -1) {
-                    for (i = 0; i < events.length; i++) {
-                        if (events[i].name == "Recent Graduate & Alumni Fair") {
-                            message.attachment.payload.elements.push(attachCard(events[i]));
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.grad_school.length; i++) {
-                if (text.indexOf(keys.grad_school[i]) != -1) {
-                    for (i = 0; i < events.length; i++) {
-                        if (events[i].name == "Graduate School Info Day") {
-                            message.attachment.payload.elements.push(attachCard(events[i]));
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.on_campus_jobs.length; i++) {
-                if (text.indexOf(keys.on_campus_jobs[i]) != -1) {
-                    for (i = 0; i < events.length; i++) {
-                        if (events[i].name == "How To Find a Job on Campus Workshop" || events[i].name == "How To Find a Job on Campus Job Fair") {
-                            message.attachment.payload.elements.push(attachCard(events[i]));
-                        }
-                    }
-                }
-            }
-
-            for (i = 0; i < keys.international.length; i++) {
-                if (text.indexOf(keys.international[i]) != -1) {
-                    for (i = 0; i < events.length; i++) {
-                        if (events[i].name == "Job Search Tips for International Students Workshop" || events[i].name == "Job Search Tips for International Students Panel") {
-                            message.attachment.payload.elements.push(attachCard(events[i]));
-                        }
-                    }
-                }
-            }
+            // for (i = 0; i < keys.resu_makeover.length; i++) {
+            //     if (text.indexOf(keys.resu_makeover[i]) != -1) {
+            //         for (i = 0; i < events.length; i++) {
+            //             if (events[i].name == "Resu-Makeover") {
+            //                 message.attachment.payload.elements.push(attachCard(events[i]));
+            //             }
+            //         }
+            //     }
+            // }
+            //
+            // for (i = 0; i < keys.sixty_seconds_to_success.length; i++) {
+            //     if (text.indexOf(keys.sixty_seconds_to_success[i]) != -1) {
+            //         for (i = 0; i < events.length; i++) {
+            //             if (events[i].name == "60 Seconds to Success") {
+            //                 message.attachment.payload.elements.push(attachCard(events[i]));
+            //             }
+            //         }
+            //     }
+            // }
+            //
+            // for (i = 0; i < keys.general_career_fair.length; i++) {
+            //     if (text.indexOf(keys.general_career_fair[i]) != -1) {
+            //         for (i = 0; i < events.length; i++) {
+            //             if (events[i].name == "Fall Internship & Career Expo") {
+            //                 message.attachment.payload.elements.push(attachCard(events[i]));
+            //             }
+            //         }
+            //     }
+            // }
+            //
+            // for (i = 0; i < keys.non_profit_gov_career_fair.length; i++) {
+            //     if (text.indexOf(keys.non_profit_gov_career_fair[i]) != -1) {
+            //         for (i = 0; i < events.length; i++) {
+            //             if (events[i].name == "Non-Profit & Government Career Fair") {
+            //                 message.attachment.payload.elements.push(attachCard(events[i]));
+            //             }
+            //         }
+            //     }
+            // }
+            //
+            // for (i = 0; i < keys.education_career_fair.length; i++) {
+            //     if (text.indexOf(keys.education_career_fair[i]) != -1) {
+            //         for (i = 0; i < events.length; i++) {
+            //             if (events[i].name == "Education Expo") {
+            //                 message.attachment.payload.elements.push(attachCard(events[i]));
+            //             }
+            //         }
+            //     }
+            // }
+            //
+            // for (i = 0; i < keys.alumni_career_fair.length; i++) {
+            //     if (text.indexOf(keys.alumni_career_fair[i]) != -1) {
+            //         for (i = 0; i < events.length; i++) {
+            //             if (events[i].name == "Recent Graduate & Alumni Fair") {
+            //                 message.attachment.payload.elements.push(attachCard(events[i]));
+            //             }
+            //         }
+            //     }
+            // }
+            //
+            // for (i = 0; i < keys.grad_school.length; i++) {
+            //     if (text.indexOf(keys.grad_school[i]) != -1) {
+            //         for (i = 0; i < events.length; i++) {
+            //             if (events[i].name == "Graduate School Info Day") {
+            //                 message.attachment.payload.elements.push(attachCard(events[i]));
+            //             }
+            //         }
+            //     }
+            // }
+            //
+            // for (i = 0; i < keys.on_campus_jobs.length; i++) {
+            //     if (text.indexOf(keys.on_campus_jobs[i]) != -1) {
+            //         for (i = 0; i < events.length; i++) {
+            //             if (events[i].name == "How To Find a Job on Campus Workshop" || events[i].name == "How To Find a Job on Campus Job Fair") {
+            //                 message.attachment.payload.elements.push(attachCard(events[i]));
+            //             }
+            //         }
+            //     }
+            // }
+            // 
+            // for (i = 0; i < keys.international.length; i++) {
+            //     if (text.indexOf(keys.international[i]) != -1) {
+            //         for (i = 0; i < events.length; i++) {
+            //             if (events[i].name == "Job Search Tips for International Students Workshop" || events[i].name == "Job Search Tips for International Students Panel") {
+            //                 message.attachment.payload.elements.push(attachCard(events[i]));
+            //             }
+            //         }
+            //     }
+            // }
 
             for (i = 0; i < keys.next_month.length; i++) {
                 if (text.indexOf(keys.next_month[i]) != -1) {
