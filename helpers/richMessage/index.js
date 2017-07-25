@@ -80,6 +80,26 @@ richMessage = function (recipientId, text) {
                 }
             };
         }
+        for (i = 0; i < keys.tech_fest.length; i++) {
+            if (text.indexOf(keys.general[i]) != -1) {
+                for (i = 0; i < events.length; i++) {
+                    if (events.name == "Fall Tech Fest") {
+                        var card = {
+                            "title": events[i].name,
+                            "subtitle": events[i].date + "\n" + events[i].time + "\n" + events[i].location + "\n",
+                            "image_url": events[i].imgUrl,
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": events[i].rsvpUrl,
+                                "title": "Learn More"
+                            }]
+                        };
+                        message.attachment.payload.elements.push(card);
+                        break;
+                    }
+                }
+            }
+        }
         sendMessage(recipientId, message);
         return true;
     }
