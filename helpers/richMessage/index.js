@@ -2,21 +2,6 @@ var events = require('../../models/events');
 var keys = require('../../models/keys.json');
 var sendMessage = require('../../config/facebook');
 
-// attaches card
-attachCard = function (item) {
-  var card = {
-      "title": item.name,
-      "subtitle": item.date + "\n" + item.time + "\n" + item.location + "\n",
-      "image_url": item.imgUrl,
-      "buttons": [{
-          "type": "web_url",
-          "url": item.rsvpUrl,
-          "title": "Learn More"
-      }]
-  };
-  return card;
-}
-
 // send rich message for hours and events
 richMessage = function (recipientId, text) {
 
@@ -460,6 +445,21 @@ richMessage = function (recipientId, text) {
     //     }
     // }
     return true;
+}
+
+// attaches card
+attachCard = function (item) {
+    var card = {
+        "title": item.name,
+        "subtitle": item.date + "\n" + item.time + "\n" + item.location + "\n",
+        "image_url": item.imgUrl,
+        "buttons": [{
+            "type": "web_url",
+            "url": item.rsvpUrl,
+            "title": "Learn More"
+        }]
+    };
+    return card;
 }
 
 module.exports = richMessage;
