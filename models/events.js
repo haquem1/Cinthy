@@ -87,11 +87,11 @@ var events = [{
     "rsvpUrl": "https://csun-csm.symplicity.com/events/fall17",
     "tid": new Date("October 24, 2017")
 }, {
-    "name": "Peace Corps Information Session: Girl Rising Screening",
+    "name": "Peace Corps Screening: Girl Rising",
     "date": "Wednesday, October 11",
     "time": "3:00pm - 5:00pm",
     "location": "Bayramian 410",
-    "imgUrl": "http://www.vidteamcc.com/Cinthy/fb_thumbnail_techfest.png",
+    "imgUrl": "http://www.vidteamcc.com/Cinthy/CC_logo.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/events",
     "tid": new Date("October 11, 2017")
 }, {
