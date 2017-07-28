@@ -35,7 +35,7 @@ var events = [{
     "date": "Wednesday, September 13",
     "time": "2:00pm - 3:30pm",
     "location": "USU, Northridge Center",
-    "imgUrl": "http://www.vidteamcc.com/Cinthy/fb_thumbnail_techfest.png",
+    "imgUrl": "http://www.vidteamcc.com/Cinthy/September_13.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/events",
     "tid": new Date("September 19, 2017")
 }, {
@@ -51,7 +51,7 @@ var events = [{
     "date": "Tuesday, September 26",
     "time": "3:00pm - 4:30pm",
     "location": "Bayramian Hall 410",
-    "imgUrl": "http://www.vidteamcc.com/Cinthy/fb_thumbnail_techfest.png",
+    "imgUrl": "http://www.vidteamcc.com/Cinthy/September_26.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/events",
     "tid": new Date("September 26, 2017")
 },{
@@ -91,7 +91,7 @@ var events = [{
     "date": "Wednesday, October 11",
     "time": "3:00pm - 5:00pm",
     "location": "Bayramian 410",
-    "imgUrl": "http://www.vidteamcc.com/Cinthy/CC_logo.png",
+    "imgUrl": "http://www.vidteamcc.com/Cinthy/October_11.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/events",
     "tid": new Date("October 11, 2017")
 }, {
@@ -123,7 +123,7 @@ var events = [{
     "date": "Wednesday, November 8",
     "time": "2:00pm - 3:30pm",
     "location": "Bayramian 410",
-    "imgUrl": "http://www.vidteamcc.com/Cinthy/fb_thumbnail_techfest.png",
+    "imgUrl": "http://www.vidteamcc.com/Cinthy/November_8.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/events",
     "tid": new Date("November 8, 2017")
 }, {
