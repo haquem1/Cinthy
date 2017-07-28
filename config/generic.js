@@ -15,4 +15,4 @@ request({
   console.log("Access Token:", json.access_token);
 });
 
-// This authorizes other clients connected internally developed
+// This authorizes other clients connected internally developed, currently just a placeholder

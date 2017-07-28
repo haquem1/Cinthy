@@ -18,5 +18,6 @@
   "education_career_fair": ["education", "teacher", "teaching", "teach"],
   "alumni_career_fair": ["grad", "graduate", "alum", "alumni", "network", "networking"],
   "sunlink": ["sunlink", "password"],
-  "location": ["located", "location"]
+  "location": ["located"],
+  "peace_corps": ["peace corps"]
 }

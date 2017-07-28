@@ -106,6 +106,10 @@ richMessage = function (recipientId, text) {
             findEvent("on_campus_jobs", "How To Find a Job on Campus Job Fair");
             findEvent("international", "Job Search Tips for International Students Workshop");
             findEvent("international", "Job Search Tips for International Students Panel");
+            findEvent("peace_corps", "Peace Corps Information Session: Application Workshop");
+            findEvent("peace_corps", "Peace Corps Information Session: Central & South American Spotlight");
+            findEvent("peace_corps", "Peace Corps Screening: Girl Rising");
+            findEvent("peace_corps", "Peace Corps Information Session: Application Workshop 2");
 
             // Date based queries
             for (i = 0; i < keys.next_month.length; i++) {
