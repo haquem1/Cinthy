@@ -98,18 +98,14 @@ richMessage = function (recipientId, text) {
             findEvent("resu_makeover", "Resu-Makeover");
             findEvent("sixty_seconds_to_success", "60 Seconds to Success");
             findEvent("general_career_fair", "Fall Internship & Career Expo");
-            findEvent("non_profit_gov_career_fair", "Non-Profit & Government Career Fair");
-            findEvent("education_career_fair", "Education Expo");
-            findEvent("alumni_career_fair", "Recent Graduate & Alumni Fair");
             findEvent("grad_school", "Graduate School Info Day");
             findEvent("on_campus_jobs", "How To Find a Job on Campus Workshop");
-            findEvent("on_campus_jobs", "How To Find a Job on Campus Job Fair");
-            findEvent("international", "Job Search Tips for International Students Workshop");
-            findEvent("international", "Job Search Tips for International Students Panel");
+            findEvent("on_campus_jobs", "Open House & On-Campus Job Fair");
             findEvent("peace_corps", "Peace Corps Information Session: Application Workshop");
             findEvent("peace_corps", "Peace Corps Information Session: Central & South American Spotlight");
             findEvent("peace_corps", "Peace Corps Screening: Girl Rising");
             findEvent("peace_corps", "Peace Corps Information Session: Application Workshop 2");
+            findEvent("hr_panel", "Careers in HR Panel");
 
             // Date based queries
             for (i = 0; i < keys.next_month.length; i++) {

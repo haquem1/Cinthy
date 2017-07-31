@@ -1,35 +1,19 @@
 var events = [{
     "name": "How To Find a Job on Campus Workshop",
-    "date": "Tuesday, February 14",
-    "time": "11:00am - 3:00pm",
-    "location": "USU, Grand Salon",
+    "date": "Tuesday, September 5",
+    "time": "11:00am - 12:15pm",
+    "location": "Bayramian Hall 410",
     "imgUrl": "http://www.vidteamcc.com/Cinthy/CC_logo.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list", // not direct link
     "tid": new Date("February 14, 2017")
 }, {
-    "name": "How To Find a Job on Campus Job Fair",
-    "date": "Thursday, February 16",
+    "name": "Open House & On-Campus Job Fair",
+    "date": "Wednesday, September 6",
     "time": "11:00am - 3:00pm",
-    "location": "USU, Grand Salon",
+    "location": "Career Center, Bayramian Hall 413",
     "imgUrl": "http://www.vidteamcc.com/Cinthy/CC_logo.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?s=event&ss=ws&_ksl=1&mode=list", // not direct link
     "tid": new Date("February 16, 2017")
-}, {
-    "name": "Job Search Tips for International Students Workshop",
-    "date": "Wednesday, February 15",
-    "time": "10:00am - 11:15am",
-    "location": "Career Center, BH 410",
-    "imgUrl": "http://www.vidteamcc.com/Cinthy/CC_logo.png",
-    "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?mode=form&id=a4f4fff4066f2e6aebcf80cb54656e89&s=event&ss=ws",
-    "tid": new Date("February 15, 2017")
-}, {
-    "name": "Job Search Tips for International Students Panel",
-    "date": "Wednesday, February 15",
-    "time": "11:30am - 12:30pm",
-    "location": "Career Center, BH 410",
-    "imgUrl": "http://www.vidteamcc.com/Cinthy/CC_logo.png",
-    "rsvpUrl": "https://csun-csm.symplicity.com/students/index.php/pid302148?mode=form&id=a4f4fff4066f2e6aebcf80cb54656e89&s=event&ss=ws",
-    "tid": new Date("February 15, 2017")
 }, {
     "name": "Peace Corps Information Session: Application Workshop",
     "date": "Wednesday, September 13",
@@ -127,6 +111,14 @@ var events = [{
     "rsvpUrl": "https://csun-csm.symplicity.com/events",
     "tid": new Date("November 8, 2017")
 }, {
+    "name": "Careers in HR Panel",
+    "date": "Wednesday, November 8",
+    "time": "12:30pm - 1:30pm",
+    "location": "USU, Thousand Oaks",
+    "imgUrl": "http://www.vidteamcc.com/Cinthy/CC_logo.png",
+    "rsvpUrl": "https://csun-csm.symplicity.com/events",
+    "tid": new Date("November 8, 2017")
+}, {
     "name": "Graduate School Info Day",
     "date": "Thursday, November 9",
     "time": "11:00am - 2:00pm",
@@ -134,14 +126,6 @@ var events = [{
     "imgUrl": "http://www.vidteamcc.com/Cinthy/gradflyerFacebook.png",
     "rsvpUrl": "https://csun-csm.symplicity.com/events/Grad17",
     "tid": new Date("November 9, 2017")
-}, {
-    "name": "Recent Graduate & Alumni Fair",
-    "date": "Wednesday, May 23",
-    "time": "10:00am - 1:00pm",
-    "location": "USU, Northridge Center & Grand Salon",
-    "imgUrl": "http://www.vidteamcc.com/Cinthy/CC_logo.png",
-    "rsvpUrl": "https://csun-csm.symplicity.com/students/event/careerfairs/59b8238207ea66cf14695afbaa272498/overview?gotodiv=&student=832a136059707ede583fa1da08672024",
-    "tid": new Date("May 23, 2017")
 }];
 
 module.exports = events;
