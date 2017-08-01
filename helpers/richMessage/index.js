@@ -42,7 +42,7 @@ richMessage = function (recipientId, text) {
     // location block
     for (i = 0; i < keys.location.length; i++) {
         if (text.indexOf(keys.location[i]) != -1) {
-                message = "The Career Center is located on the 4th floor of Bayramian Hall\n\nIf this did not answer your question, please call us at 818-304-2506\n\nVisit us at http://www.csun.edu/career";
+                message = "The Career Center is located on the 4th floor of Bayramian Hall\n\nIf this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career";
             sendMessage(recipientId, {
                 text: message
             });
@@ -58,7 +58,7 @@ richMessage = function (recipientId, text) {
                 message = "The Career Center is now closed\n";
 
             message = message +
-                "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm\n\nIf this did not answer your question, please call us at 818-304-2506\n\nVisit us at http://www.csun.edu/career";
+                "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm\n\nIf this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career";
 
             sendMessage(recipientId, {
                 text: message
