@@ -20,5 +20,4 @@ module.exports = function (recipientId, message, callback) {
             console.log('Error: ', response.body.error);
         }
     });
-    if (callback) callback();
 };
