@@ -56,11 +56,11 @@ richMessage = function (recipientId, message) {
     // location block
     for (i = 0; i < keys.location.length; i++) {
         if (text.indexOf(keys.location[i]) != -1) {
-                message = "The Career Center is located on the 4th floor of Bayramian Hall";
-                sendMessage(recipientId, {
-                    text: message
-                  };
-            sendMessage(recipientId, text: "If this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career"); 
+            message = "The Career Center is located on the 4th floor of Bayramian Hall";
+            sendMessage(recipientId, {
+                text: message
+            });
+            sendMessage(recipientId, text: "If this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career");
             return true;
         }
     }
@@ -83,7 +83,6 @@ richMessage = function (recipientId, message) {
     }
 
     // events block
-
     for (i = 0; i < keys.general.length; i++) {
         if (text.indexOf(keys.general[i]) != -1) {
             message = {
