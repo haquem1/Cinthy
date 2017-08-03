@@ -3,7 +3,7 @@
   "help": ["hello", "hi", "hey", "help"],
   "get_started": ["get started"],
   "hours": ["open", "close", "closed", "hours"],
-  "general": ["when", "event", "events", "happen", "happening", "find", "can i", "do i", "job"],
+  "general": ["when", "event", "events", "happen", "happening", "find", "can i", "do i", "job", "can you"],
   "next_month": ["next month"],
   "this_month": ["month", "week"],
   "all_events": ["all", "semester", "year"],

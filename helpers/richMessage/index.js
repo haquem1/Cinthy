@@ -3,8 +3,12 @@ var keys = require('../../models/keys.json');
 var sendMessage = require('../../config/facebook');
 
 // send rich message for hours and events
-richMessage = function (recipientId, text) {
+richMessage = function (recipientId, message) {
 
+    // basic NLP from FB
+    
+
+    var text = message.text;
     var date = new Date();
     var compare = date;
     var found = false;
