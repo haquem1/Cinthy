@@ -81,146 +81,146 @@ richMessage = function (recipientId, message) {
     }
 
     // events block
-    //
-    // for (i = 0; i < keys.general.length; i++) {
-    //     if (text.indexOf(keys.general[i]) != -1) {
-    //         message = {
-    //             "attachment": {
-    //                 "type": "template",
-    //                 "payload": {
-    //                     "template_type": "generic",
-    //                     "elements": []
-    //                 }
-    //             }
-    //         };
-    //
-    //         // generic event finder
-    //         findEvent = function (key, name) {
-    //             for (i = 0; i < keys[key].length; i++) {
-    //                 if (text.indexOf(keys[key][i]) != -1) {
-    //                     for (i = 0; i < events.length; i++) {
-    //                         if (events[i].name == name) {
-    //                             message.attachment.payload.elements.push(attachCard(events[i]));
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //
-    //         findEvent("tech_fest", "Fall Tech Fest");
-    //         findEvent("resu_makeover", "Resu-Makeover");
-    //         findEvent("sixty_seconds_to_success", "60 Seconds to Success");
-    //         findEvent("general_career_fair", "Fall Internship & Career Expo");
-    //         findEvent("grad_school", "Graduate School Info Day");
-    //         findEvent("on_campus_jobs", "How To Find a Job on Campus Workshop");
-    //         findEvent("on_campus_jobs", "Open House & On-Campus Job Fair");
-    //         findEvent("peace_corps", "Peace Corps Information Session: Application Workshop");
-    //         findEvent("peace_corps", "Peace Corps Information Session: Central & South American Spotlight");
-    //         findEvent("peace_corps", "Peace Corps Screening: Girl Rising");
-    //         findEvent("peace_corps", "Peace Corps Information Session: Application Workshop 2");
-    //         findEvent("hr_panel", "Careers in HR Panel");
-    //
-    //         // Date based queries
-    //         for (i = 0; i < keys.next_month.length; i++) {
-    //             if (text.indexOf(keys.next_month[i]) != -1) {
-    //                 for (i = 0; i < events.length; i++) {
-    //                     if (events[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
-    //                         found = true;
-    //                         message.attachment.payload.elements.push(attachCard(events[i]));
-    //                     }
-    //                 }
-    //                 if (!found) { sendMessage(recipientId, {
-    //                     text: "No events next month!"
-    //                 });
-    //                 } else {
-    //                     sendMessage(recipientId, {
-    //                         text: "Here are next month's events:"
-    //                     });
-    //                     sendMessage(recipientId, message);
-    //                   }
-    //                 return true;
-    //             }
-    //         }
-    //
-    //         for (i = 0; i < keys.this_month.length; i++) {
-    //             if (text.indexOf(keys.this_month[i]) != -1) {
-    //                 for (i = 0; i < events.length; i++) {
-    //                     if (events[i].tid.getUTCMonth() == compare.getUTCMonth()) {
-    //                         found = true;
-    //                         message.attachment.payload.elements.push(attachCard(events[i]));
-    //                     }
-    //                 }
-    //                 if (!found) { sendMessage(recipientId, {
-    //                     text: "No events this month!"
-    //                 });
-    //                 } else {
-    //                     sendMessage(recipientId, {
-    //                         text: "Here are this month's events:"
-    //                     });
-    //                     sendMessage(recipientId, message);
-    //                   }
-    //                 return true;
-    //             }
-    //         }
-    //
-    //         for (i = 0; i < keys.next_event.length; i++) {
-    //             if (text.indexOf(keys.next_event[i]) != -1) {
-    //                 for (i = 0; i < events.length; i++) {
-    //                     if (events[i].tid >= compare) {
-    //                         found = true;
-    //                         message.attachment.payload.elements.push(attachCard(events[i]));
-    //                     }
-    //                 }
-    //                 if (!found) { sendMessage(recipientId, {
-    //                     text: "No events!"
-    //                 });
-    //                 } else {
-    //                     sendMessage(recipientId, {
-    //                         text: "Here is the next events:"
-    //                     });
-    //                     sendMessage(recipientId, message);
-    //                   }
-    //                 return true;
-    //             }
-    //         }
-    //
-    //         for (i = 0; i < keys.all_events.length; i++) {
-    //             if (text.indexOf(keys.all_events[i]) != -1) {
-    //                 sendMessage(recipientId, {
-    //                     text: "Check out our calendar:"
-    //                 });
-    //                 message = {
-    //                     "attachment": {
-    //                         "type": "template",
-    //                         "payload": {
-    //                             "template_type": "generic",
-    //                             "elements": [{
-    //                                 "title": "Career Center Events",
-    //                                 "subtitle": "",
-    //                                 "image_url": "http://www.csun.edu/sites/default/files/styles/slideshow_full/public/field_image/field_slideshow_slides/Calendar_0.jpg?itok=onQCLNsE",
-    //                                 "buttons": [{
-    //                                     "type": "web_url",
-    //                                     "url": "http://www.csun.edu/career/calendar/",
-    //                                     "title": "Go to calendar"
-    //                                 }]
-    //                             }]
-    //                         }
-    //                     }
-    //                 };
-    //                 sendMessage(recipientId, message);
-    //                 return true;
-    //             }
-    //         }
-    //
-    //         if (message.attachment.payload.elements.length > 0) {
-    //             sendMessage(recipientId, {
-    //                 text: "This could be helpful"
-    //             });
-    //             sendMessage(recipientId, message);
-    //         }
-    //         return true;
-    //     }
-    // }
+    
+    for (i = 0; i < keys.general.length; i++) {
+        if (text.indexOf(keys.general[i]) != -1) {
+            message = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": []
+                    }
+                }
+            };
+
+            // generic event finder
+            findEvent = function (key, name) {
+                for (i = 0; i < keys[key].length; i++) {
+                    if (text.indexOf(keys[key][i]) != -1) {
+                        for (i = 0; i < events.length; i++) {
+                            if (events[i].name == name) {
+                                message.attachment.payload.elements.push(attachCard(events[i]));
+                            }
+                        }
+                    }
+                }
+            }
+
+            findEvent("tech_fest", "Fall Tech Fest");
+            findEvent("resu_makeover", "Resu-Makeover");
+            findEvent("sixty_seconds_to_success", "60 Seconds to Success");
+            findEvent("general_career_fair", "Fall Internship & Career Expo");
+            findEvent("grad_school", "Graduate School Info Day");
+            findEvent("on_campus_jobs", "How To Find a Job on Campus Workshop");
+            findEvent("on_campus_jobs", "Open House & On-Campus Job Fair");
+            findEvent("peace_corps", "Peace Corps Information Session: Application Workshop");
+            findEvent("peace_corps", "Peace Corps Information Session: Central & South American Spotlight");
+            findEvent("peace_corps", "Peace Corps Screening: Girl Rising");
+            findEvent("peace_corps", "Peace Corps Information Session: Application Workshop 2");
+            findEvent("hr_panel", "Careers in HR Panel");
+
+            // Date based queries
+            for (i = 0; i < keys.next_month.length; i++) {
+                if (text.indexOf(keys.next_month[i]) != -1) {
+                    for (i = 0; i < events.length; i++) {
+                        if (events[i].tid.getUTCMonth() == compare.getUTCMonth() + 1) {
+                            found = true;
+                            message.attachment.payload.elements.push(attachCard(events[i]));
+                        }
+                    }
+                    if (!found) { sendMessage(recipientId, {
+                        text: "No events next month!"
+                    });
+                    } else {
+                        sendMessage(recipientId, {
+                            text: "Here are next month's events:"
+                        });
+                        sendMessage(recipientId, message);
+                      }
+                    return true;
+                }
+            }
+
+            for (i = 0; i < keys.this_month.length; i++) {
+                if (text.indexOf(keys.this_month[i]) != -1) {
+                    for (i = 0; i < events.length; i++) {
+                        if (events[i].tid.getUTCMonth() == compare.getUTCMonth()) {
+                            found = true;
+                            message.attachment.payload.elements.push(attachCard(events[i]));
+                        }
+                    }
+                    if (!found) { sendMessage(recipientId, {
+                        text: "No events this month!"
+                    });
+                    } else {
+                        sendMessage(recipientId, {
+                            text: "Here are this month's events:"
+                        });
+                        sendMessage(recipientId, message);
+                      }
+                    return true;
+                }
+            }
+
+            for (i = 0; i < keys.next_event.length; i++) {
+                if (text.indexOf(keys.next_event[i]) != -1) {
+                    for (i = 0; i < events.length; i++) {
+                        if (events[i].tid >= compare) {
+                            found = true;
+                            message.attachment.payload.elements.push(attachCard(events[i]));
+                        }
+                    }
+                    if (!found) { sendMessage(recipientId, {
+                        text: "No events!"
+                    });
+                    } else {
+                        sendMessage(recipientId, {
+                            text: "Here is the next events:"
+                        });
+                        sendMessage(recipientId, message);
+                      }
+                    return true;
+                }
+            }
+
+            for (i = 0; i < keys.all_events.length; i++) {
+                if (text.indexOf(keys.all_events[i]) != -1) {
+                    sendMessage(recipientId, {
+                        text: "Check out our calendar:"
+                    });
+                    message = {
+                        "attachment": {
+                            "type": "template",
+                            "payload": {
+                                "template_type": "generic",
+                                "elements": [{
+                                    "title": "Career Center Events",
+                                    "subtitle": "",
+                                    "image_url": "http://www.csun.edu/sites/default/files/styles/slideshow_full/public/field_image/field_slideshow_slides/Calendar_0.jpg?itok=onQCLNsE",
+                                    "buttons": [{
+                                        "type": "web_url",
+                                        "url": "http://www.csun.edu/career/calendar/",
+                                        "title": "Go to calendar"
+                                    }]
+                                }]
+                            }
+                        }
+                    };
+                    sendMessage(recipientId, message);
+                    return true;
+                }
+            }
+
+            if (message.attachment.payload.elements.length > 0) {
+                sendMessage(recipientId, {
+                    text: "This could be helpful"
+                });
+                sendMessage(recipientId, message);
+            }
+            return true;
+        }
+    }
     return true;
 }
 
