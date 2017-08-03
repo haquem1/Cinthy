@@ -62,25 +62,25 @@ richMessage = function (recipientId, message) {
             return true;
         }
     }
-    // hours block
-    // for (i = 0; i < keys.hours.length; i++) {
-    //     if (text.indexOf(keys.hours[i]) != -1) {
-    //         if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1))
-    //             message = "The Career Center is now open\n";
-    //         else
-    //             message = "The Career Center is now closed\n";
-    //
-    //         message = message +
-    //             "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm\n\nIf this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career";
-    //
-    //         sendMessage(recipientId, {
-    //             text: message
-    //         });
-    //         return true;
-    //     }
-    // }
-    //
-    // // events block
+    hours block
+    for (i = 0; i < keys.hours.length; i++) {
+        if (text.indexOf(keys.hours[i]) != -1) {
+            if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1))
+                message = "The Career Center is now open\n";
+            else
+                message = "The Career Center is now closed\n";
+
+            message = message +
+                "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm\n\nIf this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career";
+
+            sendMessage(recipientId, {
+                text: message
+            });
+            return true;
+        }
+    }
+
+    // events block
     //
     // for (i = 0; i < keys.general.length; i++) {
     //     if (text.indexOf(keys.general[i]) != -1) {
