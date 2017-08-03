@@ -205,6 +205,7 @@ richMessage = function (recipientId, text) {
                 });
                 sendMessage(recipientId, message);
             }
+            return true;
         }
     }
     return true;
