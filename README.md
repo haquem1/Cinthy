@@ -10,7 +10,7 @@ Find othe clients to connect to Heroku app besides Facebook. Possibly create an 
 **Server address, Access Tokens, and other information found in Heroku dashboard, Facebook Developer portal, and API.ai portal**
 
 <p>
- When simulating your webhooks using your local machine, through ngrok which can be install on your machine using `npm install -g ngrok` A guide to using ngrok is found here: https://ngrok.com/ .
+ When simulating your webhooks using your local machine, through ngrok which can be install on your machine using ```npm install -g ngrok``` A guide to using ngrok is found here: https://ngrok.com/ .
 
 </p>
  
