@@ -20,5 +20,5 @@ module.exports = function (recipientId, message, callback) {
             console.log('Error: ', response.body.error);
         }
     });
-    if (callback) callback(recipientId, nextMessage);
+    if (callback) callback();
 };
