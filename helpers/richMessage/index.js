@@ -62,7 +62,7 @@ richMessage = function (recipientId, message) {
             return true;
         }
     }
-    hours block
+    // hours block
     for (i = 0; i < keys.hours.length; i++) {
         if (text.indexOf(keys.hours[i]) != -1) {
             if (date.getUTCDay() > 0 && date.getUTCDay() < 6 && (date.getUTCHours() > 16 || date.getUTCHours() < 1))
