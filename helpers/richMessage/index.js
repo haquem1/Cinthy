@@ -59,7 +59,8 @@ richMessage = function (recipientId, message) {
                 message = "The Career Center is located on the 4th floor of Bayramian Hall";
             sendMessage(recipientId, {
                 text: message
-            }).then(sendMessage(recipientId, {text: "If this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career"}));
+            });
+            sendMessage(recipientId, {text: "If this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career"})
             //async.waterfall([sendMessage(recipientId, {text: message}), sendMessage(recipientId, {text: "If this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career"})]);
             return true;
         }
