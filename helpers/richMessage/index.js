@@ -60,7 +60,7 @@ richMessage = function (recipientId, message) {
             sendMessage(recipientId, {
                 text: message
             });
-            async.waterfall([sendMessage(recipientId, {text: message}), sendMessage(recipientId, {text: "If this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career"})]);
+            //async.waterfall([sendMessage(recipientId, {text: message}), sendMessage(recipientId, {text: "If this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career"})]);
             return true;
         }
     }
