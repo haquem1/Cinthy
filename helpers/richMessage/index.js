@@ -8,6 +8,7 @@ richMessage = function (recipientId, message) {
 
     // basic NLP from FB
 
+
     var text = message.text;
     var date = new Date();
     var compare = date;
@@ -59,7 +60,7 @@ richMessage = function (recipientId, message) {
             sendMessage(recipientId, {
                 text: message
             });
-            sendMessage(recipientId)
+
             //async.waterfall([sendMessage(recipientId, {text: message}), sendMessage(recipientId, {text: "If this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career"})]);
             return true;
         }
