@@ -236,11 +236,11 @@ attachCard = function (item) {
         "buttons": [{
             "type": "web_url",
             "url": item.rsvpUrl,
-            "title": "Register"
+            "title": "RSVP"
         },{
             "type": "web_url",
             "url": "https://csun-csm.symplicity.com/students/",
-            "title": "Find Jobs and More"
+            "title": "Find Jobs & Events"
         }]
     };
     return card;
