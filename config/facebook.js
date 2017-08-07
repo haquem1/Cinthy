@@ -11,7 +11,6 @@ module.exports = function (recipientId, message, callback) {
             recipient: {
                 id: recipientId
             },
-            sender_action: 'typing_on',
             message: message,
         }
     }, function(error, response, body) {
