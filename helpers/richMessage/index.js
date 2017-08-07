@@ -8,7 +8,6 @@ richMessage = function (recipientId, message) {
 
     // basic NLP from FB
 
-
     var text = message.text;
     var date = new Date();
     var compare = date;
@@ -60,7 +59,7 @@ richMessage = function (recipientId, message) {
             sendMessage(recipientId, {
                 text: message
             });
-            sendMessage(recipientId, {text: "If this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career"});
+            sendMessage(recipientId)
             //async.waterfall([sendMessage(recipientId, {text: message}), sendMessage(recipientId, {text: "If this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career"})]);
             return true;
         }
@@ -237,6 +236,10 @@ attachCard = function (item) {
             "type": "web_url",
             "url": item.rsvpUrl,
             "title": "Learn More"
+        },{
+          "type": "web_url",
+          "url": "https://csun-csm.symplicity.com",
+          "title": "Search Jobs and Events in Sunlink"
         }]
     };
     return card;
