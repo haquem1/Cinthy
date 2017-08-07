@@ -236,10 +236,6 @@ attachCard = function (item) {
             "type": "web_url",
             "url": item.rsvpUrl,
             "title": "Learn More"
-        },{
-          "type": "web_url",
-          "url": "https://csun-csm.symplicity.com",
-          "title": "Search Jobs and Events in Sunlink"
         }]
     };
     return card;
