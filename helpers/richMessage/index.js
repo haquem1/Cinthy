@@ -25,7 +25,7 @@ richMessage = function (recipientId, message) {
     // message for staff
     if (keys.message.indexOf(values[0]) != -1) return false;
 
-    // get started
+    // greeting
     if (keys.help.indexOf(values[0]) != -1 && values.length < 6) {
         message = "Hi! This is Cinthy the Career Center Assistant.\n\nHow may I help you?";
         sendMessage(recipientId, {
@@ -46,13 +46,14 @@ richMessage = function (recipientId, message) {
     // sunlink block
     for (i = 0; i < keys.sunlink.length; i++) {
         if (text.indexOf(keys.sunlink[i]) != -1) {
-                message = "If you are a current student, your Sunlink password is #CareerCenter for your first log in.\n\nPlease contact the Career Center if you are not a current student or the password is not working.\n\nVisit us at http://www.csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall";
+              message = "If you are a current student, your Sunlink password is #CareerCenter for your first log in.\n\nPlease contact the Career Center if you are not a current student or the password is not working.\n\nVisit us at http://www.csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall";
             sendMessage(recipientId, {
                 text: message
             });
             return true;
         }
     }
+
     // location block
     for (i = 0; i < keys.location.length; i++) {
         if (text.indexOf(keys.location[i]) != -1) {
@@ -61,7 +62,6 @@ richMessage = function (recipientId, message) {
                 text: message
             });
 
-            //async.waterfall([sendMessage(recipientId, {text: message}), sendMessage(recipientId, {text: "If this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career"})]);
             return true;
         }
     }
@@ -123,7 +123,7 @@ richMessage = function (recipientId, message) {
             findEvent("peace_corps", "Peace Corps Information Session: Application Workshop 2");
             findEvent("hr_panel", "Careers in HR Panel");
 
-            // Date based queries
+            // date based queries
             for (i = 0; i < keys.next_month.length; i++) {
                 if (text.indexOf(keys.next_month[i]) != -1) {
                     for (i = 0; i < events.length; i++) {
@@ -236,7 +236,7 @@ attachCard = function (item) {
         "buttons": [{
             "type": "web_url",
             "url": item.rsvpUrl,
-            "title": "RSVP"
+            "title": "Learn More"
         },{
             "type": "web_url",
             "url": "https://csun-csm.symplicity.com/students/",
