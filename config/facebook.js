@@ -20,4 +20,5 @@ module.exports = function (recipientId, message) {
             console.log('Error: ', response.body.error);
         }
     });
+    return;
 };
