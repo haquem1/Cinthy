@@ -41,7 +41,7 @@ richMessage = function (recipientId, message) {
             text: message
         });
         setTimeout(function(){
-            sendMessage(recipientId, { text: "Type 'message' followed by your message if there's something you would like our staff to answer.\n\n\nVisit us at http://www.csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall"})
+            sendMessage(recipientId, { text: "Type 'message' followed by your message if there's something you would like our staff to answer.\n\nVisit us at http://www.csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall"})
         }, 3000)
         return true;
     }
