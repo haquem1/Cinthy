@@ -1,6 +1,7 @@
 var events = require('../../models/events');
 var keys = require('../../models/keys.json');
 var sendMessage = require('../../config/facebook');
+var emoji = require('node-emoji');
 
 // send rich message for hours and events
 richMessage = function (recipientId, message) {
@@ -21,32 +22,22 @@ richMessage = function (recipientId, message) {
     // message for staff
     if (keys.message.indexOf(values[0]) != -1) return false;
 
-    // // basic NLP from FB
-    // const greetings = firstEntity(message.nlp, 'greetings');
-    // if (greetings && greetings.confidence > 0.8) {
-    //     sendMessage(recipientId, { text: "Hi! This is Cinthy the Career Center Assistant.\n\nHow may I help you?" });
-    //     setTimeout(function() {
-    //         sendMessage(recipientId, { text: "If you're not sure where to begin, type 'get started'" });
-    //     }, 3000);
-    //     return true;
-    // }
-    //
-    // const thanks = firstEntity(message.nlp, 'thanks');
-    // if (thanks && thanks.confidence > 0.8) sendMessage(recipientId, { text: "You're welcome! I am happy to help" });
-    //
-    //
-    // const bye = firstEntity(message.nlp, 'bye');
-    // if (bye && bye.confidence > 0.8) sendMessage(recipientId, { text: "Goodbye!" });
-
-    // greeting
-    if (keys.help.indexOf(values[0]) != -1 && values.length < 12) {
-        message = "Hi! This is Cinthy the Career Center Assistant.\n\nHow may I help you?";
-        sendMessage(recipientId, { text: message });
+    // basic NLP from FB
+    const greetings = firstEntity(message.nlp, 'greetings');
+    if (greetings && greetings.confidence > 0.75) {
+        sendMessage(recipientId, { text: emoji.emojify("Hi! This is Cinthy the Career Center Assistant :wave:\n\nHow may I help you?" }));
         setTimeout(function() {
             sendMessage(recipientId, { text: "If you're not sure where to begin, type 'get started'" });
         }, 3000);
         return true;
     }
+
+    const thanks = firstEntity(message.nlp, 'thanks');
+    if (thanks && thanks.confidence > 0.75) sendMessage(recipientId, { text: "You're welcome! I am happy to help" });
+
+
+    const bye = firstEntity(message.nlp, 'bye');
+    if (bye && bye.confidence > 0.75) sendMessage(recipientId, { text: "Goodbye!" });
 
     // get started
     if (text.indexOf(keys.get_started[0]) != -1) {
