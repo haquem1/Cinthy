@@ -24,7 +24,7 @@ richMessage = function (recipientId, message) {
     // basic NLP from FB
     const greetings = firstEntity(message.nlp, 'greetings');
     if (greetings && greetings.confidence > 0.75) {
-        sendMessage(recipientId, { text: "Hi! This is Cinthy the Career Center Assistant U+270C\n\nHow may I help you?" });
+        sendMessage(recipientId, { text: "Hi! This is Cinthy the Career Center Assistant"+ decodeURI('\u270C') + "\n\nHow may I help you?" });
         setTimeout(function() {
             sendMessage(recipientId, { text: "If you're not sure where to begin, type 'get started'" });
         }, 3000);
