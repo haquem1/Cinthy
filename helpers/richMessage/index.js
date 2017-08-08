@@ -23,9 +23,8 @@ richMessage = function (recipientId, message) {
 
     // basic NLP from FB
     const greetings = firstEntity(message.nlp, 'greetings');
-    if (thanks && thanks.confidence > 0.8) {
-        message = "Hi! This is Cinthy the Career Center Assistant.\n\nHow may I help you?";
-        sendMessage(recipientId, { text: message });
+    if (greetings && greetings.confidence > 0.8) {
+        sendMessage(recipientId, { text: "Hi! This is Cinthy the Career Center Assistant.\n\nHow may I help you?" });
         setTimeout(function() {
             sendMessage(recipientId, { text: "If you're not sure where to begin, type 'get started'" });
         }, 3000);
@@ -33,15 +32,12 @@ richMessage = function (recipientId, message) {
     }
 
     const thanks = firstEntity(message.nlp, 'thanks');
-    if (thanks && thanks.confidence > 0.8) {
-        sendMessage(recipientId, { text: "You're welcome! I am happy to help" });
-    }
+    if (thanks && thanks.confidence > 0.8) sendMessage(recipientId, { text: "You're welcome! I am happy to help" });
+
 
     const bye = firstEntity(message.nlp, 'bye');
-    if (bye && bye.confidence > 0.8) {
-        sendMessage(recipientId, { text: "Goodbye!" });
-    }
-    
+    if (bye && bye.confidence > 0.8) sendMessage(recipientId, { text: "Goodbye!" });
+
     // greeting
     // if (keys.help.indexOf(values[0]) != -1 && values.length < 12) {
     //     message = "Hi! This is Cinthy the Career Center Assistant.\n\nHow may I help you?";
