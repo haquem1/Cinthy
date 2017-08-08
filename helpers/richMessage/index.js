@@ -1,7 +1,11 @@
-var async = require('async');
+var sync = require('synchronize');
 var events = require('../../models/events');
 var keys = require('../../models/keys.json');
 var sendMessage = require('../../config/facebook');
+
+var fiber = sync.fiber;
+var await = sync.await;
+var defer = sync.defer;
 
 // send rich message for hours and events
 richMessage = function (recipientId, message) {
@@ -26,16 +30,20 @@ richMessage = function (recipientId, message) {
     if (keys.message.indexOf(values[0]) != -1) return false;
 
     // greeting
-    if (keys.help.indexOf(values[0]) != -1 && values.length < 6) {
+    if (keys.help.indexOf(values[0]) != -1 && values.length < 12) {
         message = "Hi! This is Cinthy the Career Center Assistant.\n\nHow may I help you?";
-        sendMessage(recipientId, {
-            text: message
+        fiber(function() {
+            await( sendMessage(recipientId, { text: message }) );
+            await( sendMessage(recipientId, { text: "If you're not sure where to begin, type 'get started'" }) );
         });
+        // sendMessage(recipientId, {
+        //     text: message
+        // });
         return true;
       }
 
     // get started
-    if (keys.get_started.indexOf(values[0]) != -1 && values.length < 6) {
+    if (keys.get_started.indexOf(values[0]) != -1 && values.length < 10) {
         message = "You ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!\n\n\nVisit us at http://www.csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall";
         sendMessage(recipientId, {
             text: message
