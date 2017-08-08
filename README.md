@@ -15,3 +15,4 @@ When simulating your webhooks using your local machine, through ngrok which can 
  **Remember to first launch your bot start up file and then run ngrok. Don't forget to update your webhook subscription when relaunching your ngrok tunnel**
 
 Emoji reference found here: https://raw.githubusercontent.com/omnidan/node-emoji/master/lib/emoji.json
+http://unicode.org/emoji/charts/full-emoji-list.html
