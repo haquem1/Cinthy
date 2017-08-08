@@ -26,7 +26,7 @@ richMessage = function (recipientId, message) {
 
     // greeting
     if (keys.help.indexOf(values[0]) != -1 && values.length < 12) {
-        message = "Hi! This is Cinthy the Career Center Assistant.\n\nHow may I help you?  \ntest";
+        message = "Hi! This is Cinthy the Career Center Assistant.\n\nHow may I help you?";
         sendMessage(recipientId, { text: message });
         setTimeout(function() {
             sendMessage(recipientId, { text: "If you're not sure where to begin, type 'get started'" });
