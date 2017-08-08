@@ -1,6 +1,6 @@
 var request = require('request');
 
-module.exports = function (recipientId, message, callback) {
+module.exports = function (recipientId, message) {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {
