@@ -35,11 +35,14 @@ richMessage = function (recipientId, message) {
       }
 
     // get started
-    if (keys.get_started.indexOf(values[0]) != -1) {
-        message = "You can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!\n\nType 'message' followed by your message if there's something you would like our staff to answer.\n\nSimply say hello or help to bring this screen up again!\n\n\nVisit us at http://www.csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall";
+    if (text.indexOf(keys.get_started[0]) != -1) {
+        message = "You can ask me about:\n-Our hours\n-Our upcoming events for this month, next month, and the semester\n\nI can also recommend events for you. Or, if you know which event you're looking for, just ask!";
         sendMessage(recipientId, {
             text: message
         });
+        setTimeout(function(){
+            sendMessage(recipientId, { text: "Type 'message' followed by your message if there's something you would like our staff to answer.\n\n\nVisit us at http://www.csun.edu/career or call us 818-677-2878\nWe are located on the 4th floor of Bayramian Hall"})
+        }, 3000)
         return true;
     }
 
