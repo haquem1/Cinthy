@@ -30,10 +30,7 @@ richMessage = function (recipientId, message) {
         sendMessage(recipientId, { text: message });
         setTimeout(function() {
             sendMessage(recipientId, { text: "If you're not sure where to begin, type 'get started'" });
-        }, 7000)
-        // sendMessage(recipientId, {
-        //     text: message
-        // });
+        }, 3000);
         return true;
       }
 
@@ -64,7 +61,9 @@ richMessage = function (recipientId, message) {
             sendMessage(recipientId, {
                 text: message
             });
-
+            setTimeout(function() {
+                sendMessage(recipientId, { text: "If this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career" });
+            }, 3000);
             return true;
         }
     }
@@ -77,11 +76,14 @@ richMessage = function (recipientId, message) {
                 message = "The Career Center is now closed\n";
 
             message = message +
-                "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm\n\nIf this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career";
+                "\nOur regular hours are:\nMonday - Thursday: 9am-5pm\nFriday: 9am-4pm";
 
             sendMessage(recipientId, {
                 text: message
             });
+            setTimeout(function() {
+                sendMessage(recipientId, { text: "IIf this did not answer your question, please call us at 818-677-2878\n\nVisit us at http://www.csun.edu/career" });
+            }, 3000);
             return true;
         }
     }
