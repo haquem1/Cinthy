@@ -33,7 +33,7 @@ richMessage = function (recipientId, message) {
     if (keys.help.indexOf(values[0]) != -1 && values.length < 12) {
         message = "Hi! This is Cinthy the Career Center Assistant.\n\nHow may I help you?";
         fiber(function() {
-            await( sendMessage(recipientId, { text: message }), defer (sendMessage(recipientId, { text: "If you're not sure where to begin, type 'get started'" })));
+            await( sendMessage(recipientId, { text: message }));
         });
         // sendMessage(recipientId, {
         //     text: message
