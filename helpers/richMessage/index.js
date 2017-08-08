@@ -24,10 +24,10 @@ richMessage = function (recipientId, message) {
     // basic NLP from FB
     const greetings = firstEntity(message.nlp, 'greetings');
     if (greetings && greetings.confidence > 0.75) {
-        sendMessage(recipientId, { text: "Hi! This is Cinthy the Career Center Assistant "+ decodeURI('\u263A') + "\n\nHow may I help you?" });
-        setTimeout(function() {
-            sendMessage(recipientId, { text: "If you're not sure where to begin, type 'get started'" });
-        }, 3000);
+        sendMessage(recipientId, { text: "Hi! This is Cinthy the Career Center Assistant "+ decodeURI('\u263A') + "\n\nHow may I help you?" }).then(function(){sendMessage(recipientId, { text: "If you're not sure where to begin, type 'get started'" })});
+        // setTimeout(function() {
+        //     sendMessage(recipientId, { text: "If you're not sure where to begin, type 'get started'" });
+        // }, 3000);
         return true;
     }
 
