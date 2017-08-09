@@ -229,7 +229,7 @@ richMessage = function (recipientId, message) {
 
             if (message.attachment.payload.elements.length > 0) {
                 sendMessage(recipientId, {
-                    text: "This could be helpful" + decodeURI('\u263A')
+                    text: "This could be helpful " + decodeURI('\u263A')
                 });
                 sendMessage(recipientId, message);
             }
